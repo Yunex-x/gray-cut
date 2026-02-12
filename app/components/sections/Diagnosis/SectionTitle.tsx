@@ -6,7 +6,7 @@ export default function SectionTitle() {
         w-full
         bg-[#F6F4F1]
       
-mt-[56px]
+mt-[26px]
 md:mt-[100px]
       
 
@@ -21,6 +21,9 @@ md:mt-[100px]
           text-[#2A2A2A]
 
           text-[12px]
+          md:text-[64px]
+          leading-[100px]
+          md:leading-[100px]
          
 
           

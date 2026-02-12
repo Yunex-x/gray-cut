@@ -22,7 +22,6 @@ export default function DiagnosisSection({
           max-w-[1440px]
           mx-auto
 
-          min-h-[1024px]
 
           grid
           grid-cols-1
@@ -49,9 +48,8 @@ export default function DiagnosisSection({
               text-[#2C2D30]
               text-[24px]
               md:text-[64px]
-
-              md:leading-[76px]
-
+              md:leading-[100%]
+leading-[100%]
             
             "
           >
@@ -64,20 +62,21 @@ export default function DiagnosisSection({
             className="
               uppercase
               text-[rgba(44,45,48,0.7)]
-
-              text-[16px]
+font-poppins
+              text-[14px]
+              text-center
+md:text-left
               leading-[25px]
 
              
             "
-            style={{ fontFamily: "Poppins" }}
           >
             Most hair systems fail because of bad geometry. Our protocol is built
             on 10,000.
           </p>
 
           {/* Actions */}
-          <div className="flex gap-[20px] flex-wrap">
+          <div className="flex gap-[20px] ">
             {/* Primary */}
             <button
               className="
@@ -86,7 +85,7 @@ export default function DiagnosisSection({
                 uppercase
                 font-medium
 
-                px-[24px]
+                w-[215px]
                 h-[44px]
 
                 text-[14px]
@@ -104,9 +103,9 @@ export default function DiagnosisSection({
                 text-[#8AAE9B]
                 uppercase
                 font-medium
-
-                px-[24px]
+                w-[122px]
                 h-[44px]
+                
 
                 text-[14px]
               "
