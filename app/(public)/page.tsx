@@ -1,3 +1,4 @@
+import DiagnosisSection from "../components/sections/Diagnosis/diagnosisSection";
 import HeroSection from "../components/sections/herosection/HeroSection";
 import ProtocolsSections from "../components/sections/protocols/ProtocolsSections";
 
@@ -6,6 +7,7 @@ export default function HomePage() {
     <main className="w-full flex flex-col items-center">
 <HeroSection/>
 <ProtocolsSections/>
+<DiagnosisSection/>
     </main>
   );
 }

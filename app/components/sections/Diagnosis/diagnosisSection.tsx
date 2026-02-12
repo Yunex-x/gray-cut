@@ -1,0 +1,147 @@
+import SectionTitle from "./SectionTitle";
+
+
+export default function DiagnosisSection({
+  children,
+}: {
+  children?: React.ReactNode;
+}) {
+  return (
+    <section
+      className="
+        w-full
+        mx-auto
+        overflow-hidden
+        bg-[#F6F4F1]
+      "
+    >
+        <SectionTitle/>
+        <section className="w-full bg-[#F6F4F1]">
+      <div
+        className="
+          max-w-[1440px]
+          mx-auto
+
+          min-h-[1024px]
+
+          grid
+          grid-cols-1
+          md:grid-cols-2
+
+          items-center
+
+          px-[40px]
+          md:px-[40px]
+          sm:px-[18px]
+        "
+      >
+        {/* LEFT CONTENT */}
+        <div className="flex  flex-col  gap-[24px] max-w-[532px]">
+          {/* Title */}
+          <h2
+            className="
+              font-playfair
+              font-normal
+              text-center
+              md:text-left
+              uppercase
+              tracking-[0.02em]
+              text-[#2C2D30]
+              text-[24px]
+              md:text-[64px]
+
+              md:leading-[76px]
+
+            
+            "
+          >
+            We don’t guess, <br />
+            we measure
+          </h2>
+
+          {/* Description */}
+          <p
+            className="
+              uppercase
+              text-[rgba(44,45,48,0.7)]
+
+              text-[16px]
+              leading-[25px]
+
+             
+            "
+            style={{ fontFamily: "Poppins" }}
+          >
+            Most hair systems fail because of bad geometry. Our protocol is built
+            on 10,000.
+          </p>
+
+          {/* Actions */}
+          <div className="flex gap-[20px] flex-wrap">
+            {/* Primary */}
+            <button
+              className="
+                bg-[#8AAE9B]
+                text-[#F6F4F1]
+                uppercase
+                font-medium
+
+                px-[24px]
+                h-[44px]
+
+                text-[14px]
+              "
+              style={{ fontFamily: "Poppins" }}
+            >
+              Start digital diagnosis
+            </button>
+
+            {/* Secondary */}
+            <button
+              className="
+                border
+                border-[#8AAE9B]
+                text-[#8AAE9B]
+                uppercase
+                font-medium
+
+                px-[24px]
+                h-[44px]
+
+                text-[14px]
+              "
+              style={{ fontFamily: "Poppins" }}
+            >
+              Learn more
+            </button>
+          </div>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div
+          className="
+            w-full
+            flex
+            justify-center
+            md:justify-end
+
+            mt-[40px]
+            md:mt-0
+          "
+        >
+          <img
+            src="/diagnosis.webp"
+            alt="Diagnosis device"
+            className="
+              w-full
+              max-w-[792px]
+              h-auto
+              object-contain
+            "
+          />
+        </div>
+      </div>
+    </section>
+    </section>
+  );
+}
