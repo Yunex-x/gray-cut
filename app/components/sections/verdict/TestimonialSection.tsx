@@ -164,24 +164,21 @@ export default function TestimonialCarousel() {
       {/* ================= DESKTOP LAYOUT ================= */}
       <div className="hidden lg:grid w-full grid-cols-1 lg:grid-cols-2 min-h-[870px]">
         {/* IMAGE */}
-        <div className="relative bg-[#EEECE9] overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "linear-gradient(181.2deg, rgba(0,0,0,0) 27%, rgba(0,0,0,0.54) 92%), url('/verdict.webp')",
-            }}
-          />
-        </div>
+ <div className="relative bg-[#EEECE9] overflow-hidden">
+    {/* Gradient */}
+    <div className="absolute inset-0 bg-[linear-gradient(181.2deg,rgba(0,0,0,0)_27%,rgba(0,0,0,0.54)_92%)] z-10" />
 
+    {/* Image */}
+    <div className="absolute inset-0 bg-[url('/verdict.webp')] bg-cover bg-center xl:bg-top xl:bg-cover" />
+  </div>
         {/* CONTENT */}
         <div className="flex flex-col bg-[#F6F4F1]">
           {/* HEADER */}
-          <div className="px-[24px] lg:px-[40px] pt-[64px]">
-            <h2 className="font-playfair uppercase font-normal text-right tracking-[-0.02em] text-[#2C2D30] text-[36px] lg:text-[64px] leading-tight">
+          <div className="px-[24px] lg:px-[40px] xl:px-[80px] pt-[64px]">
+            <h2 className="font-playfair uppercase font-normal text-center tracking-[-0.02em] text-[#2C2D30] text-[36px] lg:text-[64px] leading-tight">
               Thought of First 50
             </h2>
-            <p className="mt-2 max-w-[373px] ml-auto text-right font-poppins uppercase text-[rgba(44,45,48,0.7)] text-[14px] lg:text-[16px]">
+            <p className="mt-2 mx-auto text-center font-poppins uppercase text-[rgba(44,45,48,0.7)] text-[14px] lg:text-[16px]">
               We invited 50 men to test the protocol. Here is the unedited reality.
             </p>
           </div>
@@ -195,16 +192,17 @@ export default function TestimonialCarousel() {
               border-black/30
 
               w-full
-              max-w-[750px]
               h-[280px]
               lg:h-[346px]
+              xl:h-[400px]
 
               px-[24px]
               lg:px-[40px]
+              xl:px-[60px]
               py-[24px]
+              xl:py-[40px]
 
               overflow-hidden
-              ml-auto
             "
           >
             <AnimatePresence mode="wait" custom={direction}>
@@ -237,6 +235,7 @@ export default function TestimonialCarousel() {
                     text-white
                     text-[20px]
                     lg:text-[36px]
+                    xl:text-[40px]
                     leading-[1.5]
                     line-clamp-4
                   "
@@ -246,10 +245,10 @@ export default function TestimonialCarousel() {
 
                 {/* AUTHOR */}
                 <div>
-                  <p className="font-poppins text-white text-[16px] font-medium">
+                  <p className="font-poppins text-white text-[16px] xl:text-[18px] font-medium">
                     {testimonials[index].name}
                   </p>
-                  <p className="font-poppins text-white/60 text-[14px]">
+                  <p className="font-poppins text-white/60 text-[14px] xl:text-[16px]">
                     {testimonials[index].role}
                   </p>
                 </div>
@@ -258,7 +257,7 @@ export default function TestimonialCarousel() {
           </div>
 
           {/* NAV */}
-          <div className="mt-auto flex items-center justify-between px-[24px] lg:px-[40px] py-[24px]">
+          <div className="mt-auto flex items-center justify-between px-[24px] lg:px-[40px] xl:px-[80px] py-[24px] xl:py-[40px]">
             <div className="h-[1px] flex-1 bg-black/20 mr-[24px]" />
 
             <div className="flex gap-[12px]">
