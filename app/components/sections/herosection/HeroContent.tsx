@@ -1,69 +1,71 @@
 export default function HeroContent() {
-    return (
-        <div
-            className="
+  return (
+    <div
+      className="
         flex
         flex-col
         justify-end
-        gap-[24px]
-h-full
-whitespace-nowrap
-        max-w-[850px]
-        px-[40px]
-        pb-[80px]
+        gap-[18px]
+
+        h-full
+        max-w-[834px]
+
+        md:px-[40px]
+        md:pb-[80px]
+lg:whitespace-nowrap
+        px-[18px]
+        pb-[56px]
       "
-        >
-            {/* Title */}
-            <h1
-                className="
-          text-[#F6F4F1]
+    >
+      {/* Title */}
+      <h1
+        className="
           uppercase
-          tracking-[0.02em]
           font-playfair
-
-          text-[80px]
-          xl:text-[80px]
-          leading-[96px]
-xl:leading-[96px]
-          md:text-[56px]
-          md:leading-[68px]
-
-          sm:text-[40px]
-          sm:leading-[48px]
-        "
-            >
-                <span className="text-[#F6F4F1]">
-                    AGING IS INEVITABLE.
-                </span>
-                <br />
-                <span className="text-[#8AAE9B]">
-                    BALDING IS OPTIONAL.
-                </span>
-            </h1>
-
-            {/* Subtitle */}
-            <p
-                className="
-          text-[rgba(246,244,241,0.6)]
           font-normal
-          text-[24px]
-          leading-[36px]
+          tracking-[0.02em]
+          text-[48px]
+          leading-[52px]
+xl:text-[74px]
+          lg:text-[60px]
+          md:text-[56px]
+          md:leading-[96px]
+    
+        "
+      >
+        <span className="text-[#F6F4F1]">
+          AGING IS INEVITABLE.
+        </span>
+        <br />
+        <span className="text-[#8AAE9B]">
+          BALDING IS OPTIONAL.
+        </span>
+      </h1>
+
+      {/* Subtitle */}
+      <p
+        className="
+          font-normal
+          uppercase
+          text-[rgba(246,244,241,0.6)]
+
+          lg:text-[24px]
+          xl:text-[22px]
+          leading-[24px]
+
           md:text-[18px]
           md:leading-[28px]
 
-          sm:text-[16px]
-          sm:leading-[24px]
+          text-[18px]
         "
-                style={{ fontFamily: "Poppins" }}
-            >
-                The European standard in undetectable hair restoration.
-            </p>
+        style={{ fontFamily: "Poppins" }}
+      >
+        The European standard in undetectable hair restoration.
+      </p>
 
-            {/* CTA */}
-            <button
-                className="
-          w-[324px]
-          h-[44px]
+      {/* CTA */}
+      <button
+        className="
           bg-[#8AAE9B]
 
           flex
@@ -73,16 +75,19 @@ xl:leading-[96px]
           text-[#F6F4F1]
           text-[14px]
           leading-[21px]
-          font-medium
+          font-normal
           uppercase
 
-          md:w-[280px]
-          sm:w-full
+          md:w-[324px]
+         md:h-[44px]
+
+          w-[184px]
+          h-[36px]
         "
-                style={{ fontFamily: "Poppins" }}
-            >
-                Start Your Journey
-            </button>
-        </div>
-    );
+        style={{ fontFamily: "Poppins" }}
+      >
+        Start Your Journey
+      </button>
+    </div>
+  );
 }

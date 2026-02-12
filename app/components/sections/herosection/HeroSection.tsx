@@ -11,7 +11,6 @@ export default function HeroSection({
       className="
         relative
         w-full
-        max-w-[1440px]
         h-[870px]
         lg:h-[870px]
         md:h-[700px]
@@ -29,7 +28,9 @@ export default function HeroSection({
           bg-cover
           bg-center
           bg-no-repeat
-          bg-[url('/hero.webp')]
+          md:bg-[url('/hero.webp')]
+          bg-[url('/heromobile.webp')]
+
         "
       />
 
