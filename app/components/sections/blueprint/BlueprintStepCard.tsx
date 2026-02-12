@@ -61,6 +61,7 @@ export default function BlueprintStepCard({
               text-[16px]
               leading-[19px]
               md:text-[32px]
+              xl:text-[38px]
               md:leading-[38px]
               uppercase
               font-medium
@@ -84,6 +85,9 @@ export default function BlueprintStepCard({
               text-[16px]
               leading-[19px]
               md:text-[32px]
+              xl:text-[38px]
+              md:leading-[38px]
+              uppercase
               md:leading-[38px]
               uppercase
               font-medium
@@ -104,7 +108,13 @@ export default function BlueprintStepCard({
             text-[24px]
             leading-[140%]
             md:text-[20px]
-            md:leading-[24px]
+            xl:text-[24px]
+            md:leading-[28px]
+            xl:leading-[24px]
+            text-[#2C2D30]
+            md:text-[rgba(44,45,48,0.6)]
+            md:leading-[28px]
+            xl:leading-[24px]
             text-[#2C2D30]
             md:text-[rgba(44,45,48,0.6)]
             uppercase
@@ -125,6 +135,7 @@ export default function BlueprintStepCard({
           w-full
           h-[177px]
           md:h-[311px]
+          xl:h-[500px]
           bg-cover
           bg-center
           overflow-hidden

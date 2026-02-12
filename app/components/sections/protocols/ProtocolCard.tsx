@@ -17,7 +17,7 @@ export default function ProtocolCard({
     <div className="relative w-full h-[580px] md:h-[928px] overflow-hidden group cursor-pointer">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
+        className="absolute inset-0 bg-cover bg-start transition-transform duration-700 ease-out group-hover:scale-110"
         style={{ backgroundImage: `url(${image})` }}
       />
 
@@ -54,6 +54,9 @@ export default function ProtocolCard({
               text-white
 
               text-[24px]
+              xl:text-[36px]
+              leading-[28px]
+              xl:leading-[38px]
               leading-[32px]
 
               md:text-[32px]
@@ -78,6 +81,7 @@ export default function ProtocolCard({
                   text-white/80
 
                   text-[12px]
+                  xl:text-[16px]
                   leading-[18px]
 
                   md:text-[14px]
@@ -108,9 +112,11 @@ export default function ProtocolCard({
 
                 px-[16px]
                 h-[44px]
+                xl:px-[22px]
 
                 md:px-[22px]
                 md:h-[54px]
+                xl:h-[64px]
 
                 text-[14px]
                 md:text-[18px]
@@ -148,6 +154,9 @@ export default function ProtocolCard({
 
                 md:text-[48px]
                 md:leading-[58px]
+
+                xl:text-[56px]
+                xl:leading-[68px]
 
                 transition-all
                 duration-300

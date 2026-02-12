@@ -5,13 +5,10 @@ export default function BlueprintSteps() {
     <section
       className="
         w-full
-        max-w-[357px]
-        md:max-w-[1360px]
-        mx-auto
         mt-[40px]
         md:mt-[80px]
-        px-0
-        md:px-[16px]
+        px-[18px]
+        md:px-[40px]
         mb-[8px]
         md:mb-[100px]
       "

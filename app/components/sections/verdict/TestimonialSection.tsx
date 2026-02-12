@@ -161,8 +161,8 @@ export default function TestimonialCarousel() {
         </div>
       </div>
 
-      {/* ================= DESKTOP LAYOUT - ORIGINAL ================= */}
-      <div className="hidden lg:grid max-w-[1440px] mx-auto grid-cols-1 lg:grid-cols-2 min-h-[870px]">
+      {/* ================= DESKTOP LAYOUT ================= */}
+      <div className="hidden lg:grid w-full grid-cols-1 lg:grid-cols-2 min-h-[870px]">
         {/* IMAGE */}
         <div className="relative bg-[#EEECE9] overflow-hidden">
           <div

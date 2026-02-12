@@ -4,7 +4,7 @@ import SectionDivider from "./SectionDivider";
 
 export default function BlueprintSection() {
   return (
-    <section className="bg-[#F6F4F1] ">
+    <section className="bg-[#F6F4F1] w-full">
         <SectionDivider/>
         <BlueprintHeader/>
         <BlueprintSteps/>
