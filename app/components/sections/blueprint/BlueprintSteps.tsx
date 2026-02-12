@@ -5,18 +5,22 @@ export default function BlueprintSteps() {
     <section
       className="
         w-full
-        max-w-[1360px]
+        max-w-[357px]
+        md:max-w-[1360px]
         mx-auto
-        mt-[80px]
-        px-[16px]
+        mt-[40px]
+        md:mt-[80px]
+        px-0
+        md:px-[16px]
         mb-[8px]
-md:mb-[100px]
+        md:mb-[100px]
       "
     >
       <div
         className="
-          grid
-          grid-cols-1
+          flex
+          flex-col
+          md:grid
           md:grid-cols-3
           gap-[24px]
         "
@@ -34,6 +38,7 @@ md:mb-[100px]
           title="Ship"
           description="Dispatched from Europe in 24h."
           image="/Rectangle2.webp"
+          faded
         />
 
         <BlueprintStepCard
@@ -41,6 +46,7 @@ md:mb-[100px]
           title="Wear"
           description="Receive in 3 days. Ready to install."
           image="/Rectangle3.webp"
+          faded
         />
       </div>
     </section>

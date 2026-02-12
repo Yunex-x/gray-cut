@@ -8,6 +8,8 @@ export default function ProtocolsGrid() {
         grid
         grid-cols-1
         md:grid-cols-2
+        max-w-[1440px]
+        mx-auto
       "
     >
       <ProtocolCard

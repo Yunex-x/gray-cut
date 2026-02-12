@@ -54,8 +54,7 @@ export default function BlueprintHeader() {
       <div
         className="
           flex
-          flex-col
-          md:flex-row
+          flex-row
           gap-[12px]
           md:gap-[16px]
           mt-[8px]
@@ -64,7 +63,8 @@ export default function BlueprintHeader() {
         {/* Express Track */}
         <button
           className="
-            w-[188px]
+            w-[160px]
+            md:w-[188px]
             h-[44px]
             bg-[#8AAE9B]
 
@@ -73,7 +73,8 @@ export default function BlueprintHeader() {
             justify-center
 
             font-poppins
-            text-[14px]
+            text-[11px]
+            md:text-[14px]
             leading-[21px]
             font-medium
             uppercase
@@ -101,7 +102,8 @@ export default function BlueprintHeader() {
         {/* Bespoke Protocol */}
         <button
           className="
-            w-[187px]
+            w-[160px]
+            md:w-[187px]
             h-[44px]
             bg-[#F6F4F1]
             border
@@ -112,7 +114,8 @@ export default function BlueprintHeader() {
             justify-center
 
             font-poppins
-            text-[14px]
+            text-[11px]
+            md:text-[14px]
             leading-[21px]
             font-medium
             uppercase
@@ -134,7 +137,7 @@ export default function BlueprintHeader() {
             cursor-pointer
           "
         >
-          Bespoke Protocol
+Bespoke Protocol 
         </button>
       </div>
     </section>

@@ -14,7 +14,7 @@ export default function ProtocolCard({
   image,
 }: ProtocolCardProps) {
   return (
-    <div className="relative w-[719px] h-[928px] overflow-hidden group cursor-pointer">
+    <div className="relative w-full h-[580px] md:h-[928px] overflow-hidden group cursor-pointer">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
@@ -33,13 +33,17 @@ export default function ProtocolCard({
           flex flex-col
           justify-end
 
-          px-[80px]
-          pb-[80px]
+          px-[18px]
+          pb-[40px]
 
-          
+          md:px-[40px]
+          md:pb-[60px]
+
+          lg:px-[80px]
+          lg:pb-[80px]
         "
       >
-        <div className="flex flex-col gap-[16px] max-w-[362px] transform transition-transform duration-500 group-hover:translate-y-[-10px]">
+        <div className="flex flex-col gap-[12px] md:gap-[16px] max-w-full md:max-w-[362px] transform transition-transform duration-500 group-hover:translate-y-[-10px]">
           {/* Title */}
           <h3
             className="
@@ -49,13 +53,15 @@ export default function ProtocolCard({
               tracking-[-0.02em]
               text-white
 
-              text-[32px]
-              leading-[43px]
+              text-[24px]
+              leading-[32px]
+
+              md:text-[32px]
+              md:leading-[43px]
 
               transition-all
               duration-300
               group-hover:text-[#8AAE9B]
-              
             "
           >
             {title}
@@ -71,14 +77,16 @@ export default function ProtocolCard({
                   uppercase
                   text-white/80
 
-                  text-[14px]
-                  leading-[21px]
+                  text-[12px]
+                  leading-[18px]
+
+                  md:text-[14px]
+                  md:leading-[21px]
 
                   transition-all
                   duration-300
                   group-hover:text-white
                   group-hover:translate-x-2
-                 
                 "
                 style={{ 
                   fontFamily: "Poppins",
@@ -91,17 +99,21 @@ export default function ProtocolCard({
           </ul>
 
           {/* CTA + Price */}
-          <div className="flex items-center justify-between pt-[8px]">
+          <div className="flex items-center justify-between pt-[8px] gap-[12px]">
             <button
               className="
                 bg-[#8AAE9B]
                 flex items-center justify-center
                 uppercase text-white
 
-                px-[22px]
-                h-[54px]
+                px-[16px]
+                h-[44px]
 
-                text-[18px]
+                md:px-[22px]
+                md:h-[54px]
+
+                text-[14px]
+                md:text-[18px]
                 font-semibold
 
                 transition-all
@@ -118,7 +130,7 @@ export default function ProtocolCard({
                 active:shadow-lg
 
                 cursor-pointer
-                
+                whitespace-nowrap
               "
               style={{ fontFamily: "Poppins" }}
             >
@@ -131,14 +143,16 @@ export default function ProtocolCard({
                 uppercase
                 text-white
 
-                text-[48px]
-                leading-[58px]
+                text-[36px]
+                leading-[44px]
+
+                md:text-[48px]
+                md:leading-[58px]
 
                 transition-all
                 duration-300
                 group-hover:scale-110
                 group-hover:text-[#8AAE9B]
-              
               "
               style={{ fontFamily: "Alumni Sans SC" }}
             >
