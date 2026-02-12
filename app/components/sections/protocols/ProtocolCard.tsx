@@ -14,16 +14,16 @@ export default function ProtocolCard({
   image,
 }: ProtocolCardProps) {
   return (
-    <div className="relative w-[719px] h-[928px]  overflow-hidden">
+    <div className="relative w-[719px] h-[928px] overflow-hidden group cursor-pointer">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
         style={{ backgroundImage: `url(${image})` }}
       />
 
       {/* Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent transition-opacity duration-500 group-hover:from-black/70 group-hover:via-black/30" />
+      <div className="absolute inset-0 bg-black/20 transition-opacity duration-500 group-hover:bg-black/10" />
 
       {/* Content */}
       <div
@@ -39,7 +39,7 @@ export default function ProtocolCard({
           
         "
       >
-        <div className="flex flex-col gap-[16px] max-w-[362px]">
+        <div className="flex flex-col gap-[16px] max-w-[362px] transform transition-transform duration-500 group-hover:translate-y-[-10px]">
           {/* Title */}
           <h3
             className="
@@ -52,6 +52,9 @@ export default function ProtocolCard({
               text-[32px]
               leading-[43px]
 
+              transition-all
+              duration-300
+              group-hover:text-[#8AAE9B]
               
             "
           >
@@ -60,7 +63,7 @@ export default function ProtocolCard({
 
           {/* Features */}
           <ul className="flex flex-col gap-[4px]">
-            {features.map((item) => (
+            {features.map((item, index) => (
               <li
                 key={item}
                 className="
@@ -71,9 +74,16 @@ export default function ProtocolCard({
                   text-[14px]
                   leading-[21px]
 
+                  transition-all
+                  duration-300
+                  group-hover:text-white
+                  group-hover:translate-x-2
                  
                 "
-                style={{ fontFamily: "Poppins" }}
+                style={{ 
+                  fontFamily: "Poppins",
+                  transitionDelay: `${index * 50}ms`
+                }}
               >
                 {item}
               </li>
@@ -94,6 +104,20 @@ export default function ProtocolCard({
                 text-[18px]
                 font-semibold
 
+                transition-all
+                duration-300
+                ease-in-out
+
+                hover:bg-[#7a9d8a]
+                hover:scale-110
+                hover:shadow-xl
+                hover:shadow-[#8AAE9B]/50
+                hover:tracking-wider
+
+                active:scale-95
+                active:shadow-lg
+
+                cursor-pointer
                 
               "
               style={{ fontFamily: "Poppins" }}
@@ -110,6 +134,10 @@ export default function ProtocolCard({
                 text-[48px]
                 leading-[58px]
 
+                transition-all
+                duration-300
+                group-hover:scale-110
+                group-hover:text-[#8AAE9B]
               
               "
               style={{ fontFamily: "Alumni Sans SC" }}

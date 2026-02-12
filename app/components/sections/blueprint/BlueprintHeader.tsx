@@ -78,6 +78,21 @@ export default function BlueprintHeader() {
             font-medium
             uppercase
             text-[#F6F4F1]
+
+            transition-all
+            duration-300
+            ease-in-out
+
+            hover:bg-[#7a9d8a]
+            hover:scale-105
+            hover:shadow-lg
+            hover:shadow-[#8AAE9B]/50
+            hover:tracking-wider
+
+            active:scale-95
+            active:shadow-md
+
+            cursor-pointer
           "
         >
           Express Track
@@ -102,6 +117,21 @@ export default function BlueprintHeader() {
             font-medium
             uppercase
             text-[#8AAE9B]
+
+            transition-all
+            duration-300
+            ease-in-out
+
+            hover:bg-[#8AAE9B]
+            hover:text-[#F6F4F1]
+            hover:scale-105
+            hover:shadow-lg
+            hover:shadow-[#8AAE9B]/50
+
+            active:scale-95
+            active:shadow-md
+
+            cursor-pointer
           "
         >
           Bespoke Protocol

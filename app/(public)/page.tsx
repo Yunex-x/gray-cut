@@ -3,6 +3,7 @@ import BlueprintSection from "../components/sections/blueprint/BlueprintSection"
 import DiagnosisSection from "../components/sections/Diagnosis/diagnosisSection";
 import HeroSection from "../components/sections/herosection/HeroSection";
 import ProtocolsSections from "../components/sections/protocols/ProtocolsSections";
+import VerdictSection from "../components/sections/verdict/VerdictSection";
 
 export default function HomePage() {
   return (
@@ -11,7 +12,8 @@ export default function HomePage() {
 <ProtocolsSections/>
 <DiagnosisSection/>
 <BlueprintSection/>
-<Footer/>
+<VerdictSection/>
+
     </main>
   );
 }

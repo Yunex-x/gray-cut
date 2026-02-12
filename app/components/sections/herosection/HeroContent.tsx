@@ -83,6 +83,20 @@ xl:text-[74px]
 
           w-[184px]
           h-[36px]
+
+          transition-all
+          duration-300
+          ease-in-out
+          
+          hover:bg-[#7a9d8a]
+          hover:scale-105
+          hover:shadow-lg
+          hover:shadow-[#8AAE9B]/50
+          
+          active:scale-95
+          active:shadow-md
+          
+          cursor-pointer
         "
         style={{ fontFamily: "Poppins" }}
       >

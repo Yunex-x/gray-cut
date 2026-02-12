@@ -53,7 +53,7 @@ leading-[100%]
             
             "
           >
-            We don’t guess, <br />
+            We don't guess, <br />
             we measure
           </h2>
 
@@ -89,6 +89,21 @@ md:text-left
                 h-[44px]
 
                 text-[14px]
+
+                transition-all
+                duration-300
+                ease-in-out
+
+                hover:bg-[#7a9d8a]
+                hover:scale-105
+                hover:shadow-lg
+                hover:shadow-[#8AAE9B]/50
+                hover:tracking-wider
+
+                active:scale-95
+                active:shadow-md
+
+                cursor-pointer
               "
               style={{ fontFamily: "Poppins" }}
             >
@@ -108,6 +123,21 @@ md:text-left
                 
 
                 text-[14px]
+
+                transition-all
+                duration-300
+                ease-in-out
+
+                hover:bg-[#8AAE9B]
+                hover:text-[#F6F4F1]
+                hover:scale-105
+                hover:shadow-lg
+                hover:shadow-[#8AAE9B]/50
+
+                active:scale-95
+                active:shadow-md
+
+                cursor-pointer
               "
               style={{ fontFamily: "Poppins" }}
             >
@@ -126,6 +156,8 @@ md:text-left
 
             mt-[40px]
             md:mt-0
+
+            group
           "
         >
           <img
@@ -136,6 +168,16 @@ md:text-left
               max-w-[792px]
               h-auto
               object-contain
+
+              transition-all
+              duration-700
+              ease-out
+
+              group-hover:scale-110
+              group-hover:rotate-2
+              group-hover:drop-shadow-xl
+
+              cursor-pointer
             "
           />
         </div>
