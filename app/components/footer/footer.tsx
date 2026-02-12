@@ -1,17 +1,22 @@
 'use client'
-  import ConnectWithUs from './connectwithus'
+import ConnectWithUs from './connectwithus'
 
 const Footer = () => {
   return (
-    <div className='bg-secondary  font-poppins  w-full '>
-        <div className='flex flex-col items-center justify-center py-8'>
-            <img src={'/logo.svg'} alt='Logo' className='mx-auto ' />
-            <p className='text-center text-sm mb-4'><strong>Gray</strong>Cut</p>
-            <h1 className='playfair text-4xl font-extrabold'>STOP GUESSING</h1>
-        </div>
-        <ConnectWithUs />
-    </div>
-  )
-}
+    <footer className="bg-secondary font-poppins w-full">
+      <div className="flex flex-col items-center justify-center py-8 px-4 text-center">
+        <img src="/logo.svg" alt="Logo" className="mx-auto mb-2" />
+        <p className="text-sm mb-4">
+          <strong>Gray</strong>Cut
+        </p>
+        <h1 className="playfair text-3xl sm:text-4xl font-extrabold">
+          STOP GUESSING
+        </h1>
+      </div>
 
-export default Footer
+      <ConnectWithUs />
+    </footer>
+  );
+};
+
+export default Footer;

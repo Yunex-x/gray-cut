@@ -1,17 +1,33 @@
-'use clinet'
+'use client'
 import React from "react";
 
 const ConnectWithUs = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission logic here
   };
+
   return (
-    <div className="flex flex-col items-center justify-center w-full">
-      <h1>CONNECT WITH US!</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="email" placeholder="Enter your email" className="py-8 px-5" />
-        <button type="submit" className="bg-primary py-8 px-4">SUBSCRIBE</button>
+    <div className="w-full max-w-xl mx-auto px-4">
+      <h1 className="  mb-4">
+        CONNECT WITH US!
+      </h1>
+
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center gap-3 w-full"
+      >
+        <input
+          type="email"
+          placeholder="Enter your email"
+          className="flex-1 min-w-0 py-3.5 px-4 border  focus:outline-none"
+        />
+
+        <button
+          type="submit"
+          className="bg-primary py-4 px-5 text-sm  whitespace-nowrap"
+        >
+          SUBSCRIBE
+        </button>
       </form>
     </div>
   );
