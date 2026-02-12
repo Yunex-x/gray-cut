@@ -25,9 +25,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-<<<<<<< HEAD
-}
-=======
 }
 .poppins {
   font-family: var(--font-poppins);
@@ -37,4 +34,3 @@ body {
   font-family: var(--font-playfair);
 }
 .alumanium { font-family: var(--font-); }
->>>>>>> ae0cc527e010ecfc6da8c6fc906f2d7d7c0816d8
