@@ -18,9 +18,6 @@ export default function BlueprintStepCard({
       className="
         bg-[#F6F4F1]
         w-full
-        max-w-[357px]
-        md:max-w-[453px]
-        mx-auto
         
         border-x
         border-[#E4DACC]
@@ -41,10 +38,14 @@ export default function BlueprintStepCard({
         md:px-[24px] 
         md:pt-[16px]
         md:pb-[24px]
+        xl:px-[40px]
+        xl:pt-[24px]
+        xl:pb-[32px]
         
         flex flex-col 
         gap-[19px]
         md:gap-[16px]
+        xl:gap-[24px]
         
         order-1
         md:order-2
@@ -54,15 +55,16 @@ export default function BlueprintStepCard({
         group-hover:translate-y-[-5px]
       ">
         {/* Header */}
-        <div className="flex items-center gap-[9px] md:gap-[12px]">
+        <div className="flex items-center gap-[9px] md:gap-[12px] xl:gap-[16px]">
           <span
             className={`
               font-neue
               text-[16px]
               leading-[19px]
               md:text-[32px]
-              xl:text-[38px]
+              xl:text-[42px]
               md:leading-[38px]
+              xl:leading-[48px]
               uppercase
               font-medium
               transition-all
@@ -77,7 +79,7 @@ export default function BlueprintStepCard({
             {step}
           </span>
 
-          <span className="w-[1px] h-[17px] md:h-[21px] bg-[#D2D2D2] transition-all duration-300 group-hover:bg-[#8AAE9B] group-hover:w-[2px]" />
+          <span className="w-[1px] h-[17px] md:h-[21px] xl:h-[28px] bg-[#D2D2D2] transition-all duration-300 group-hover:bg-[#8AAE9B] group-hover:w-[2px]" />
 
           <span
             className="
@@ -85,10 +87,9 @@ export default function BlueprintStepCard({
               text-[16px]
               leading-[19px]
               md:text-[32px]
-              xl:text-[38px]
+              xl:text-[42px]
               md:leading-[38px]
-              uppercase
-              md:leading-[38px]
+              xl:leading-[48px]
               uppercase
               font-medium
               text-[rgba(42,42,42,0.5)]
@@ -108,13 +109,9 @@ export default function BlueprintStepCard({
             text-[24px]
             leading-[140%]
             md:text-[20px]
-            xl:text-[24px]
+            xl:text-[26px]
             md:leading-[28px]
-            xl:leading-[24px]
-            text-[#2C2D30]
-            md:text-[rgba(44,45,48,0.6)]
-            md:leading-[28px]
-            xl:leading-[24px]
+            xl:leading-[36px]
             text-[#2C2D30]
             md:text-[rgba(44,45,48,0.6)]
             uppercase
@@ -135,7 +132,7 @@ export default function BlueprintStepCard({
           w-full
           h-[177px]
           md:h-[311px]
-          xl:h-[500px]
+          xl:h-[550px]
           bg-cover
           bg-center
           overflow-hidden
