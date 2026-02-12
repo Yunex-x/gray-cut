@@ -1,3 +1,4 @@
+import HeroContent from "./HeroContent";
 import Navbar from "./Navbar";
 
 export default function HeroSection({
@@ -35,6 +36,7 @@ export default function HeroSection({
       {/* Content */}
       <div className="relative z-10 w-full h-full">
      <Navbar/>
+     <HeroContent/>
       </div>
     </section>
   );
