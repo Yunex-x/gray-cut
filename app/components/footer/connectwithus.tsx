@@ -19,7 +19,7 @@ const ConnectWithUs = () => {
         <input
           type="email"
           placeholder="Enter your email"
-          className="flex-1 min-w-0 py-3.5 px-4 border  focus:outline-none"
+          className="flex-1 min-w-0 py-3.5 ps-2 border  focus:outline-none"
         />
 
         <button
