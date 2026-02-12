@@ -51,7 +51,7 @@ export default function BlueprintStepCard({
         
         transition-all 
         duration-300 
-        md:group-hover:translate-y-[-5px]
+        group-hover:translate-y-[-5px]
       ">
         {/* Header */}
         <div className="flex items-center gap-[9px] md:gap-[12px]">
@@ -68,15 +68,15 @@ export default function BlueprintStepCard({
               duration-300
               ${
                 faded
-                  ? "text-[rgba(42,42,42,0.5)] md:group-hover:text-[rgba(42,42,42,0.7)]"
-                  : "text-[rgba(42,42,42,0.5)] md:group-hover:text-[#8AAE9B]"
+                  ? "text-[rgba(42,42,42,0.5)] group-hover:text-[rgba(42,42,42,0.7)]"
+                  : "text-[rgba(42,42,42,0.5)] group-hover:text-[#8AAE9B]"
               }
             `}
           >
             {step}
           </span>
 
-          <span className="w-[1px] h-[17px] md:h-[21px] bg-[#D2D2D2] transition-all duration-300 md:group-hover:bg-[#8AAE9B] md:group-hover:w-[2px]" />
+          <span className="w-[1px] h-[17px] md:h-[21px] bg-[#D2D2D2] transition-all duration-300 group-hover:bg-[#8AAE9B] group-hover:w-[2px]" />
 
           <span
             className="
@@ -90,7 +90,7 @@ export default function BlueprintStepCard({
               text-[rgba(42,42,42,0.5)]
               transition-all
               duration-300
-              md:group-hover:text-[#8AAE9B]
+              group-hover:text-[#8AAE9B]
             "
           >
             {title}
@@ -112,7 +112,7 @@ export default function BlueprintStepCard({
             md:font-normal
             transition-all
             duration-300
-            md:group-hover:text-[rgba(44,45,48,0.9)]
+            group-hover:text-[rgba(44,45,48,0.9)]
           "
         >
           {description}
@@ -143,8 +143,8 @@ export default function BlueprintStepCard({
             transition-all
             duration-700
             ease-out
-            md:group-hover:scale-110
-            md:group-hover:brightness-110
+            group-hover:scale-110
+            group-hover:brightness-110
           "
           style={{ backgroundImage: `url(${image})` }}
         />

@@ -60,7 +60,7 @@ export default function SectionTitle() {
         </p>
       </div>
 
-      {/* Desktop Title - Original */}
+      {/* Desktop Title - THE VERDICT */}
       <h2
         className="
           hidden
@@ -71,12 +71,10 @@ export default function SectionTitle() {
           uppercase
           tracking-[0.02em]
           text-[#2A2A2A]
-          text-[32px]
-          leading-[40px]
-          mb-[5px]
-          md:mb-[50px]
-          md:text-[64px]
-          md:leading-[85px]
+          text-[64px]
+          leading-[85px]
+          pt-[100px]
+          pb-[50px]
         "
       >
         THE VERDICT

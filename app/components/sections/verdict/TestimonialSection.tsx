@@ -175,10 +175,10 @@ export default function TestimonialCarousel() {
         </div>
 
         {/* CONTENT */}
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-[#F6F4F1]">
           {/* HEADER */}
-          <div className="px-[24px] lg:px-[40px] pt-[64px] ">
-            <h2 className="font-playfair whitespace-nowrap uppercase font-medium text-right tracking-[-0.02em] text-[#2C2D30] text-[36px] lg:text-[64px] leading-tight">
+          <div className="px-[24px] lg:px-[40px] pt-[64px]">
+            <h2 className="font-playfair uppercase font-normal text-right tracking-[-0.02em] text-[#2C2D30] text-[36px] lg:text-[64px] leading-tight">
               Thought of First 50
             </h2>
             <p className="mt-2 max-w-[373px] ml-auto text-right font-poppins uppercase text-[rgba(44,45,48,0.7)] text-[14px] lg:text-[16px]">

@@ -110,7 +110,7 @@ export default function Navbar() {
       </div>
 
       {/* ================= Mobile ================= */}
-      <div className="lg:hidden absolute top-[56px] left-1/2 -translate-x-1/2 w-[393px] md:w-2xl h-[28px] flex items-center justify-between px-[18px] md:px-0">
+      <div className="lg:hidden absolute top-[26px] left-1/2 -translate-x-1/2 w-[393px] md:w-2xl h-[28px] flex items-center justify-between px-[18px] md:px-0">
         {/* Left */}
         <button className="flex items-center gap-[4px] cursor-pointer transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 group">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-300 group-hover:rotate-12">
