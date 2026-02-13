@@ -6,7 +6,8 @@ export default function Navbar() {
     <header
       className="
         absolute top-0 left-1/2 -translate-x-1/2
-        w-full max-w-[1440px]
+        w-full 
+        px-[18px] md:px-[40px]
         z-50
         backdrop-blur-[3px]
         bg-gradient-to-b from-white/5 to-transparent

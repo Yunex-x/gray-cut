@@ -19,9 +19,7 @@ export default function DiagnosisSection({
         <section className="w-full bg-[#F6F4F1]">
       <div
         className="
-          max-w-[1440px]
-          mx-auto
-
+          w-full
 
           grid
           grid-cols-1

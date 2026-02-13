@@ -17,7 +17,7 @@ export default function ProtocolCard({
     <div className="relative w-full h-[580px] md:h-[928px] overflow-hidden group cursor-pointer">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
+        className="absolute inset-0 bg-cover bg-start transition-transform duration-700 ease-out group-hover:scale-110"
         style={{ backgroundImage: `url(${image})` }}
       />
 
@@ -43,10 +43,12 @@ export default function ProtocolCard({
           lg:pb-[80px]
         "
       >
-        <div className="flex flex-col gap-[12px] md:gap-[16px] max-w-full md:max-w-[362px] transform transition-transform duration-500 group-hover:translate-y-[-10px]">
-          {/* Title */}
+        <div className="flex flex-col gap-[12px] md:gap-[20px] max-w-full md:max-w-[590px] transform transition-transform duration-500 group-hover:translate-y-[-10px]">
+          
+          {/* Title - Mobile Only */}
           <h3
             className="
+              md:hidden
               font-playfair
               font-semibold
               uppercase
@@ -54,10 +56,7 @@ export default function ProtocolCard({
               text-white
 
               text-[24px]
-              leading-[32px]
-
-              md:text-[32px]
-              md:leading-[43px]
+              leading-[28px]
 
               transition-all
               duration-300
@@ -67,8 +66,53 @@ export default function ProtocolCard({
             {title}
           </h3>
 
-          {/* Features */}
-          <ul className="flex flex-col gap-[4px]">
+          {/* Title + Price Row - Desktop Only */}
+          <div className="hidden md:flex items-center whitespace-nowrap justify-between gap-[16px] lg:gap-[42px] xl:gap-[80px] ">
+            <h3
+              className="
+                font-playfair
+                font-semibold
+                uppercase
+                tracking-[0.02em]
+                text-white
+                lg:text-[24px]
+
+                text-[32px]
+                leading-[43px]
+
+                transition-all
+                duration-300
+                group-hover:text-[#8AAE9B]
+              "
+            >
+              {title}
+            </h3>
+
+            <span
+              className="
+                font-semibold
+                uppercase
+                text-white
+
+                text-[40px]
+                xl:text-[48px]
+                lg:text-[32px]
+
+                leading-[48px]
+                xl:leading-[58px]
+
+                transition-all
+                duration-300
+                group-hover:text-[#8AAE9B]
+              "
+              style={{ fontFamily: "Alumni Sans SC" }}
+            >
+              {price}
+            </span>
+          </div>
+
+          {/* Features / Protocols */}
+          <ul className="flex flex-col gap-[8px] md:gap-[10px]">
             {features.map((item, index) => (
               <li
                 key={item}
@@ -98,8 +142,8 @@ export default function ProtocolCard({
             ))}
           </ul>
 
-          {/* CTA + Price */}
-          <div className="flex items-center justify-between pt-[8px] gap-[12px]">
+          {/* CTA + Price Row - Mobile Only / CTA Button - Desktop */}
+          <div className="flex items-center justify-between pt-[8px] md:pt-[16px] gap-[12px]">
             <button
               className="
                 bg-[#8AAE9B]
@@ -137,21 +181,19 @@ export default function ProtocolCard({
               {cta}
             </button>
 
+            {/* Price - Mobile Only */}
             <span
               className="
+                md:hidden
                 font-semibold
                 uppercase
                 text-white
 
-                text-[36px]
-                leading-[44px]
-
-                md:text-[48px]
-                md:leading-[58px]
+                text-[32px]
+                leading-[36px]
 
                 transition-all
                 duration-300
-                group-hover:scale-110
                 group-hover:text-[#8AAE9B]
               "
               style={{ fontFamily: "Alumni Sans SC" }}
