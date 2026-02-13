@@ -13,7 +13,7 @@ export default function HomePage() {
 <DiagnosisSection/>
 <BlueprintSection/>
 <VerdictSection/>
-
+    <Footer/>
     </main>
   );
 }

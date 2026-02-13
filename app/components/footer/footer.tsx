@@ -5,7 +5,8 @@ const Footer = () => {
   return (
     <footer className="bg-secondary font-poppins w-full">
       <div className="flex flex-col items-center justify-center py-10 px-4 text-center">
-        <img src="/logo.svg" alt="Logo" className="mx-auto mb-2" />
+     <div className="md:flex-row lg:flex-row ">
+         <img src="/logo.svg" alt="Logo" className="mx-auto mb-2" />
         <p className="text-sm mb-4">
           <strong>Gray</strong>Cut
         </p>
@@ -14,7 +15,9 @@ const Footer = () => {
         </h1>
       </div>
       <ConnectWithUs />
-      {/* explore now and know more about  */}
+     </div>
+   <div>
+       {/* explore now and know more about  */}
       <div className="flex mx-4 items-center justify-center gap-2 py-4 text-xs mt-6">
         {/* left side  */}
         <div>
@@ -51,6 +54,7 @@ const Footer = () => {
      <div className="flex gap-3 mx-auto justify-center items-center text-center my-4 text-xs bg-primary py-6">
       <p className="mx-auto">© 2025 GrayCut. All Rights Reserved. Terms & Conditions™</p>
      </div>
+   </div>
     </footer>
   );
 };
