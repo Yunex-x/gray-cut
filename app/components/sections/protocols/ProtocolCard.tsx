@@ -44,32 +44,55 @@ export default function ProtocolCard({
         "
       >
         <div className="flex flex-col gap-[12px] md:gap-[16px] max-w-full md:max-w-[362px] transform transition-transform duration-500 group-hover:translate-y-[-10px]">
-          {/* Title */}
-          <h3
-            className="
-              font-playfair
-              font-semibold
-              uppercase
-              tracking-[-0.02em]
-              text-white
+          {/* Title + Price */}
+          <div className="flex  justify-center items-center whitespace-nowrap  gap-[149px]">
+            <h3
+              className="
+      font-playfair
+      font-semibold
+      uppercase
+      tracking-[0.02em]
+      text-white
 
-              text-[24px]
-              xl:text-[36px]
-              leading-[28px]
-              xl:leading-[38px]
-              leading-[32px]
+      text-[24px]
+      md:text-[32px]
+      xl:text-[32px]
 
-              md:text-[32px]
-              md:leading-[43px]
+      leading-[28px]
+      md:leading-[23px]
+      xl:leading-[38px]
 
-              transition-all
-              duration-300
-              group-hover:text-[#8AAE9B]
-            "
-          >
-            {title}
-          </h3>
+      transition-all
+      duration-300
+      group-hover:text-[#8AAE9B]
+    "
+            >
+              {title}
+            </h3>
 
+            <span
+              className="
+      font-semibold
+      uppercase
+      text-white
+
+      text-[32px]
+      md:text-[40px]
+      xl:text-[48px]
+
+      leading-[36px]
+      md:leading-[48px]
+      xl:leading-[48px]
+
+      transition-all
+      duration-300
+      group-hover:text-[#8AAE9B]
+    "
+              style={{ fontFamily: "Alumni Sans SC" }}
+            >
+              {price}
+            </span>
+          </div>
           {/* Features */}
           <ul className="flex flex-col gap-[4px]">
             {features.map((item, index) => (
@@ -92,7 +115,7 @@ export default function ProtocolCard({
                   group-hover:text-white
                   group-hover:translate-x-2
                 "
-                style={{ 
+                style={{
                   fontFamily: "Poppins",
                   transitionDelay: `${index * 50}ms`
                 }}
@@ -102,71 +125,46 @@ export default function ProtocolCard({
             ))}
           </ul>
 
-          {/* CTA + Price */}
-          <div className="flex items-center justify-between pt-[8px] gap-[12px]">
+          {/* CTA */}
+          <div className="pt-[8px]">
             <button
               className="
-                bg-[#8AAE9B]
-                flex items-center justify-center
-                uppercase text-white
+      bg-[#8AAE9B]
+      flex items-center justify-center
+      uppercase text-white
 
-                px-[16px]
-                h-[44px]
-                xl:px-[22px]
+      px-[16px]
+      h-[44px]
+      xl:px-[22px]
 
-                md:px-[22px]
-                md:h-[54px]
-                xl:h-[64px]
+      md:px-[22px]
+      md:h-[54px]
+      xl:h-[64px]
 
-                text-[14px]
-                md:text-[18px]
-                font-semibold
+      text-[14px]
+      md:text-[18px]
+      font-semibold
 
-                transition-all
-                duration-300
-                ease-in-out
+      transition-all
+      duration-300
+      ease-in-out
 
-                hover:bg-[#7a9d8a]
-                hover:scale-110
-                hover:shadow-xl
-                hover:shadow-[#8AAE9B]/50
-                hover:tracking-wider
+      hover:bg-[#7a9d8a]
+      hover:scale-110
+      hover:shadow-xl
+      hover:shadow-[#8AAE9B]/50
+      hover:tracking-wider
 
-                active:scale-95
-                active:shadow-lg
+      active:scale-95
+      active:shadow-lg
 
-                cursor-pointer
-                whitespace-nowrap
-              "
+      cursor-pointer
+      whitespace-nowrap
+    "
               style={{ fontFamily: "Poppins" }}
             >
               {cta}
             </button>
-
-            <span
-              className="
-                font-semibold
-                uppercase
-                text-white
-
-                text-[36px]
-                leading-[44px]
-
-                md:text-[48px]
-                md:leading-[58px]
-
-                xl:text-[56px]
-                xl:leading-[68px]
-
-                transition-all
-                duration-300
-                group-hover:scale-110
-                group-hover:text-[#8AAE9B]
-              "
-              style={{ fontFamily: "Alumni Sans SC" }}
-            >
-              {price}
-            </span>
           </div>
         </div>
       </div>
