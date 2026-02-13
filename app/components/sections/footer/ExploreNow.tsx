@@ -11,10 +11,9 @@
       {/* TITLE */}
       <h3
         className="
-          font-alumni
+        font-poppins
+          text-[32px]
           font-semibold
-          text-[48px]
-          leading-[58px]
           uppercase
           text-[#F6F4F1]
         "

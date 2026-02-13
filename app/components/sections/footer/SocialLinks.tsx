@@ -1,25 +1,31 @@
-export default function SocialLinks() {
+export default function FooterSocials() {
   return (
-    <div className="flex gap-[8px]">
-      {Array.from({ length: 4 }).map((_, i) => (
-        <button
-          key={i}
-          className="
-            w-[44px]
-            h-[44px]
-            border
-            border-[#E4DACC]
-            flex
-            items-center
-            justify-center
-            hover:bg-white/10
-            transition
-          "
-        >
-          {/* SVG ICON */}
-          <div className="w-[18px] h-[18px] bg-white" />
-        </button>
-      ))}
+    <div
+      className="
+        justify-end
+        flex
+        gap-[12px]
+      "
+    >
+      {/* Facebook */}
+      <div className="w-[44px] h-[44px] border border-[#E4DACC] flex items-center justify-center">
+     <img src="/facebook.png" alt="Facebook" />
+      </div>
+
+      {/* Instagram */}
+      <div className="w-[44px] h-[44px] border border-[#E4DACC] flex items-center justify-center">
+        <img src="/instagram.png" alt="Instagram" />
+      </div>
+
+      {/* WhatsApp */}
+      <div className="w-[44px] h-[44px] border border-[#E4DACC] flex items-center justify-center">
+        <img src="/whatsapp.png" alt="WhatsApp" />
+      </div>
+
+      {/* X */}
+      <div className="w-[44px] h-[44px] border border-[#E4DACC] flex items-center justify-center">
+        <img src="/x.png" alt="X" />
+      </div>
     </div>
   );
 }

@@ -4,13 +4,11 @@ export default function KnowMore() {
   return (
     <div className="flex flex-col gap-[20px] w-[276px]">
       {/* TITLE */}
-      <SocialLinks />
       <h3
         className="
-          font-alumni
           font-semibold
-          text-[48px]
-          leading-[58px]
+         font-poppins
+          text-[32px]
           uppercase
           text-[#F6F4F1]
         "
