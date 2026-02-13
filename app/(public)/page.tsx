@@ -16,10 +16,7 @@ export default function HomePage() {
       <DiagnosisSection />
       <BlueprintSection />
       <VerdictSection />
-      <ClubCard />
-      <FeaturesMarquee />
-      <FooterSection />
-     <MobileFooter />
+     
     </main>
   );
 }
