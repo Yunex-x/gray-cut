@@ -43,58 +43,76 @@ export default function ProtocolCard({
           lg:pb-[80px]
         "
       >
-        <div className="flex flex-col gap-[12px] md:gap-[16px] max-w-full md:max-w-[362px] transform transition-transform duration-500 group-hover:translate-y-[-10px]">
-          {/* Title + Price */}
-          <div className="flex  justify-center items-center whitespace-nowrap  gap-[149px]">
+        <div className="flex flex-col gap-[12px] md:gap-[20px] max-w-full md:max-w-[590px] transform transition-transform duration-500 group-hover:translate-y-[-10px]">
+          
+          {/* Title - Mobile Only */}
+          <h3
+            className="
+              md:hidden
+              font-playfair
+              font-semibold
+              uppercase
+              tracking-[-0.02em]
+              text-white
+
+              text-[24px]
+              leading-[28px]
+
+              transition-all
+              duration-300
+              group-hover:text-[#8AAE9B]
+            "
+          >
+            {title}
+          </h3>
+
+          {/* Title + Price Row - Desktop Only */}
+          <div className="hidden md:flex items-center whitespace-nowrap justify-between gap-[16px] lg:gap-[42px] xl:gap-[80px] ">
             <h3
               className="
-      font-playfair
-      font-semibold
-      uppercase
-      tracking-[0.02em]
-      text-white
+                font-playfair
+                font-semibold
+                uppercase
+                tracking-[0.02em]
+                text-white
+                lg:text-[24px]
 
-      text-[24px]
-      md:text-[32px]
-      xl:text-[32px]
+                text-[32px]
+                leading-[43px]
 
-      leading-[28px]
-      md:leading-[23px]
-      xl:leading-[38px]
-
-      transition-all
-      duration-300
-      group-hover:text-[#8AAE9B]
-    "
+                transition-all
+                duration-300
+                group-hover:text-[#8AAE9B]
+              "
             >
               {title}
             </h3>
 
             <span
               className="
-      font-semibold
-      uppercase
-      text-white
+                font-semibold
+                uppercase
+                text-white
 
-      text-[32px]
-      md:text-[40px]
-      xl:text-[48px]
+                text-[40px]
+                xl:text-[48px]
+                lg:text-[32px]
 
-      leading-[36px]
-      md:leading-[48px]
-      xl:leading-[48px]
+                leading-[48px]
+                xl:leading-[58px]
 
-      transition-all
-      duration-300
-      group-hover:text-[#8AAE9B]
-    "
+                transition-all
+                duration-300
+                group-hover:text-[#8AAE9B]
+              "
               style={{ fontFamily: "Alumni Sans SC" }}
             >
               {price}
             </span>
           </div>
-          {/* Features */}
-          <ul className="flex flex-col gap-[4px]">
+
+          {/* Features / Protocols */}
+          <ul className="flex flex-col gap-[8px] md:gap-[10px]">
             {features.map((item, index) => (
               <li
                 key={item}
@@ -104,7 +122,6 @@ export default function ProtocolCard({
                   text-white/80
 
                   text-[12px]
-                  xl:text-[16px]
                   leading-[18px]
 
                   md:text-[14px]
@@ -115,7 +132,7 @@ export default function ProtocolCard({
                   group-hover:text-white
                   group-hover:translate-x-2
                 "
-                style={{
+                style={{ 
                   fontFamily: "Poppins",
                   transitionDelay: `${index * 50}ms`
                 }}
@@ -125,46 +142,64 @@ export default function ProtocolCard({
             ))}
           </ul>
 
-          {/* CTA */}
-          <div className="pt-[8px]">
+          {/* CTA + Price Row - Mobile Only / CTA Button - Desktop */}
+          <div className="flex items-center justify-between pt-[8px] md:pt-[16px] gap-[12px]">
             <button
               className="
-      bg-[#8AAE9B]
-      flex items-center justify-center
-      uppercase text-white
+                bg-[#8AAE9B]
+                flex items-center justify-center
+                uppercase text-white
 
-      px-[16px]
-      h-[44px]
-      xl:px-[22px]
+                px-[16px]
+                h-[44px]
 
-      md:px-[22px]
-      md:h-[54px]
-      xl:h-[64px]
+                md:px-[22px]
+                md:h-[54px]
 
-      text-[14px]
-      md:text-[18px]
-      font-semibold
+                text-[14px]
+                md:text-[18px]
+                font-semibold
 
-      transition-all
-      duration-300
-      ease-in-out
+                transition-all
+                duration-300
+                ease-in-out
 
-      hover:bg-[#7a9d8a]
-      hover:scale-110
-      hover:shadow-xl
-      hover:shadow-[#8AAE9B]/50
-      hover:tracking-wider
+                hover:bg-[#7a9d8a]
+                hover:scale-110
+                hover:shadow-xl
+                hover:shadow-[#8AAE9B]/50
+                hover:tracking-wider
 
-      active:scale-95
-      active:shadow-lg
+                active:scale-95
+                active:shadow-lg
 
-      cursor-pointer
-      whitespace-nowrap
-    "
+                cursor-pointer
+                whitespace-nowrap
+              "
               style={{ fontFamily: "Poppins" }}
             >
               {cta}
             </button>
+
+            {/* Price - Mobile Only */}
+            <span
+              className="
+                md:hidden
+                font-semibold
+                uppercase
+                text-white
+
+                text-[32px]
+                leading-[36px]
+
+                transition-all
+                duration-300
+                group-hover:text-[#8AAE9B]
+              "
+              style={{ fontFamily: "Alumni Sans SC" }}
+            >
+              {price}
+            </span>
           </div>
         </div>
       </div>
