@@ -8,7 +8,7 @@ export default function BrandBlock() {
       "
     >
       {/* LOGO */}
-      <div className="lg:w-[65px] lg:h-[46px] xl:w-[82px] xl:h-[58px]">
+      <div className="lg:w-[65px] lg:h-[46px] xl:w-[82px] xl:h-[58px] 2xl:w-[100px] 2xl:h-[70px]">
         <img src="/logofooter.png" alt="GrayCut Logo" />
       </div>
 
@@ -19,6 +19,7 @@ export default function BrandBlock() {
           font-semibold
           lg:text-[48px]
           xl:text-[64px]
+          2xl:text-[80px]
           lg:leading-[64px]
           xl:leading-[85px]
           uppercase

@@ -41,13 +41,15 @@ export default function DiagnosisSection({
               font-normal
               text-center
               md:text-left
+              whitespace-pre-line
+              lg:whitespace-nowrap
               uppercase
               tracking-[0.02em]
               text-[#2C2D30]
               text-[24px]
               md:text-[64px]
               md:leading-[100%]
-leading-[100%]
+leading-[140%]
             
             "
           >
@@ -66,7 +68,8 @@ font-poppins
 md:text-left
               leading-[25px]
 
-             
+             w-[319px]
+              lg:w-[370px]
             "
           >
             Most hair systems fail because of bad geometry. Our protocol is built

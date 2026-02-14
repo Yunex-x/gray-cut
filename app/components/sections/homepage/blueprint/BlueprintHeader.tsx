@@ -58,6 +58,8 @@ export default function BlueprintHeader() {
           gap-[12px]
           md:gap-[16px]
           mt-[8px]
+          mb-[32px]
+          lg:mb-[1px]
         "
       >
         {/* Express Track */}

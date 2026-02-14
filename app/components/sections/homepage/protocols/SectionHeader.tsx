@@ -36,11 +36,12 @@ md:mb-[26px]
       {/* Subtitle */}
       <p
         className="
-          font-normal
+          font-poppins
           uppercase
           text-center
           text-[rgba(44,45,48,0.7)]
-
+mt-16
+lg:mt-4
           text-[16px]
           leading-[21px]
           max-w-[359px]

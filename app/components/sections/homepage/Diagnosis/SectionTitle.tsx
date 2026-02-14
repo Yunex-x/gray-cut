@@ -19,7 +19,7 @@ md:mt-[100px]
           uppercase
           text-center
           text-[#2A2A2A]
-
+-mb-6
           text-[12px]
           md:text-[64px]
           leading-[100px]

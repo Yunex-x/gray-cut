@@ -6,11 +6,11 @@ export default function BlueprintSteps() {
       className="
         w-full
         mt-[40px]
-        md:mt-[80px]
+        lg:mt-[10px]
         px-[18px]
         md:px-[40px]
         mb-[8px]
-        md:mb-[100px]
+        md:mb-[20px]
       "
     >
       <div
@@ -20,6 +20,7 @@ export default function BlueprintSteps() {
           md:grid
           md:grid-cols-3
           gap-[24px]
+          
         "
       >
         <BlueprintStepCard

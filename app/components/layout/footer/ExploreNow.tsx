@@ -7,6 +7,7 @@ export default function ExploreNow() {
         gap-[20px]
         lg:w-[180px]
         xl:w-[207px]
+        2xl:w-[330px]
       "
     >
       {/* TITLE */}
@@ -15,6 +16,7 @@ export default function ExploreNow() {
         font-poppins
           lg:text-[26px]
           xl:text-[32px]
+          2xl:text-[60px]
           font-semibold
           uppercase
           text-[#F6F4F1]
@@ -33,8 +35,11 @@ export default function ExploreNow() {
               font-normal
               lg:text-[16px]
               xl:text-[18px]
+                2xl:text-[30px]
               lg:leading-[24px]
               xl:leading-[27px]
+              2xl:leading-[45px]
+              
               text-[#F6F4F1]
               hover:opacity-70
               transition
@@ -52,8 +57,11 @@ export default function ExploreNow() {
               font-normal
               lg:text-[16px]
               xl:text-[18px]
+                2xl:text-[30px]
               lg:leading-[24px]
               xl:leading-[27px]
+              2xl:leading-[45px]
+              
               text-[#F6F4F1]
               hover:opacity-70
               transition
@@ -71,8 +79,11 @@ export default function ExploreNow() {
               font-normal
               lg:text-[16px]
               xl:text-[18px]
+                2xl:text-[30px]
               lg:leading-[24px]
               xl:leading-[27px]
+              2xl:leading-[45px]
+              
               text-[#F6F4F1]
               hover:opacity-70
               transition

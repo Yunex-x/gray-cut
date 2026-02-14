@@ -3,7 +3,7 @@ export default function SectionDivider() {
     <div className="w-full flex justify-center items-center bg-[#F6F4F1]">
       {/* Mobile SVG - Hidden on md and above */}
       <svg 
-        className="md:hidden" 
+        className="md:hidden -mb-7 mt-[56px]" 
         width="393" 
         height="9" 
         viewBox="0 0 393 9" 
@@ -17,7 +17,7 @@ export default function SectionDivider() {
 
       {/* Desktop SVG - Hidden below md */}
       <svg 
-        className="hidden md:block" 
+        className="hidden md:block mt-[100px]" 
         width="full" 
         height="11" 
         viewBox="0 0 1400 11" 

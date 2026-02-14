@@ -77,7 +77,7 @@ export default function Footer() {
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex justify-center gap-[12px] px-[18px] pt-[48px]">
+        <div className="flex justify-start gap-[12px] px-[18px] mb-[40px] pt-[48px]">
           <SocialIcon icon="facebook" />
           <SocialIcon icon="instagram" />
           <SocialIcon icon="whatsapp" />

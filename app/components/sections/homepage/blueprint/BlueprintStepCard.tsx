@@ -25,7 +25,7 @@ export default function BlueprintStepCard({
         
         group
         cursor-pointer
-        
+        items-center
         flex
         flex-col
       "
@@ -129,15 +129,20 @@ export default function BlueprintStepCard({
       {/* Image */}
       <div
         className="
-          w-full
+          w-[321px]
           h-[177px]
-          md:h-[311px]
-          xl:h-[550px]
-          bg-cover
-          bg-center
+          md:w-[220px]
+          md:h-[198px]
+          lg:h-[280px]
+          lg:w-[300px]
+          xl:w-[400px]
+          xl:h-[330px]
+          2xl:w-[600px]
+          2xl:h-[500px]
+       
           overflow-hidden
           relative
-          
+          mx-auto
           order-2
           md:order-1
         "
@@ -147,7 +152,7 @@ export default function BlueprintStepCard({
             w-full
             h-full
             bg-cover
-            bg-center
+
             transition-all
             duration-700
             ease-out
