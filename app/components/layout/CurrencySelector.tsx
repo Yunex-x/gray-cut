@@ -52,7 +52,7 @@ export default function CurrencySelector() {
         className="flex items-center gap-[18px] w-[237px] h-[24px] cursor-pointer hover:opacity-80 transition-opacity"
       >
         {/* Left group */}
-        <div className="flex items-center gap-[8px] w-[101px]  lg:w-[201px]  h-[24px]">
+        <div className="flex items-center gap-[8px] w-[75px]  lg:w-[201px]  h-[24px]">
           {/* Icon */}
           <div className="relative w-[24px] h-[24px]">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
