@@ -67,7 +67,7 @@ export default function Footer() {
                 WHY US?
               </Link>
               <Link href="/question" className="font-poppins text-[14px] leading-[21px] text-[#F6F4F1] hover:text-[#8AAE9B]">
-                A QUATION?
+                A QUESTION?
               </Link>
               <Link href="/blog" className="font-poppins text-[14px] leading-[21px] text-[#F6F4F1] hover:text-[#8AAE9B]">
                 BLOG

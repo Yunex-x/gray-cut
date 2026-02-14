@@ -1,11 +1,7 @@
 import SectionTitle from "./SectionTitle";
 
 
-export default function DiagnosisSection({
-  children,
-}: {
-  children?: React.ReactNode;
-}) {
+export default function DiagnosisSection() {
   return (
     <section
       className="
