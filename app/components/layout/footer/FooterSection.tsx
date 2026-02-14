@@ -8,8 +8,8 @@ export default function Footer() {
   return (
     <footer className="hidden lg:block w-full bg-[#2C2D30] text-white whitespace-nowrap">
       {/* ===== TOP FOOTER ===== */}
-      <div className="w-full mx-auto px-[40px] py-[80px]">
-        <div className="grid grid-cols-[1.4fr_auto_1fr_auto_1fr] gap-[20px]">
+      <div className="w-full mx-auto lg:px-[30px] xl:px-[40px] lg:py-[60px] xl:py-[80px]">
+        <div className="grid lg:grid-cols-[1.2fr_auto_0.9fr_auto_0.9fr] xl:grid-cols-[1.4fr_auto_1fr_auto_1fr] lg:gap-[15px] xl:gap-[20px]">
 
           <BrandBlock />
           {/* Divider */}

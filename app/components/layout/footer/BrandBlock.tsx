@@ -8,7 +8,7 @@ export default function BrandBlock() {
       "
     >
       {/* LOGO */}
-      <div className="w-[82px] h-[58px]">
+      <div className="lg:w-[65px] lg:h-[46px] xl:w-[82px] xl:h-[58px]">
         <img src="/logofooter.png" alt="GrayCut Logo" />
       </div>
 
@@ -17,8 +17,10 @@ export default function BrandBlock() {
         className="
           font-playfair
           font-semibold
-          text-[64px]
-          leading-[85px]
+          lg:text-[48px]
+          xl:text-[64px]
+          lg:leading-[64px]
+          xl:leading-[85px]
           uppercase
           text-[#F6F4F1]
         "
@@ -27,12 +29,13 @@ export default function BrandBlock() {
       </h2>
 
       {/* NEWSLETTER */}
-      <div className="flex flex-col gap-[20px] pt-[40px]">
+      <div className="flex flex-col gap-[20px] lg:pt-[24px] xl:pt-[40px]">
         <p
           className="
             font-neue
             font-medium
-            text-[20px]
+            lg:text-[18px]
+            xl:text-[20px]
             uppercase
             text-[#F6F4F1]
           "
@@ -45,7 +48,8 @@ export default function BrandBlock() {
             type="email"
             placeholder="Enter your email"
             className="
-              w-[324px]
+              lg:w-[260px]
+              xl:w-[324px]
               h-[44px]
               bg-[#3D3E41]
               border
@@ -59,7 +63,8 @@ export default function BrandBlock() {
 
           <button
             className="
-              w-[123px]
+              lg:w-[100px]
+              xl:w-[123px]
               h-[44px]
               bg-[#8AAE9B]
               font-poppins

@@ -7,9 +7,9 @@ export default function ClubHeader() {
           flex
           justify-center
           items-center
-          py-[54px]
-          md:py-[80px]
-          lg:py-[100px]
+          py-[34px]
+          md:py-[30px]
+          lg:py-[30px]
           px-[18px]
         "
       >

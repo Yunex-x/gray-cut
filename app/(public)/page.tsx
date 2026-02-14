@@ -1,12 +1,12 @@
-import BlueprintSection from "../components/sections/blueprint/BlueprintSection";
-import ClubCard from "../components/sections/club/ClubCard";
-import DiagnosisSection from "../components/sections/Diagnosis/diagnosisSection";
-import FeaturesMarquee from "../components/sections/Feature/Features";
-import FooterSection from "../components/sections/footer/FooterSection";
-import MobileFooter from "../components/sections/footer/MobileFooter";
-import HeroSection from "../components/sections/herosection/HeroSection";
-import ProtocolsSections from "../components/sections/protocols/ProtocolsSections";
-import VerdictSection from "../components/sections/verdict/VerdictSection";
+import BlueprintSection from "../components/sections/homepage/blueprint/BlueprintSection";
+import ClubCard from "../components/sections/homepage/club/ClubCard";
+import DiagnosisSection from "../components/sections/homepage/Diagnosis/diagnosisSection";
+import FeaturesMarquee from "../components/sections/homepage/Feature/Features";
+import FooterSection from "../components/layout/footer/FooterSection";
+import MobileFooter from "../components/layout/footer/MobileFooter";
+import HeroSection from "../components/sections/homepage/herosection/HeroSection";
+import ProtocolsSections from "../components/sections/homepage/protocols/ProtocolsSections";
+import VerdictSection from "../components/sections/homepage/verdict/VerdictSection";
 
 export default function HomePage() {
   return (
@@ -16,7 +16,10 @@ export default function HomePage() {
       <DiagnosisSection />
       <BlueprintSection />
       <VerdictSection />
-     
+      <ClubCard />
+      <FeaturesMarquee />
+      <FooterSection />
+      <MobileFooter />
     </main>
   );
 }

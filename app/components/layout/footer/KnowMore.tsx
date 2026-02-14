@@ -1,24 +1,26 @@
- export default function ExploreNow() {
+export default function KnowMore() {
   return (
     <div
       className="
         flex
         flex-col
         gap-[20px]
-        w-[207px]
+        lg:w-[180px]
+        xl:w-[207px]
       "
     >
       {/* TITLE */}
       <h3
         className="
-        font-poppins
-          text-[32px]
+          font-poppins
+          lg:text-[26px]
+          xl:text-[32px]
           font-semibold
           uppercase
           text-[#F6F4F1]
         "
       >
-        Explore now!
+        Know more about
       </h3>
 
       {/* LINKS */}
@@ -29,14 +31,16 @@
             className="
               font-poppins
               font-normal
-              text-[18px]
-              leading-[27px]
+              lg:text-[16px]
+              xl:text-[18px]
+              lg:leading-[24px]
+              xl:leading-[27px]
               text-[#F6F4F1]
               hover:opacity-70
               transition
             "
           >
-            Home
+            Why us?
           </a>
         </li>
 
@@ -46,14 +50,16 @@
             className="
               font-poppins
               font-normal
-              text-[18px]
-              leading-[27px]
+              lg:text-[16px]
+              xl:text-[18px]
+              lg:leading-[24px]
+              xl:leading-[27px]
               text-[#F6F4F1]
               hover:opacity-70
               transition
             "
           >
-            PrecisionFit System
+            A question?
           </a>
         </li>
 
@@ -63,14 +69,16 @@
             className="
               font-poppins
               font-normal
-              text-[18px]
-              leading-[27px]
+              lg:text-[16px]
+              xl:text-[18px]
+              lg:leading-[24px]
+              xl:leading-[27px]
               text-[#F6F4F1]
               hover:opacity-70
               transition
             "
           >
-            Ready-to-Wear
+            Blog
           </a>
         </li>
       </ul>

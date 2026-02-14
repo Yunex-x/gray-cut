@@ -1,5 +1,5 @@
 import HeroContent from "./HeroContent";
-import Navbar from "./Navbar";
+import Navbar from "../../../layout/Navbar";
 
 export default function HeroSection({
   children,
@@ -36,8 +36,8 @@ export default function HeroSection({
 
       {/* Content */}
       <div className="relative z-10 w-full h-full">
-     <Navbar/>
-     <HeroContent/>
+        <Navbar />
+        <HeroContent />
       </div>
     </section>
   );
