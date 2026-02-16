@@ -14,15 +14,15 @@ interface ProductShowcaseProps {
 export default function ProductShowcase({ images, className = '' }: ProductShowcaseProps) {
   return (
     <section className={`w-full bg-[#F6F4F1] ${className}`}>
-      <div className="max-w-[1440px] mx-auto px-10 py-[118px]">
-        <div className="flex flex-col xl:flex-row gap-10 items-start">
+      <div className="max-w-[1440px]  px-[40px] py-[118px]">
+        <div className="flex flex-col xl:flex-row gap-[20px] items-start">
           {/* Gallery Grid - Main Content */}
           <div className="flex-1 w-full max-w-[1044px]">
             <GridGallery images={images} className="p-0 max-w-none" />
           </div>
 
           {/* Product Configurator - Sticky Sidebar */}
-          <aside className="w-full xl:w-[276px] flex-shrink-0">
+          <aside className="w-full  xl:w-fit flex-shrink-0">
             <div className="sticky top-8 xl:top-[118px]">
               <ProductConfigurator />
             </div>

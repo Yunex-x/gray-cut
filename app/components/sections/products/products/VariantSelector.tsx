@@ -21,17 +21,17 @@ export default function VariantSelector({ options, selected, onSelect }: Variant
         <button
           key={option.id}
           onClick={() => onSelect(option.id)}
-          className={`flex flex-col px-2.5 py-3 gap-[22px] border transition-all ${
-            selected === option.id || option.isSelected
+          className={`flex flex-col px-2.5 py-3 gap-[22px] w-[276px] border transition-all ${
+            selected === option.id
               ? 'bg-[#8AAE9B]/12 border-[#8AAE9B]'
-              : 'border-[#2C2D30]/10 hover:border-[#2C2D30]/30'
+              : 'bg-[#F6F4F1] border-[#2C2D30]/10 hover:border-[#2C2D30]/30'
           }`}
         >
           <h3 className="font-playfair font-semibold text-lg leading-6 tracking-[-0.02em] uppercase text-[#2C2D30] text-left">
             {option.name}
           </h3>
           <div className="flex items-end justify-between gap-14">
-            <span className="font-poppins text-sm leading-[21px] tracking-[-0.02em] uppercase text-[#2C2D30]/80">
+            <span className="font-poppins text-sm leading-[21px] tracking-[0.02em] whitespace-nowrap uppercase text-[#2C2D30]/80">
               {option.delivery}
             </span>
             <span className="font-alumni font-semibold text-2xl leading-[29px] uppercase text-[#2C2D30]">

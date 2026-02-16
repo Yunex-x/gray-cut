@@ -16,7 +16,7 @@ interface ProductOption {
 }
 
 export default function ProductConfigurator() {
-  const [selectedColor, setSelectedColor] = useState<string>('beige');
+  const [selectedColor, setSelectedColor] = useState<string>('jet-black');
   const [selectedSize, setSelectedSize] = useState<string>('7 × 7');
   const [selectedLocation, setSelectedLocation] = useState<string>('');
   const [selectedVariant, setSelectedVariant] = useState<string>('standard');
@@ -38,17 +38,16 @@ export default function ProductConfigurator() {
     }
   ];
 
+  // Just pass the color data with optional image paths
   const colors = [
-    // First Row
-    { id: 'beige', color: '#D5D6D1', image: '/products/jet-black.png', selected: true },
-    { id: 'brown', color: '#745632', image: '/colors/brown.png', selected: false },
-    { id: 'black', color: '#181818', image: '/colors/black.png', selected: false },
-    { id: 'tan', color: '#5B4E3E', image: '/colors/tan.png', selected: false },
-    // Second Row
-    { id: 'beige-2', color: '#D5D6D1', image: '/colors/beige-2.png', selected: false },
-    { id: 'brown-2', color: '#745632', image: '/colors/brown-2.png', selected: false },
-    { id: 'black-2', color: '#181818', image: '/colors/black-2.png', selected: false },
-    { id: 'tan-2', color: '#5B4E3E', image: '/colors/tan-2.png', selected: false }
+    { id: 'jet-black', label: 'Jet Black', image: '/products/jet-black.png' },
+    { id: 'natural-black', label: 'Natural Black', image: '/products/natural-black.png' },
+    { id: 'dark-brown', label: 'Dark Brown', image: '/products/dark-brown.png' },
+    { id: 'medium-brown', label: 'Medium Brown', image: '/products/medium-brown.png' },
+    { id: 'light-brown', label: 'Light Brown', image: '/products/light-brown.png' },
+    { id: 'chestnut-brown', label: 'Chestnut Brown', image: '/products/chestnut-brown.png' },
+    { id: 'dark-blonde', label: 'Dark Blonde', image: '/products/dark-blonde.png' },
+    { id: 'light-blonde', label: 'Light Blonde', image: '/products/light-blonde.png' },
   ];
 
   const sizes = ['7 × 7', '8 × 8', '9 × 9'];
@@ -59,8 +58,8 @@ export default function ProductConfigurator() {
       <div className="flex flex-col gap-6 bg-[#F6F4F1] p-6">
         {/* Header */}
         <div className="flex flex-col gap-3">
-          <h1 className="font-playfair font-semibold text-[32px] leading-[43px] tracking-[-0.02em] uppercase text-[#2C2D30]">
-            The Standard System
+          <h1 className="font-playfair whitespace-nowrap font-semibold text-[32px] leading-[43px] tracking-[-0.02em] uppercase text-[#2C2D30]">
+            The Standard <br /> System
           </h1>
           
           {/* Rating */}
