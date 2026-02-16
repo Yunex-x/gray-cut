@@ -44,7 +44,7 @@ export default function TestimonialCarousel() {
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage:
-                "linear-gradient(181.2deg, rgba(0,0,0,0) 27.49%, rgba(0,0,0,0.54) 91.81%), url('/verdict.webp')",
+                "linear-gradient(181.2deg, rgba(0,0,0,0) 27.49%, rgba(0,0,0,0.54) 91.81%), url('/home/verdict.webp')",
             }}
           />
         </div>
@@ -134,7 +134,7 @@ export default function TestimonialCarousel() {
             aria-label="Previous testimonial"
           >
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M11.25 13.5L6.75 9L11.25 4.5" stroke="#8AAE9B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M11.25 13.5L6.75 9L11.25 4.5" stroke="#8AAE9B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
 
@@ -155,7 +155,7 @@ export default function TestimonialCarousel() {
             aria-label="Next testimonial"
           >
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M6.75 13.5L11.25 9L6.75 4.5" stroke="#F6F4F1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M6.75 13.5L11.25 9L6.75 4.5" stroke="#F6F4F1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
@@ -164,13 +164,13 @@ export default function TestimonialCarousel() {
       {/* ================= DESKTOP LAYOUT ================= */}
       <div className="hidden lg:grid w-full grid-cols-1 lg:grid-cols-2 min-h-[870px]">
         {/* IMAGE */}
- <div className="relative bg-[#EEECE9] overflow-hidden">
-    {/* Gradient */}
-    <div className="absolute inset-0 bg-[linear-gradient(181.2deg,rgba(0,0,0,0)_27%,rgba(0,0,0,0.54)_92%)] z-10" />
+        <div className="relative bg-[#EEECE9] overflow-hidden">
+          {/* Gradient */}
+          <div className="absolute inset-0 bg-[linear-gradient(181.2deg,rgba(0,0,0,0)_27%,rgba(0,0,0,0.54)_92%)] z-10" />
 
-    {/* Image */}
-    <div className="absolute inset-0 bg-[url('/verdict.webp')] bg-cover bg-center xl:bg-top xl:bg-cover" />
-  </div>
+          {/* Image */}
+          <div className="absolute inset-0 bg-[url('/home/verdict.webp')] bg-cover bg-center xl:bg-top xl:bg-cover" />
+        </div>
         {/* CONTENT */}
         <div className="flex flex-col bg-[#F6F4F1]">
           {/* HEADER */}

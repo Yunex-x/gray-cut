@@ -27,7 +27,7 @@ export default function BlueprintSteps() {
           step="01"
           title="Order"
           description="Pick your shade. Packed instantly."
-          image="/Rectangle1.webp"
+          image="/home/Rectangle1.webp"
           faded
         />
 
@@ -35,7 +35,7 @@ export default function BlueprintSteps() {
           step="02"
           title="Ship"
           description="Dispatched from Europe in 24h."
-          image="/Rectangle2.webp"
+          image="/home/Rectangle2.webp"
           faded
         />
 
@@ -43,7 +43,7 @@ export default function BlueprintSteps() {
           step="03"
           title="Wear"
           description="Receive in 3 days. Ready to install."
-          image="/Rectangle3.webp"
+          image="/home/Rectangle3.webp"
           faded
         />
       </div>

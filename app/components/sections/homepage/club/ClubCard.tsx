@@ -23,7 +23,7 @@ export default function ClubSection() {
             pointer-events-none
           "
           style={{
-            backgroundImage: "url('/Sunshine.png')",
+            backgroundImage: "url('/home/Sunshine.png')",
             backgroundSize: "cover",
           }}
         />
@@ -33,7 +33,7 @@ export default function ClubSection() {
           {/* Image */}
           <div className="w-full h-[231px] relative">
             <Image
-              src="/club.webp"
+              src="/home/club.webp"
               alt="Club member"
               fill
               className="object-contain"
@@ -56,7 +56,7 @@ export default function ClubSection() {
 
             {/* Description */}
             <p className="font-poppins text-[14px] leading-[21px] uppercase text-white/70 max-w-[319px]">
-              We don't just sell systems. We manage your image. Join the inner
+              We don&apos;t just sell systems. We manage your image. Join the inner
               circle and automate your maintenance
             </p>
           </div>
@@ -168,7 +168,7 @@ export default function ClubSection() {
       z-20
     "
           style={{
-            backgroundImage: "url('/Sunshine.png')",
+            backgroundImage: "url('/home/Sunshine.png')",
             backgroundSize: "cover",
             transform: "translateY(-39px)"
           }}

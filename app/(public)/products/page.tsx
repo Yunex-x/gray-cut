@@ -3,9 +3,9 @@ import ProductShowcase from "@/app/components/sections/products/products/Product
 
 export default function PrecisionPage() {
   return (
-    <main className="w-full flex flex-col   items-center">
-   <Navbar/>
-   <ProductShowcase />
+    <main className="w-full flex flex-col items-center">
+      <Navbar variant="dark" />
+      <ProductShowcase />
     </main>
   );
 }

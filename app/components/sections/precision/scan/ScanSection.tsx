@@ -9,7 +9,7 @@ export default function ScanSection() {
         <div className="flex flex-col items-center mt-[56px] gap-[16px]">
           {/* Title */}
           <h2 className="w-[357px] h-[17px] font-playfair font-normal text-[24px] leading-[32px] text-center uppercase text-[#2A2A2A]">
-            WE DON'T GUESS. WE SCAN..
+            WE DON&apos;T GUESS. WE SCAN..
           </h2>
 
           {/* Description */}
@@ -36,7 +36,7 @@ export default function ScanSection() {
         <div className="flex flex-col items-center mt-[100px] gap-[24px] ">
           {/* Title */}
           <h2 className="w-[1075px] h-[45px] font-playfair font-normal text-[64px] leading-[85px] text-center uppercase text-[#2C2D30]">
-            WE DON'T GUESS. WE SCAN..
+            WE DON&apos;T GUESS. WE SCAN..
           </h2>
 
           {/* Description */}

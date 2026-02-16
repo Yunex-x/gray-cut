@@ -2,11 +2,7 @@ import ProtocolsGrid from "./ProtocolsGrid";
 import SectionHeader from "./SectionHeader";
 
 
-export default function ProtocolsSections({
-  children,
-}: {
-  children?: React.ReactNode;
-}) {
+export default function ProtocolsSections() {
   return (
     <section
       className="
@@ -16,8 +12,8 @@ export default function ProtocolsSections({
         bg-[#F6F4F1]
       "
     >
-     <SectionHeader/>
-     <ProtocolsGrid/>
+      <SectionHeader />
+      <ProtocolsGrid />
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import SectionTitle from "./SectionTitle";
+import Image from "next/image";
 
 
 export default function DiagnosisSection() {
@@ -11,10 +12,10 @@ export default function DiagnosisSection() {
         bg-[#F6F4F1]
       "
     >
-        <SectionTitle/>
-        <section className="w-full bg-[#F6F4F1]">
-      <div
-        className="
+      <SectionTitle />
+      <section className="w-full bg-[#F6F4F1]">
+        <div
+          className="
           w-full
 
           grid
@@ -27,12 +28,12 @@ export default function DiagnosisSection() {
           md:px-[40px]
           sm:px-[18px]
         "
-      >
-        {/* LEFT CONTENT */}
-        <div className="flex  flex-col  gap-[24px] max-w-[532px]">
-          {/* Title */}
-          <h2
-            className="
+        >
+          {/* LEFT CONTENT */}
+          <div className="flex  flex-col  gap-[24px] max-w-[532px]">
+            {/* Title */}
+            <h2
+              className="
               font-playfair
               font-normal
               text-center
@@ -48,14 +49,14 @@ export default function DiagnosisSection() {
 leading-[140%]
             
             "
-          >
-            We don't guess, <br />
-            we measure
-          </h2>
+            >
+              We don&apos;t guess, <br />
+              we measure
+            </h2>
 
-          {/* Description */}
-          <p
-            className="
+            {/* Description */}
+            <p
+              className="
               uppercase
               text-[rgba(44,45,48,0.7)]
 font-poppins
@@ -67,16 +68,16 @@ md:text-left
              w-[319px]
               lg:w-[370px]
             "
-          >
-            Most hair systems fail because of bad geometry. Our protocol is built
-            on 10,000.
-          </p>
+            >
+              Most hair systems fail because of bad geometry. Our protocol is built
+              on 10,000.
+            </p>
 
-          {/* Actions */}
-          <div className="flex gap-[20px] ">
-            {/* Primary */}
-            <button
-              className="
+            {/* Actions */}
+            <div className="flex gap-[20px] ">
+              {/* Primary */}
+              <button
+                className="
                 bg-[#8AAE9B]
                 text-[#F6F4F1]
                 uppercase
@@ -102,14 +103,14 @@ md:text-left
 
                 cursor-pointer
               "
-              style={{ fontFamily: "Poppins" }}
-            >
-              Start digital diagnosis
-            </button>
+                style={{ fontFamily: "Poppins" }}
+              >
+                Start digital diagnosis
+              </button>
 
-            {/* Secondary */}
-            <button
-              className="
+              {/* Secondary */}
+              <button
+                className="
                 border
                 border-[#8AAE9B]
                 text-[#8AAE9B]
@@ -136,16 +137,16 @@ md:text-left
 
                 cursor-pointer
               "
-              style={{ fontFamily: "Poppins" }}
-            >
-              Learn more
-            </button>
+                style={{ fontFamily: "Poppins" }}
+              >
+                Learn more
+              </button>
+            </div>
           </div>
-        </div>
 
-        {/* RIGHT IMAGE */}
-        <div
-          className="
+          {/* RIGHT IMAGE */}
+          <div
+            className="
             w-full
             flex
             justify-center
@@ -156,11 +157,13 @@ md:text-left
 
             group
           "
-        >
-          <img
-            src="/diagnosis.webp"
-            alt="Diagnosis device"
-            className="
+          >
+            <Image
+              src="/home/diagnosis.webp"
+              alt="Diagnosis device"
+              width={792}
+              height={500}
+              className="
               w-full
               max-w-[792px]
               h-auto
@@ -176,10 +179,10 @@ md:text-left
 
               cursor-pointer
             "
-          />
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </section>
   );
 }

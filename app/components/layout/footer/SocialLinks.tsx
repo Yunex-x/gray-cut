@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function FooterSocials() {
   return (
     <div
@@ -9,22 +11,22 @@ export default function FooterSocials() {
     >
       {/* Facebook */}
       <div className="w-[44px] h-[44px] border border-[#E4DACC] flex items-center justify-center">
-     <img src="/facebook.png" alt="Facebook" />
+        <Image src="/home/facebook.png" alt="Facebook" width={20} height={20} />
       </div>
 
       {/* Instagram */}
       <div className="w-[44px] h-[44px] border border-[#E4DACC] flex items-center justify-center">
-        <img src="/instagram.png" alt="Instagram" />
+        <Image src="/home/instagram.png" alt="Instagram" width={20} height={20} />
       </div>
 
       {/* WhatsApp */}
       <div className="w-[44px] h-[44px] border border-[#E4DACC] flex items-center justify-center">
-        <img src="/whatsapp.png" alt="WhatsApp" />
+        <Image src="/home/whatsapp.png" alt="WhatsApp" width={20} height={20} />
       </div>
 
       {/* X */}
       <div className="w-[44px] h-[44px] border border-[#E4DACC] flex items-center justify-center">
-        <img src="/x.png" alt="X" />
+        <Image src="/home/x.png" alt="X" width={20} height={20} />
       </div>
     </div>
   );

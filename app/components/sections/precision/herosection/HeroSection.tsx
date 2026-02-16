@@ -2,11 +2,7 @@ import Navbar from "../../../layout/Navbar";
 import HeroDescription from "./HeroDescription";
 import HeroText from "./HeroText";
 
-export default function HeroSection({
-  children,
-}: {
-  children?: React.ReactNode;
-}) {
+export default function HeroSection() {
   return (
     <section
       className="

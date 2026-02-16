@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function BrandBlock() {
   return (
     <div
@@ -9,7 +11,7 @@ export default function BrandBlock() {
     >
       {/* LOGO */}
       <div className="lg:w-[65px] lg:h-[46px] xl:w-[82px] xl:h-[58px] ">
-        <img src="/logofooter.png" alt="GrayCut Logo" />
+        <Image src="/home/logofooter.png" alt="GrayCut Logo" width={82} height={58} className="w-full h-full" />
       </div>
 
       {/* TITLE */}

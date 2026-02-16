@@ -1,11 +1,7 @@
 import HeroContent from "./HeroContent";
 import Navbar from "../../../layout/Navbar";
 
-export default function HeroSection({
-  children,
-}: {
-  children?: React.ReactNode;
-}) {
+export default function HeroSection() {
   return (
     <section
       className="
@@ -28,8 +24,8 @@ export default function HeroSection({
           bg-cover
           bg-center
           bg-no-repeat
-          md:bg-[url('/hero.webp')]
-          bg-[url('/heromobile.webp')]
+          md:bg-[url('/home/hero.webp')]
+          bg-[url('/home/heromobile.webp')]
 
         "
       />

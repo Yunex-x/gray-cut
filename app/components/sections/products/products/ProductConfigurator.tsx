@@ -18,7 +18,7 @@ interface ProductOption {
 export default function ProductConfigurator() {
   const [selectedColor, setSelectedColor] = useState<string>('jet-black');
   const [selectedSize, setSelectedSize] = useState<string>('7 × 7');
-  const [selectedLocation, setSelectedLocation] = useState<string>('');
+  const [selectedLocation] = useState<string>('');
   const [selectedVariant, setSelectedVariant] = useState<string>('standard');
 
   const productOptions: ProductOption[] = [
@@ -61,7 +61,7 @@ export default function ProductConfigurator() {
           <h1 className="font-playfair whitespace-nowrap font-semibold text-[32px] leading-[43px] tracking-[-0.02em] uppercase text-[#2C2D30]">
             The Standard <br /> System
           </h1>
-          
+
           {/* Rating */}
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">
@@ -77,21 +77,21 @@ export default function ProductConfigurator() {
         </div>
 
         {/* Variant Selector */}
-        <VariantSelector 
+        <VariantSelector
           options={productOptions}
           selected={selectedVariant}
           onSelect={setSelectedVariant}
         />
 
         {/* Color Selector */}
-        <ColorSelector 
+        <ColorSelector
           colors={colors}
           selected={selectedColor}
           onSelect={setSelectedColor}
         />
 
         {/* Size Selector */}
-        <SizeSelector 
+        <SizeSelector
           sizes={sizes}
           selected={selectedSize}
           onSelect={setSelectedSize}
@@ -107,14 +107,14 @@ export default function ProductConfigurator() {
               Select your part line
             </span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M3 6.75L9 12.75L15 6.75" stroke="rgba(44, 45, 48, 0.7)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M3 6.75L9 12.75L15 6.75" stroke="rgba(44, 45, 48, 0.7)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
         </div>
       </div>
 
       {/* Add to Cart Button */}
-      <AddToCart 
+      <AddToCart
         onAddToCart={() => {
           console.log('Added to cart:', {
             variant: selectedVariant,
