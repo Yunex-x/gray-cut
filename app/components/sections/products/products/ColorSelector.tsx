@@ -1,0 +1,138 @@
+'use client';
+
+import Image from 'next/image';
+
+interface Color {
+  id: string;
+  label?: string;
+  image?: string;
+}
+
+interface ColorSelectorProps {
+  colors: Color[];
+  selected: string;
+  onSelect: (id: string) => void;
+}
+
+export default function ColorSelector({ colors, selected, onSelect }: ColorSelectorProps) {
+  // Hair color hex values mapped to realistic hair colors
+  const colorMap: Record<string, string> = {
+    'jet-black': '#181818',
+    'natural-black': '#2C2D30',
+    'dark-brown': '#3E2723',
+    'medium-brown': '#5B4E3E',
+    'light-brown': '#745632',
+    'chestnut-brown': '#8B4513',
+    'dark-blonde': '#C4A574',
+    'light-blonde': '#D5D6D1',
+  };
+
+  // Optional: Add image paths for hair texture samples
+  const imageMap: Record<string, string> = {
+    'jet-black': '/products/jet-black.png',
+    'natural-black': '/hair-colors/natural-black.jpg',
+    'dark-brown': '/hair-colors/dark-brown.jpg',
+    'medium-brown': '/hair-colors/medium-brown.jpg',
+    'light-brown': '/hair-colors/light-brown.jpg',
+    'chestnut-brown': '/hair-colors/chestnut-brown.jpg',
+    'dark-blonde': '/hair-colors/dark-blonde.jpg',
+    'light-blonde': '/hair-colors/light-blonde.jpg',
+  };
+
+  return (
+    <div className="flex flex-col gap-2 w-[276px]">
+      <h3 className="font-playfair font-semibold text-base leading-[21px] tracking-[-0.02em] uppercase text-[#2C2D30]">
+        Color
+      </h3>
+
+      <div className="flex flex-col gap-2">
+        {/* First Row - 4 colors */}
+        <div className="flex items-center gap-2 h-10">
+          {/* First color with special border */}
+          {colors.slice(0, 1).map((color) => {
+            const displayLabel = color.label ?? color.id;
+
+            return <button
+              key={color.id}
+              onClick={() => onSelect(color.id)}
+              className={`relative flex-1 h-10 transition-all overflow-hidden ${selected === color.id
+                  ? 'border-[1.5px] border-black p-0.5'
+                  : 'hover:opacity-80'
+                }`}
+              title={displayLabel}
+              aria-label={displayLabel}
+            >
+              <div
+                className="w-full h-full relative"
+                style={{ backgroundColor: colorMap[color.id] }}
+              >
+                {imageMap[color.id] && (
+                  <Image
+                    src={imageMap[color.id]}
+                    alt={displayLabel}
+                    fill
+                    className="object-cover"
+                  />
+                )}
+              </div>
+            </button>;
+          })}
+
+          {/* Remaining 3 colors in first row */}
+          {colors.slice(1, 4).map((color) => {
+            const displayLabel = color.label ?? color.id;
+
+            return <button
+              key={color.id}
+              onClick={() => onSelect(color.id)}
+              className={`relative flex-1 h-9 transition-all overflow-hidden ${selected === color.id
+                  ? 'ring-2 ring-[#8AAE9B]'
+                  : 'hover:opacity-80'
+                }`}
+              style={{ backgroundColor: colorMap[color.id] }}
+              title={displayLabel}
+              aria-label={displayLabel}
+            >
+              {imageMap[color.id] && (
+                <Image
+                  src={imageMap[color.id]}
+                  alt={displayLabel}
+                  fill
+                  className="object-cover"
+                />
+              )}
+            </button>;
+          })}
+        </div>
+
+        {/* Second Row - 4 more colors */}
+        <div className="flex items-center gap-2 h-9">
+          {colors.slice(4, 8).map((color) => {
+            const displayLabel = color.label ?? color.id;
+
+            return <button
+              key={color.id}
+              onClick={() => onSelect(color.id)}
+              className={`relative flex-1 h-full transition-all overflow-hidden ${selected === color.id
+                  ? 'ring-2 ring-[#8AAE9B]'
+                  : 'hover:opacity-80'
+                }`}
+              style={{ backgroundColor: colorMap[color.id] }}
+              title={displayLabel}
+              aria-label={displayLabel}
+            >
+              {imageMap[color.id] && (
+                <Image
+                  src={imageMap[color.id]}
+                  alt={displayLabel}
+                  fill
+                  className="object-cover"
+                />
+              )}
+            </button>;
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}

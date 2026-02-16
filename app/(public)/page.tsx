@@ -1,12 +1,12 @@
 import BlueprintSection from "../components/sections/homepage/blueprint/BlueprintSection";
 import ClubCard from "../components/sections/homepage/club/ClubCard";
-import DiagnosisSection from "../components/sections/homepage/Diagnosis/DiagnosisSection";
 import FeaturesMarquee from "../components/sections/homepage/Feature/Features";
 import FooterSection from "../components/layout/footer/FooterSection";
 import MobileFooter from "../components/layout/footer/MobileFooter";
 import HeroSection from "../components/sections/homepage/herosection/HeroSection";
 import ProtocolsSections from "../components/sections/homepage/protocols/ProtocolsSections";
 import VerdictSection from "../components/sections/homepage/verdict/VerdictSection";
+import DiagnosisSection from "../components/sections/homepage/Diagnosis/DiagnosisSection";
 
 export default function HomePage() {
   return (

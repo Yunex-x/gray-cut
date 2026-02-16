@@ -1,8 +1,8 @@
 export default function ClubHeader() {
-  return (
-    <section className="w-full bg-[#F6F4F1]">
-      <div
-        className="
+    return (
+        <section className="w-full bg-[#F6F4F1]">
+            <div
+                className="
           w-full
           flex
           justify-center
@@ -12,9 +12,9 @@ export default function ClubHeader() {
           lg:py-[30px]
           px-[18px]
         "
-      >
-        <h2
-          className="
+            >
+                <h2
+                    className="
             font-playfair
             font-normal
             text-[32px]
@@ -28,10 +28,10 @@ export default function ClubHeader() {
             text-[#2A2A2A]
             max-w-[309px]
           "
-        >
-          The Club
-        </h2>
-      </div>
-    </section>
-  );
+                >
+                    The Club
+                </h2>
+            </div>
+        </section>
+    );
 }

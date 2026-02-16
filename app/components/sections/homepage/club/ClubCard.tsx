@@ -1,12 +1,12 @@
 import Image from "next/image";
 import ClubImage from "./ClubImage";
 import ClubContent from "./ClubContent";
-import Clubheader from "./clubheader";
+import ClubHeader from "./ClubHeading";
 
 export default function ClubSection() {
   return (
     <section className="w-full bg-[#2C2D30] relative overflow-hidden">
-     <Clubheader/>
+      <ClubHeader />
       {/* Mobile Layout */}
       <div className="md:hidden w-full relative min-h-[702px]">
         {/* Background Blur Effect - Mobile */}
