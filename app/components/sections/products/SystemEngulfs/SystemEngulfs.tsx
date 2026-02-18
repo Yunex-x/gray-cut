@@ -4,6 +4,7 @@ interface SystemEngulfsProps {
   title?: string;
   description?: string;
   image?: string;
+  mobileImage?: string;
   className?: string;
 }
 
@@ -11,6 +12,7 @@ export default function SystemEngulfs({
   title = 'The System That Engulfs You',
   description = 'A next generation hair system engineered to look, feel, and move like real hair. Ultra thin, breathable, and hand-finished for a seamless, undetectable fit.',
   image = '/products/system.png',
+  mobileImage = '/products/4.webp',
   className = ''
 }: SystemEngulfsProps) {
   return (
@@ -48,18 +50,24 @@ export default function SystemEngulfs({
         </div>
 
         {/* Frame 496 - Image Container */}
-      <div
-  className="relative w-full h-[300px] md:h-[450px] lg:h-[621px] mx-auto bg-white overflow-hidden rounded-lg md:rounded-none"
->
-  <Image
-    src={image}
-    alt={title}
-    fill
-className="object-cover object-[30%_23%]"
-    priority
-  />
-</div>
-
+        <div className="relative w-full h-[300px] md:h-[450px] lg:h-[621px] mx-auto bg-white overflow-hidden rounded-lg md:rounded-none">
+          {/* Mobile Image - visible only on mobile */}
+          <Image
+            src={mobileImage}
+            alt={title}
+            fill
+            className="object-cover object-[30%_23%] md:hidden"
+            priority
+          />
+          {/* Desktop Image - hidden on mobile */}
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover object-[30%_23%] hidden md:block"
+            priority
+          />
+        </div>
       </div>
     </section>
   );

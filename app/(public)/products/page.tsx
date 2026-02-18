@@ -16,7 +16,7 @@ export default function PrecisionPage() {
       <AfterProtocol />
       <DeliveryProcess />
       <FooterSection />
-            <MobileFooter />
+      <MobileFooter />
     </main>
   );
 }

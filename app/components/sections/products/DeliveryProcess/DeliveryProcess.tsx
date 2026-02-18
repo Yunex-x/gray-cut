@@ -1,5 +1,8 @@
-import Image from 'next/image';
+'use client';
 
+import Image from 'next/image';
+import { useRef, useState } from 'react';
+import ProcessToggleButtons from './ProcessToggleButtons';
 interface ProcessStep {
   number: string;
   label: string;
@@ -39,6 +42,44 @@ export default function DeliveryProcess({
   ],
   className = ''
 }: DeliveryProcessProps) {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    const x = e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+  };
+
   return (
     <section className={`w-full bg-[#F6F4F1] ${className}`}>
       <div className="max-w-[1124px] mx-auto px-4 md:px-8 lg:px-10 py-12 md:py-16 lg:py-20">
@@ -73,16 +114,46 @@ export default function DeliveryProcess({
               {subtitle}
             </p>
           </div>
-
+          <ProcessToggleButtons />
           {/* Frame 508 - Steps Container */}
-          <div className="w-full flex flex-col md:flex-row items-stretch gap-0">
+          <div 
+            ref={scrollContainerRef}
+            className={`
+              w-full 
+              flex flex-row 
+              overflow-x-auto 
+              md:overflow-x-visible
+              snap-x snap-mandatory
+              md:snap-none
+              gap-4 md:gap-0
+              scrollbar-hide
+              ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}
+              md:cursor-default
+            `}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleDragEnd}
+            onMouseLeave={handleDragEnd}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleDragEnd}
+            style={{
+              WebkitOverflowScrolling: 'touch',
+            }}
+          >
             {steps.map((step, index) => (
               <div
                 key={step.number}
-                className={`flex flex-col items-start p-4 gap-6 flex-1 ${index === 1
+                className={`
+                  flex flex-col items-start p-4 gap-6 
+                  flex-shrink-0 
+                  w-[85vw] md:w-auto md:flex-1
+                  snap-center
+                  ${index === 1
                     ? ''
                     : 'border-r border-l border-[#E4DACC] md:border-l-0 md:border-r md:first:border-l md:last:border-r'
-                  }`}
+                  }
+                `}
                 style={{
                   boxSizing: 'border-box',
                   flex: 'none',
@@ -157,8 +228,9 @@ export default function DeliveryProcess({
                     src={step.image}
                     alt={`${step.label} step`}
                     fill
-                    className="object-cover"
+                    className="object-cover pointer-events-none"
                     sizes="(max-width: 768px) 100vw, 348px"
+                    draggable={false}
                   />
                 </div>
               </div>
@@ -166,6 +238,17 @@ export default function DeliveryProcess({
           </div>
         </div>
       </div>
+
+      {/* Hide scrollbar */}
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 }
