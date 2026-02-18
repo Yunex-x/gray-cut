@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useRef, useState } from 'react';
-import ProcessToggleButtons from './ProcessToggleButtons';
+
 interface ProcessStep {
   number: string;
   label: string;
@@ -42,93 +42,63 @@ export default function DeliveryProcess({
   ],
   className = ''
 }: DeliveryProcessProps) {
+  // mobile carousel drag state (used only by the mobile carousel)
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handlePointerStart = (pageX: number) => {
     if (!scrollContainerRef.current) return;
     setIsDragging(true);
-    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setStartX(pageX - scrollContainerRef.current.offsetLeft);
     setScrollLeft(scrollContainerRef.current.scrollLeft);
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeft(scrollContainerRef.current.scrollLeft);
+  const handlePointerMove = (pageX: number) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    const x = pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  const handleMouseDown = (e: React.MouseEvent) => handlePointerStart(e.pageX);
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
     e.preventDefault();
-    const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+    handlePointerMove(e.pageX);
   };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
-    const x = e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleDragEnd = () => {
-    setIsDragging(false);
-  };
+  const handleTouchStart = (e: React.TouchEvent) =>
+    handlePointerStart(e.touches[0].pageX);
+  const handleTouchMove = (e: React.TouchEvent) =>
+    handlePointerMove(e.touches[0].pageX);
+  const handleDragEnd = () => setIsDragging(false);
 
   return (
     <section className={`w-full bg-[#F6F4F1] ${className}`}>
       <div className="max-w-[1124px] mx-auto px-4 md:px-8 lg:px-10 py-12 md:py-16 lg:py-20">
-        {/* Frame 509 - Main Container */}
         <div className="w-full max-w-[1044px] mx-auto flex flex-col justify-center items-start gap-8 md:gap-12 lg:gap-14">
-
-          {/* Frame 503 - Header */}
           <div className="w-full flex flex-col justify-center items-center gap-4 md:gap-6">
-            {/* Title */}
-            <h2
-              className="w-full font-playfair font-normal text-[32px] md:text-[48px] lg:text-[64px] leading-[42px] md:leading-[64px] lg:leading-[85px] text-center tracking-[-0.02em] uppercase text-[#2C2D30]"
-              style={{
-                flex: 'none',
-                order: 0,
-                alignSelf: 'stretch',
-                flexGrow: 0
-              }}
-            >
+            <h2 className="w-full font-playfair font-normal text-[32px] md:text-[48px] lg:text-[64px] leading-[42px] md:leading-[64px] lg:leading-[85px] text-center tracking-[-0.02em] uppercase text-[#2C2D30]">
               {title}
             </h2>
 
-            {/* Subtitle */}
-            <p
-              className="w-full font-poppins font-normal text-sm md:text-base leading-5 md:leading-6 text-center uppercase text-[rgba(44,45,48,0.7)]"
-              style={{
-                flex: 'none',
-                order: 1,
-                alignSelf: 'stretch',
-                flexGrow: 0
-              }}
-            >
+            <p className="w-full font-poppins font-normal text-sm md:text-base leading-5 md:leading-6 text-center uppercase text-[rgba(44,45,48,0.7)]">
               {subtitle}
             </p>
           </div>
-          <ProcessToggleButtons />
-          {/* Frame 508 - Steps Container */}
-          <div 
+
+          {/* MOBILE carousel (md:hidden) */}
+          <div
             ref={scrollContainerRef}
             className={`
-              w-full 
-              flex flex-row 
-              overflow-x-auto 
-              md:overflow-x-visible
+              md:hidden
+              w-full
+              flex flex-row
+              overflow-x-auto
               snap-x snap-mandatory
-              md:snap-none
-              gap-4 md:gap-0
+              gap-4
               scrollbar-hide
               ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}
-              md:cursor-default
             `}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
@@ -137,101 +107,59 @@ export default function DeliveryProcess({
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleDragEnd}
-            style={{
-              WebkitOverflowScrolling: 'touch',
-            }}
+            style={{ WebkitOverflowScrolling: 'touch' }}
           >
-            {steps.map((step, index) => (
-              <div
-                key={step.number}
-                className={`
-                  flex flex-col items-start p-4 gap-6 
-                  flex-shrink-0 
-                  w-[85vw] md:w-auto md:flex-1
-                  snap-center
-                  ${index === 1
-                    ? ''
-                    : 'border-r border-l border-[#E4DACC] md:border-l-0 md:border-r md:first:border-l md:last:border-r'
-                  }
-                `}
-                style={{
-                  boxSizing: 'border-box',
-                  flex: 'none',
-                  order: index,
-                  flexGrow: 1
-                }}
-              >
-                {/* Frame 408 - Text Content */}
-                <div className="w-full flex flex-col items-start gap-6">
-                  {/* Frame 206 - Number and Label */}
+            {steps.map((step) => (
+              <div key={step.number} className="flex-shrink-0 w-[85vw] snap-center border-l border-r border-[#E4DACC] pl-4 pr-4">
+                <div className="flex flex-col items-start gap-6 p-4">
                   <div className="w-full flex flex-row items-center gap-3">
-                    {/* Number */}
-                    <span
-                      className="font-neue-montreal font-medium text-base leading-[19px] uppercase text-[rgba(42,42,42,0.5)]"
-                      style={{
-                        flex: 'none',
-                        order: 0,
-                        flexGrow: 0
-                      }}
-                    >
+                    <span className="font-neue-montreal font-medium text-base leading-[19px] uppercase text-[rgba(42,42,42,0.5)]">
                       {step.number}
                     </span>
-
-                    {/* Divider */}
-                    <div
-                      className="w-px h-4 bg-[#D2D2D2]"
-                      style={{
-                        flex: 'none',
-                        order: 1,
-                        flexGrow: 0
-                      }}
-                    />
-
-                    {/* Label */}
-                    <span
-                      className="font-neue-montreal font-medium text-base leading-[19px] uppercase text-[rgba(42,42,42,0.5)]"
-                      style={{
-                        flex: 'none',
-                        order: 2,
-                        flexGrow: 0
-                      }}
-                    >
+                    <div className="w-px h-4 bg-[#D2D2D2]" />
+                    <span className="font-neue-montreal font-medium text-base leading-[19px] uppercase text-[rgba(42,42,42,0.5)]">
                       {step.label}
                     </span>
                   </div>
 
-                  {/* Description */}
-                  <p
-                    className="w-full font-neue-montreal font-medium text-lg md:text-xl leading-6 uppercase text-[#2C2D30]"
-                    style={{
-                      flex: 'none',
-                      order: 1,
-                      alignSelf: 'stretch',
-                      flexGrow: 0
-                    }}
-                  >
+                  <h3 className="font-neue-montreal font-medium text-xl leading-6 uppercase text-[#2C2D30] mb-4">
+                    {step.description}
+                  </h3>
+
+                  <div className="relative w-full h-[120px] bg-white overflow-hidden">
+                    <Image src={step.image} alt={`${step.label} step`} fill className="object-cover" sizes="100vw" draggable={false} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* DESKTOP / MD+: 3-column layout */}
+          <div className="hidden md:flex w-full flex-row items-stretch gap-0">
+            {steps.map((step, index) => (
+              <div
+                key={step.number}
+                className={`flex flex-col items-start p-4 gap-6 flex-1 ${index === 1 ? '' : 'border-r border-l border-[#E4DACC]'}`}
+                style={{ boxSizing: 'border-box' }}
+              >
+                <div className="w-full flex flex-col items-start gap-6">
+                  <div className="w-full flex flex-row items-center gap-3">
+                    <span className="font-neue-montreal font-medium text-base leading-[19px] uppercase text-[rgba(42,42,42,0.5)]">
+                      {step.number}
+                    </span>
+                    <div className="w-px h-4 bg-[#D2D2D2]" />
+                    <span className="font-neue-montreal font-medium text-base leading-[19px] uppercase text-[rgba(42,42,42,0.5)]">
+                      {step.label}
+                    </span>
+                  </div>
+
+                  <p className="w-full font-neue-montreal font-medium text-lg md:text-xl leading-6 uppercase text-[#2C2D30]">
                     {step.description}
                   </p>
                 </div>
 
-                {/* Frame 505 - Image Container */}
-                <div
-                  className="relative w-full h-[166px] bg-white overflow-hidden"
-                  style={{
-                    flex: 'none',
-                    order: 1,
-                    alignSelf: 'stretch',
-                    flexGrow: 0
-                  }}
-                >
-                  <Image
-                    src={step.image}
-                    alt={`${step.label} step`}
-                    fill
-                    className="object-cover pointer-events-none"
-                    sizes="(max-width: 768px) 100vw, 348px"
-                    draggable={false}
-                  />
+                <div className="relative w-full h-[166px] bg-white overflow-hidden">
+                  <Image src={step.image} alt={`${step.label} step`} fill className="object-cover" sizes="(max-width: 768px) 100vw, 348px" />
                 </div>
               </div>
             ))}
@@ -239,15 +167,9 @@ export default function DeliveryProcess({
         </div>
       </div>
 
-      {/* Hide scrollbar */}
       <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
     </section>
   );
