@@ -1,27 +1,35 @@
 'use client';
 
 import { Star } from 'lucide-react';
+import Image from 'next/image';
 
 interface MobileProductHeroProps {
   heroImage?: string;
   title?: string;
   onConfigureClick: () => void;
+  additionalImages?: {
+    image1?: string;
+    image2?: string;
+  };
 }
 
 export default function MobileProductHero({
   heroImage = '/products/heromobile.png',
   title = 'The Standard System',
-  onConfigureClick
+  onConfigureClick,
+  additionalImages = {
+    image1: '/products/2.webp',
+    image2: '/products/3.webp'
+  }
 }: MobileProductHeroProps) {
   return (
     <div className="w-full flex flex-col bg-[#F6F4F1] relative">
       {/* Hero Image with Gradient Overlay */}
-      <div className="relative w-full h-[646px] overflow-hidden">
+      <div className="relative w-full aspect-[375/646] md:aspect-[768/900]">
         {/* Background Image positioned as per design */}
         <div 
-          className="absolute w-[718px] h-[646px] top-[-40px]"
+          className="absolute inset-0 w-full h-full"
           style={{
-            left: 'calc(50% - 718px/2 + 15.5px)',
             background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 55.99%, rgba(0, 0, 0, 0.38) 96.42%), url(${heroImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
@@ -29,77 +37,30 @@ export default function MobileProductHero({
         >
           {/* Title and CTA Container - Frame 603 */}
           <div 
-            className="absolute w-[345px] h-[202px] flex flex-col items-start gap-[20px] p-0"
-            style={{
-              left: 'calc(50% - 345px/2 - 6px)',
-              top: '386px'
-            }}
+            className="absolute bottom-8 md:bottom-16 left-1/2 md:left-[280px] -translate-x-1/2 w-[345px] md:w-[500px] max-w-[90%] flex flex-col items-start gap-[20px] md:gap-[24px]"
           >
             {/* Title - The Standard System */}
             <h1 
-              className="w-[345px] h-[105px] font-playfair font-normal text-[40px] leading-[52px] uppercase text-[#F6F4F1]"
-              style={{
-                flex: 'none',
-                order: 0,
-                alignSelf: 'stretch',
-                flexGrow: 0
-              }}
+              className="w-full font-playfair font-normal text-[40px] md:text-[56px] leading-[52px] md:leading-[72px] uppercase text-[#F6F4F1]"
             >
               {title}
             </h1>
 
             {/* Frame 468 - Rating and CTA Container */}
-            <div 
-              className="w-[205px] h-[21px] flex flex-row items-center gap-[8px] p-0"
-              style={{
-                flex: 'none',
-                order: 1,
-                flexGrow: 0
-              }}
-            >
+            <div className="flex flex-row items-center gap-[8px]">
               {/* Frame 467 - Rating Container */}
-              <div 
-                className="w-[43px] h-[21px] flex flex-row items-center gap-[4px] p-0"
-                style={{
-                  flex: 'none',
-                  order: 0,
-                  flexGrow: 0
-                }}
-              >
+              <div className="flex flex-row items-center gap-[4px]">
                 {/* Star Icon */}
-                <div 
-                  className="w-[14px] h-[14px] rounded-[5px]"
-                  style={{
-                    flex: 'none',
-                    order: 0,
-                    flexGrow: 0
-                  }}
-                >
-                  <Star className="w-full h-full fill-[#FFFFFF] text-[#FFFFFF]" />
-                </div>
+                <Star className="w-[14px] h-[14px] md:w-4 md:h-4 fill-[#FFFFFF] text-[#FFFFFF]" />
 
                 {/* Rating Text - 5/5 */}
-                <span 
-                  className="w-[25px] h-[21px] font-poppins font-semibold text-[14px] leading-[21px] tracking-[-0.02em] uppercase text-[#FFFFFF]"
-                  style={{
-                    flex: 'none',
-                    order: 1,
-                    flexGrow: 0
-                  }}
-                >
+                <span className="font-poppins font-semibold text-[14px] md:text-base leading-[21px] md:leading-6 tracking-[-0.02em] uppercase text-[#FFFFFF]">
                   5/5
                 </span>
               </div>
 
               {/* Reviews Text */}
-              <span 
-                className="w-[154px] h-[21px] font-poppins font-normal text-[14px] leading-[21px] tracking-[-0.02em] uppercase text-[rgba(255,255,255,0.8)]"
-                style={{
-                  flex: 'none',
-                  order: 1,
-                  flexGrow: 0
-                }}
-              >
+              <span className="font-poppins font-normal text-[14px] md:text-base leading-[21px] md:leading-6 tracking-[-0.02em] uppercase text-[rgba(255,255,255,0.8)]">
                 based on 240 reviews
               </span>
             </div>
@@ -107,26 +68,39 @@ export default function MobileProductHero({
             {/* Frame 370 - Add to Cart Button */}
             <button
               onClick={onConfigureClick}
-              className="w-[126px] h-[36px] flex flex-row justify-center items-center gap-[8px] bg-[#8AAE9B]"
-              style={{
-                boxSizing: 'border-box',
-                padding: '8px 18px',
-                flex: 'none',
-                order: 2,
-                flexGrow: 0
-              }}
+              className="px-[18px] md:px-6 py-2 md:py-3 bg-[#8AAE9B] hover:bg-[#7A9E8B] transition-colors"
             >
-              <span 
-                className="w-[90px] h-[17px] whitespace-nowrap font-neue-montreal font-medium text-[14px] leading-[17px] text-justify uppercase text-[#F6F4F1]"
-                style={{
-                  flex: 'none',
-                  order: 0,
-                  flexGrow: 0
-                }}
-              >
+              <span className="font-neue-montreal font-medium text-[14px] md:text-base leading-[17px] md:leading-5 uppercase text-[#F6F4F1]">
                 Add to cart
               </span>
             </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Frame 677 - Additional Images Section */}
+      <div className="w-full px-4 md:px-8 py-6 md:py-12">
+        <div className="w-full max-w-[357px] md:max-w-[600px] mx-auto flex flex-row items-center gap-[18px] md:gap-[24px]">
+          {/* Frame 495 - First Image */}
+          <div className="relative w-full h-[210px] md:h-[350px] bg-white overflow-hidden flex-1">
+            <Image
+              src={additionalImages.image1 || '/products/2.webp'}
+              alt="Product view 1"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 50vw, 300px"
+            />
+          </div>
+
+          {/* Frame 672 - Second Image */}
+          <div className="relative w-full h-[210px] md:h-[350px] bg-white overflow-hidden flex-1">
+            <Image
+              src={additionalImages.image2 || '/products/3.webp'}
+              alt="Product view 2"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 50vw, 300px"
+            />
           </div>
         </div>
       </div>

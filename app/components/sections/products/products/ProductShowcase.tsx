@@ -31,6 +31,10 @@ export default function ProductShowcase({ images, className = '' }: ProductShowc
           heroImage={images?.image146 || '/products/1.webp'}
           title="The Standard System"
           onConfigureClick={handleConfigureClick}
+          additionalImages={{
+            image1: images?.image147 || '/products/2.webp',
+            image2: images?.image148 || '/products/3.webp'
+          }}
         />
       </div>
 
