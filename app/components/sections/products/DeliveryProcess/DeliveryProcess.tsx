@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useRef, useState } from 'react';
-
+import ProcessToggleButtons from './ProcessToggleButtons';
 interface ProcessStep {
   number: string;
   label: string;
@@ -86,7 +86,9 @@ export default function DeliveryProcess({
               {subtitle}
             </p>
           </div>
-
+          <div className="w-full flex flex-col mx-auto items-center gap-8">
+                    <ProcessToggleButtons />
+            </div>
           {/* MOBILE carousel (md:hidden) */}
           <div
             ref={scrollContainerRef}

@@ -33,7 +33,7 @@ export default function ProcessToggleButtons({
 
   return (
     <div
-      className={`md:hidden flex items-center justify-center gap-3 mr-12 my-6 ${className}`}
+      className={`md:hidden whitespace-nowrap flex items-center justify-center gap-3  ${className}`}
       role="tablist"
       aria-label="Process track toggle"
     >
