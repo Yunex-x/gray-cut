@@ -6,7 +6,7 @@ import MobileFooter from "../components/layout/footer/MobileFooter";
 import HeroSection from "../components/sections/homepage/herosection/HeroSection";
 import ProtocolsSections from "../components/sections/homepage/protocols/ProtocolsSections";
 import VerdictSection from "../components/sections/homepage/verdict/VerdictSection";
-import DiagnosisSection from "../components/sections/homepage/Diagnosis/diagnosisSection";
+import DiagnosisSection from "../components/sections/homepage/Diagnosis/DiagnosisSection";
 
 export default function HomePage() {
   return (

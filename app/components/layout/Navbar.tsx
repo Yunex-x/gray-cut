@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -29,6 +29,18 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
   const logoSrc = isDark ? '/home/logo-dark.svg' : '/home/logo.svg';
   const hamburgerColor = isDark ? 'bg-[#2C2D30]' : 'bg-white';
 
+  // Explicit menu items with their respective hrefs.
+  // Update any hrefs below if you want different target routes.
+  const menuItems = [
+    { label: "Home", href: "/" },
+    { label: "PrecisionFit System", href: "/precisionfit-system" },
+    { label: "Shop", href: "/products" },
+    { label: "Why Us?", href: "/why-us" },
+    { label: "A Question?", href: "/faq" }, // or "/contact" if preferred
+    { label: "Blog", href: "/blog" },
+    { label: "Our Location", href: "/location" },
+  ];
+
   return (
     <header
       className="
@@ -44,7 +56,7 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
         <div className="flex items-center justify-between h-[62px]">
           <CurrencySelector variant={variant} />
 
-          <Link href="/" className="w-[69px] h-[30px]">
+          <Link href="/" className="w-[69px] h-[30px]" aria-label="Home">
             <Image src={logoSrc} alt="Logo" width={69} height={30} className="w-full h-full" />
           </Link>
 
@@ -71,21 +83,14 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
 
         {/* Menu */}
         <nav className="flex justify-center gap-[24px] h-[36px]">
-          {[
-            "Home",
-            "PrecisionFit System",
-            "Shop",
-            "Why Us?",
-            "A Question?",
-            "Blog",
-            "Our Location",
-          ].map((item) => (
+          {menuItems.map((item) => (
             <Link
-              key={item}
-              href="/"
+              key={item.label}
+              href={item.href}
               className={`${textColor} text-[16px] ${textHoverColor}`}
+              aria-label={item.label}
             >
-              {item}
+              {item.label}
             </Link>
           ))}
         </nav>
@@ -102,6 +107,7 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
         <Link
           href="/"
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[69px] h-[30px]"
+          aria-label="Home"
         >
           <Image src={logoSrc} alt="Logo" width={69} height={30} className="w-full h-full" />
         </Link>
@@ -148,18 +154,10 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
 
           {/* Menu */}
           <nav className="flex flex-col gap-[24px]">
-            {[
-              "Home",
-              "PrecisionFit System",
-              "Shop",
-              "Why Us?",
-              "A Question?",
-              "Blog",
-              "Our Location",
-            ].map((item) => (
+            {menuItems.map((item) => (
               <Link
-                key={item}
-                href="/"
+                key={item.label}
+                href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className="
                   text-[#F6F4F1]
@@ -168,8 +166,9 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
                   font-medium
                   hover:opacity-70
                 "
+                aria-label={item.label}
               >
-                {item}
+                {item.label}
               </Link>
             ))}
           </nav>

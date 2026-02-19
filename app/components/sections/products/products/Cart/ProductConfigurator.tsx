@@ -52,6 +52,10 @@ export default function ProductConfigurator() {
 
   const sizes = ['7 × 7', '8 × 8', '9 × 9'];
 
+  function handleAddToCart(): void {
+    throw new Error('Function not implemented.');
+  }
+
   return (
     <div className="flex flex-col gap-8 w-[276px]">
       {/* Product Info Card */}
@@ -112,18 +116,15 @@ export default function ProductConfigurator() {
           </div>
         </div>
       </div>
-
-      {/* Add to Cart Button */}
-      <AddToCart
-        onAddToCart={() => {
-          console.log('Added to cart:', {
-            variant: selectedVariant,
-            color: selectedColor,
-            size: selectedSize,
-            location: selectedLocation
-          });
-        }}
-      />
+        {/* Add to cart — centered on desktop (lg+) but left aligned on smaller screens */}
+        <div className="w-full">
+          <div className="w-full lg:flex lg:justify-center">
+            {/* Constrain the button width on desktop so it's centered visually */}
+            <div className="w-full lg:w-[220px]">
+              <AddToCart onAddToCart={handleAddToCart} />
+            </div>
+          </div>
+        </div>
     </div>
   );
 }
