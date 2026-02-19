@@ -176,7 +176,7 @@ export default function AfterProtocol() {
         <div className="flex flex-col bg-[#F6F4F1]">
           {/* HEADER */}
           <div className="px-[24px] lg:px-[40px] xl:px-[80px] pt-[64px] text-right">
-            <h2 className="font-playfair uppercase font-semibold tracking-[-0.02em] text-[#2C2D30] text-[36px] lg:text-[64px] leading-tight">
+            <h2 className="font-playfair uppercase font-semibold tracking-[-0.02em] text-[#2C2D30] text-[36px] lg:text-[44px] xl:text-[64px] leading-tight">
               After the Protocol
             </h2>
             <p className="mt-2 ml-auto text-right font-poppins uppercase text-[rgba(44,45,48,0.7)] text-[14px] lg:text-[16px] max-w-[319px]">
@@ -235,10 +235,10 @@ export default function AfterProtocol() {
                     uppercase
                     text-white
                     text-[20px]
-                    lg:text-[28px]
+                    lg:text-[24px]
                     xl:text-[32px]
                     leading-[1.5]
-                    line-clamp-4
+                    
                   "
                 >
                   {testimonials[index].quote}

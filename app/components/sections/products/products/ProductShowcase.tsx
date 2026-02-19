@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import GridGallery from './GridGallery';
-import ProductConfigurator from './ProductConfigurator';
 import MobileProductHero from './MobileProductHero';
 import MobileProductModal from './MobileProductModal';
 
@@ -43,16 +42,9 @@ export default function ProductShowcase({ images, className = '' }: ProductShowc
         <div className="max-w-[1440px] px-[40px] py-[118px]">
           <div className="flex flex-col lg:flex-row gap-[20px] items-start">
             {/* Gallery Grid - Main Content */}
-            <div className="flex-1 w-full max-w-[1044px]">
+            <div className="w-full">
               <GridGallery images={images} className="p-0 max-w-none" />
             </div>
-
-            {/* Product Configurator - Sticky Sidebar */}
-            <aside className="w-full lg:w-fit flex-shrink-0">
-              <div className="sticky top-8 lg:top-[118px]">
-                <ProductConfigurator />
-              </div>
-            </aside>
           </div>
         </div>
       </section>
