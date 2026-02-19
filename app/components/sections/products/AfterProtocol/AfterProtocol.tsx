@@ -162,7 +162,7 @@ export default function AfterProtocol() {
       </div>
 
       {/* ================= DESKTOP LAYOUT ================= */}
-      <div className="hidden lg:grid w-full grid-cols-1 lg:grid-cols-2 min-h-[870px]">
+      <div className="hidden lg:grid w-full grid-cols-1 lg:grid-cols-2 min-h-[870px] pl-0px lg:pl-[40px] ">
         {/* IMAGE - LEFT SIDE */}
         <div className="relative bg-[#EEECE9] overflow-hidden">
           {/* Gradient */}
