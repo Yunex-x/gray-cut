@@ -17,7 +17,7 @@ export default function SystemEngulfs({
 }: SystemEngulfsProps) {
   return (
     <section className={`w-full bg-[#F6F4F1] ${className}`}>
-      <div className="max-w-[1124px] mx-auto px-4 md:px-8 lg:px-10 py-12 md:py-16 lg:py-20">
+      <div className="max-w-[1124px] mx-auto px-4 md:px-8 lg:px-10 py-1">
         {/* Frame 410 - Text Container */}
         <div 
           className="w-full mx-auto flex flex-col justify-end items-start gap-1 md:gap-2 mb-8 md:mb-12 lg:mb-14"

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Star } from 'lucide-react';
-import ColorSelector from './ColorSelector';
+import ColorSelector from '../ColorSelector';
 import SizeSelector from './SizeSelector';
 import VariantSelector from './VariantSelector';
 import AddToCart from './AddToCart';
