@@ -2,7 +2,7 @@ import SectionTitle from "./SectionTitle";
 import Image from "next/image";
 
 
-export default function DiagnosisSection() {
+export default function DiagnosisSection1() {
   return (
     <section
       className="

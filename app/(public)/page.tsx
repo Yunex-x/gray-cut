@@ -6,14 +6,14 @@ import MobileFooter from "../components/layout/footer/MobileFooter";
 import HeroSection from "../components/sections/homepage/herosection/HeroSection";
 import ProtocolsSections from "../components/sections/homepage/protocols/ProtocolsSections";
 import VerdictSection from "../components/sections/homepage/verdict/VerdictSection";
-import DiagnosisSection from "../components/sections/homepage/Diagnosis/DiagnosisSection";
+import DiagnosisSection1 from "../components/sections/homepage/Diagnosis/DiagnosisSection1";
 
 export default function HomePage() {
   return (
     <main className="w-full flex flex-col bg-[#F6F4F1] items-center">
       <HeroSection />
       <ProtocolsSections />
-      <DiagnosisSection />
+      <DiagnosisSection1 />
       <BlueprintSection />
       <VerdictSection />
       <ClubCard />
