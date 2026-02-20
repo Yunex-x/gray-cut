@@ -17,10 +17,11 @@ export default function Page() {
 
       {/* Two-column container */}
       <div className="w-full bg-[#F6F4F1]">
-        <div className="max-w-[1440px] 2xl:max-w-none w-full mx-auto flex flex-col lg:flex-row">
+        {/* Ensure parent has bottom padding so sticky stops before footer */}
+        <div className="max-w-[1440px] 2xl:max-w-none w-full mx-auto flex flex-col lg:flex-row pb-40 lg:pb-40">
           
           {/* LEFT */}
-          <div className="w-full lg:w-[1084px] 2xl:w-[calc(100vw-356px)]">
+          <div className="w-full lg:w-[1084px] 2xl:w-[calc(100vw-356px)] pt-8 lg:pt-12">
             <ProductShowcase />
             <SystemEngulfs />
             <WearingProcess />
@@ -28,10 +29,18 @@ export default function Page() {
             <DeliveryProcess />
           </div>
 
-          {/* RIGHT (Sticky) */}
+          {/* RIGHT (Sticky) - no inner scrolling */}
           <aside className="hidden lg:block lg:w-[356px] flex-shrink-0">
-            <div className="lg:sticky lg:top-[40px] lg:py-[120px]">
-              <ProductConfigurator />
+            {/* Keep a sticky container but DO NOT constrain it with overflow-auto/maxHeight.
+                This lets the page scroll (no inner scroll). The AddToCart inside the configurator
+                will be sticky-bottom so it remains visible.
+            */}
+            <div className="lg:sticky lg:top-20 lg:transform lg:-translate-y-0">
+              <div className="lg:py-4 lg:px-3">
+                <div className="max-w-[300px]">
+                  <ProductConfigurator />
+                </div>
+              </div>
             </div>
           </aside>
 

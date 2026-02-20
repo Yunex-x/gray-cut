@@ -12,6 +12,7 @@ interface ColorSelectorProps {
   colors: Color[];
   selected: string;
   onSelect: (id: string) => void;
+  compact?: boolean;
 }
 
 // Hair color hex values - only defined here
@@ -26,26 +27,27 @@ const colorMap: Record<string, string> = {
   'light-blonde': '#D5D6D1',
 };
 
-export default function ColorSelector({ colors, selected, onSelect }: ColorSelectorProps) {
+export default function ColorSelector({ colors, selected, onSelect, compact = false }: ColorSelectorProps) {
+  const containerWidthClass = compact ? 'w-full' : 'w-[276px]';
+  const firstBtnHeight = compact ? 'h-8' : 'h-10';
+  const otherBtnHeight = compact ? 'h-7' : 'h-9';
+  const gap = compact ? 'gap-1' : 'gap-2';
+
   return (
-    <div className="flex flex-col gap-2 w-[276px]">
-      <h3 className="font-playfair font-semibold text-base leading-[21px] tracking-[-0.02em] uppercase text-[#2C2D30]">
+    <div className={`flex flex-col ${gap} ${containerWidthClass}`}>
+      <h3 className={`font-playfair font-semibold ${compact ? 'text-sm' : 'text-base'} leading-[21px] tracking-[-0.02em] uppercase text-[#2C2D30]`}>
         Color
       </h3>
       
-      <div className="flex flex-col gap-2">
+      <div className={`flex flex-col ${gap}`}>
         {/* First Row - 4 colors */}
-        <div className="flex items-center gap-2 h-10">
+        <div className={`flex items-center ${compact ? 'gap-1' : 'gap-2'} ${firstBtnHeight === 'h-8' ? '' : ''}`}>
           {/* First color with special border */}
           {colors.slice(0, 1).map((color) => (
             <button
               key={color.id}
               onClick={() => onSelect(color.id)}
-              className={`relative flex-1 h-10 transition-all overflow-hidden ${
-                selected === color.id
-                  ? 'border-[1.5px] border-black p-0.5'
-                  : 'hover:opacity-80'
-              }`}
+              className={`relative flex-1 ${firstBtnHeight} transition-all overflow-hidden ${selected === color.id ? 'border-[1.5px] border-black p-0.5' : 'hover:opacity-80'}`}
               title={color.label}
               aria-label={color.label}
             >
@@ -70,10 +72,8 @@ export default function ColorSelector({ colors, selected, onSelect }: ColorSelec
             <button
               key={color.id}
               onClick={() => onSelect(color.id)}
-              className={`relative flex-1 h-9 transition-all overflow-hidden ${
-                selected === color.id
-                  ? 'ring-2 ring-[#8AAE9B]'
-                  : 'hover:opacity-80'
+              className={`relative flex-1 ${otherBtnHeight} transition-all overflow-hidden ${
+                selected === color.id ? (compact ? 'ring-1 ring-[#8AAE9B]' : 'ring-2 ring-[#8AAE9B]') : 'hover:opacity-80'
               }`}
               style={{ backgroundColor: colorMap[color.id] }}
               title={color.label}
@@ -92,15 +92,13 @@ export default function ColorSelector({ colors, selected, onSelect }: ColorSelec
         </div>
 
         {/* Second Row - 4 more colors */}
-        <div className="flex items-center gap-2 h-9">
+        <div className={`flex items-center ${compact ? 'gap-1' : 'gap-2'} ${otherBtnHeight}`}>
           {colors.slice(4, 8).map((color) => (
             <button
               key={color.id}
               onClick={() => onSelect(color.id)}
-              className={`relative flex-1 h-full transition-all overflow-hidden ${
-                selected === color.id
-                  ? 'ring-2 ring-[#8AAE9B]'
-                  : 'hover:opacity-80'
+              className={`relative flex-1 ${otherBtnHeight} transition-all overflow-hidden ${
+                selected === color.id ? (compact ? 'ring-1 ring-[#8AAE9B]' : 'ring-2 ring-[#8AAE9B]') : 'hover:opacity-80'
               }`}
               style={{ backgroundColor: colorMap[color.id] }}
               title={color.label}
