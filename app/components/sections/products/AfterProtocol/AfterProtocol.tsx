@@ -36,9 +36,8 @@ export default function AfterProtocol() {
 
   return (
     <section className="w-full bg-[#F6F4F1]">
-      {/* ================= MOBILE LAYOUT ================= */}
+      {/* MOBILE LAYOUT */}
       <div className="lg:hidden w-full max-w-[393px] mx-auto flex flex-col">
-        {/* Image */}
         <div className="relative bg-[#EEECE9] w-full h-[426px] overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -49,7 +48,6 @@ export default function AfterProtocol() {
           />
         </div>
 
-        {/* Testimonial Card */}
         <div className="w-full bg-[#8AAE9B] h-[212px] px-[18px] py-[24px] flex flex-col gap-[24px]">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
@@ -73,38 +71,16 @@ export default function AfterProtocol() {
               }}
               className="flex flex-col gap-[24px]"
             >
-              {/* Quote */}
-              <p className="
-                font-poppins
-                font-normal
-                text-[18px]
-                leading-[27px]
-                uppercase
-                text-white
-                line-clamp-4
-              ">
+              <p className="font-poppins font-normal text-[18px] leading-[27px] uppercase text-white line-clamp-4">
                 {testimonials[index].quote}
               </p>
 
-              {/* Author Info */}
               <div className="flex items-end gap-[12px]">
                 <div className="flex flex-col gap-[8px]">
-                  <p className="
-                    font-poppins
-                    font-medium
-                    text-[14px]
-                    leading-[61px]
-                    text-white
-                  ">
+                  <p className="font-poppins font-medium text-[14px] leading-[61px] text-white">
                     {testimonials[index].name}
                   </p>
-                  <p className="
-                    font-poppins
-                    font-normal
-                    text-[12px]
-                    leading-[120%]
-                    text-white/60
-                  ">
+                  <p className="font-poppins font-normal text-[12px] leading-[120%] text-white/60">
                     {testimonials[index].role}
                   </p>
                 </div>
@@ -114,23 +90,11 @@ export default function AfterProtocol() {
           </AnimatePresence>
         </div>
 
-        {/* Navigation Buttons */}
+        {/* navigation */}
         <div className="flex justify-center items-center gap-[12px] py-[40px]">
           <button
             onClick={() => paginate(-1)}
-            className="
-              w-[40px]
-              h-[40px]
-              border
-              border-[#8AAE9B]
-              flex
-              items-center
-              justify-center
-              transition-all
-              duration-300
-              hover:bg-[#8AAE9B]/10
-              active:scale-95
-            "
+            className="w-[40px] h-[40px] border border-[#8AAE9B] flex items-center justify-center transition-all duration-300 hover:bg-[#8AAE9B]/10 active:scale-95"
             aria-label="Previous testimonial"
           >
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -140,18 +104,7 @@ export default function AfterProtocol() {
 
           <button
             onClick={() => paginate(1)}
-            className="
-              w-[40px]
-              h-[40px]
-              bg-[#8AAE9B]
-              flex
-              items-center
-              justify-center
-              transition-all
-              duration-300
-              hover:opacity-90
-              active:scale-95
-            "
+            className="w-[40px] h-[40px] bg-[#8AAE9B] flex items-center justify-center transition-all duration-300 hover:opacity-90 active:scale-95"
             aria-label="Next testimonial"
           >
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -161,48 +114,33 @@ export default function AfterProtocol() {
         </div>
       </div>
 
-      {/* ================= DESKTOP LAYOUT ================= */}
-      <div className="hidden lg:grid w-full grid-cols-1 lg:grid-cols-2 min-h-[870px] pl-0px lg:pl-[40px] ">
-        {/* IMAGE - LEFT SIDE */}
-        <div className="relative bg-[#EEECE9] overflow-hidden">
-          {/* Gradient */}
+      {/* DESKTOP / WIDE LAYOUT */}
+      <div className="hidden lg:grid w-full grid-cols-1 lg:grid-cols-2 min-h-[870px] pl-0 lg:pl-[40px]">
+        {/* LEFT: image column */}
+        <div className="relative bg-[#EEECE9] overflow-hidden 2xl:h-[900px]">
           <div className="absolute inset-0 bg-[linear-gradient(181.2deg,rgba(0,0,0,0)_27%,rgba(0,0,0,0.54)_92%)] z-10" />
-
-          {/* Image */}
           <div className="absolute inset-0 bg-[url('/products/after-protocol.png')] bg-cover bg-center xl:bg-top xl:bg-cover" />
         </div>
 
-        {/* CONTENT - RIGHT SIDE */}
+        {/* RIGHT: content column */}
         <div className="flex flex-col bg-[#F6F4F1]">
-          {/* HEADER */}
-          <div className="px-[24px] lg:px-[40px] xl:px-[80px] pt-[64px] text-right">
-            <h2 className="font-playfair uppercase font-semibold tracking-[-0.02em] text-[#2C2D30] text-[36px] lg:text-[44px] xl:text-[64px] leading-tight">
+          <div className="px-[24px] lg:px-[40px] xl:px-[80px] pt-[64px] text-right 2xl:pt-[100px] 2xl:px-[120px]">
+            <h2 className="font-playfair uppercase font-semibold tracking-[-0.02em] text-[#2C2D30] text-[36px] lg:text-[44px] xl:text-[64px] leading-tight 2xl:text-[72px]">
               After the Protocol
             </h2>
-            <p className="mt-2 ml-auto text-right font-poppins uppercase text-[rgba(44,45,48,0.7)] text-[14px] lg:text-[16px] max-w-[319px]">
+            <p className="mt-2 ml-auto text-right font-poppins uppercase text-[rgba(44,45,48,0.7)] text-[14px] lg:text-[16px] max-w-[319px] 2xl:text-[18px]">
               What happens when "good enough" is removed.
             </p>
           </div>
 
-          {/* CAROUSEL */}
           <div
             className="
               mt-[48px]
               bg-[#8AAE9B]
-              border-y
-              border-black/30
-
+              border-y border-black/30
               w-full
-              h-[280px]
-              lg:h-[346px]
-              xl:h-[400px]
-
-              px-[24px]
-              lg:px-[40px]
-              xl:px-[60px]
-              py-[24px]
-              xl:py-[40px]
-
+              h-[280px] lg:h-[346px] xl:h-[400px] 2xl:h-[560px]
+              px-[24px] lg:px-[40px] xl:px-[60px] py-[24px] xl:py-[40px]
               overflow-hidden
             "
           >
@@ -228,29 +166,16 @@ export default function AfterProtocol() {
                 }}
                 className="h-full flex flex-col justify-between"
               >
-                {/* QUOTE */}
-                <p
-                  className="
-                    font-poppins
-                    uppercase
-                    text-white
-                    text-[20px]
-                    lg:text-[24px]
-                    xl:text-[32px]
-                    leading-[1.5]
-                    
-                  "
-                >
+                <p className="font-poppins uppercase text-white text-[20px] lg:text-[24px] xl:text-[32px] 2xl:text-[40px] leading-[1.2]">
                   {testimonials[index].quote}
                 </p>
 
-                {/* AUTHOR */}
                 <div>
                   <div className="h-[1px] bg-white/29 mb-4" />
-                  <p className="font-poppins text-white text-[16px] xl:text-[16px] font-medium leading-[61px]">
+                  <p className="font-poppins text-white text-[16px] xl:text-[16px] font-medium leading-[61px] 2xl:text-[20px]">
                     {testimonials[index].name}
                   </p>
-                  <p className="font-poppins text-white/60 text-[14px] xl:text-[14px] leading-[120%]">
+                  <p className="font-poppins text-white/60 text-[14px] xl:text-[14px] leading-[120%] 2xl:text-[16px]">
                     {testimonials[index].role}
                   </p>
                 </div>
@@ -258,8 +183,7 @@ export default function AfterProtocol() {
             </AnimatePresence>
           </div>
 
-          {/* NAV */}
-          <div className="mt-auto flex items-center justify-end px-[24px] lg:px-[40px] xl:px-[80px] py-[24px] xl:py-[40px]">
+          <div className="mt-auto flex items-center justify-end px-[24px] lg:px-[40px] xl:px-[80px] py-[24px] xl:py-[40px] 2xl:py-[60px]">
             <div className="flex gap-[12px]">
               <button
                 onClick={() => paginate(-1)}

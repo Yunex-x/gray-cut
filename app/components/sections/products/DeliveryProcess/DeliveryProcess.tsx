@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import ProcessToggleButtons from './ProcessToggleButtons';
+
 interface ProcessStep {
   number: string;
   label: string;
@@ -43,7 +44,7 @@ export default function DeliveryProcess({
   className = ''
 }: DeliveryProcessProps) {
   // mobile carousel drag state (used only by the mobile carousel)
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
@@ -75,20 +76,24 @@ export default function DeliveryProcess({
 
   return (
     <section className={`w-full bg-[#F6F4F1] ${className}`}>
-      <div className="max-w-[1124px] mx-auto px-4 md:px-8 lg:px-10 py-12 md:py-16 lg:py-20">
-        <div className="w-full max-w-[1044px] mx-auto flex flex-col justify-center items-start gap-8 md:gap-12 lg:gap-14">
+      {/* Container: allow expansion at 2xl so this section fills the left column */}
+      <div className="max-w-[1124px] 2xl:max-w-none 2xl:mx-0 mx-auto px-4 md:px-8 lg:px-10 py-12 md:py-16 lg:py-20">
+        {/* Removed inner max-width on 2xl so the content can use the left-column width */}
+        <div className="w-full 2xl:max-w-none 2xl:mx-0 flex flex-col justify-center items-start gap-8 md:gap-12 lg:gap-14 2xl:gap-20">
           <div className="w-full flex flex-col justify-center items-center gap-4 md:gap-6">
-            <h2 className="w-full font-playfair font-normal text-[32px] md:text-[48px] lg:text-[64px] leading-[42px] md:leading-[64px] lg:leading-[85px] text-center tracking-[-0.02em] uppercase text-[#2C2D30]">
+            <h2 className="w-full font-playfair font-normal text-[32px] md:text-[48px] lg:text-[64px] leading-[42px] md:leading-[64px] lg:leading-[85px] text-center tracking-[-0.02em] uppercase text-[#2C2D30] 2xl:text-[72px]">
               {title}
             </h2>
 
-            <p className="w-full font-poppins font-normal text-sm md:text-base leading-5 md:leading-6 text-center uppercase text-[rgba(44,45,48,0.7)]">
+            <p className="w-full font-poppins font-normal text-sm md:text-base leading-5 md:leading-6 text-center uppercase text-[rgba(44,45,48,0.7)] 2xl:text-[18px]">
               {subtitle}
             </p>
           </div>
+
           <div className="w-full flex flex-col mx-auto items-center gap-8">
-                    <ProcessToggleButtons />
-            </div>
+            <ProcessToggleButtons />
+          </div>
+
           {/* MOBILE carousel (md:hidden) */}
           <div
             ref={scrollContainerRef}
@@ -128,8 +133,15 @@ export default function DeliveryProcess({
                     {step.description}
                   </h3>
 
-                  <div className="relative w-full h-[120px] bg-white overflow-hidden">
-                    <Image src={step.image} alt={`${step.label} step`} fill className="object-cover" sizes="100vw" draggable={false} />
+                  <div className="relative w-full h-[160px] md:h-[200px] bg-white overflow-hidden rounded-md">
+                    <Image
+                      src={step.image}
+                      alt={`${step.label} step`}
+                      fill
+                      className="object-cover"
+                      sizes="100vw"
+                      draggable={false}
+                    />
                   </div>
                 </div>
               </div>
@@ -137,11 +149,11 @@ export default function DeliveryProcess({
           </div>
 
           {/* DESKTOP / MD+: 3-column layout */}
-          <div className="hidden md:flex w-full flex-row items-stretch gap-0">
+          <div className="hidden md:flex w-full flex-row items-stretch gap-0 2xl:gap-8">
             {steps.map((step, index) => (
               <div
                 key={step.number}
-                className={`flex flex-col items-start p-4 gap-6 flex-1 ${index === 1 ? '' : 'border-r border-l border-[#E4DACC]'}`}
+                className={`flex flex-col items-start p-6 gap-6 2xl:basis-1/3 ${index === 1 ? '' : 'border-r border-l border-[#E4DACC]'}`}
                 style={{ boxSizing: 'border-box' }}
               >
                 <div className="w-full flex flex-col items-start gap-6">
@@ -155,13 +167,20 @@ export default function DeliveryProcess({
                     </span>
                   </div>
 
-                  <p className="w-full font-neue-montreal font-medium text-lg md:text-xl leading-6 uppercase text-[#2C2D30]">
+                  <p className="w-full font-neue-montreal font-medium text-lg md:text-xl leading-6 uppercase text-[#2C2D30] 2xl:text-[20px]">
                     {step.description}
                   </p>
                 </div>
 
-                <div className="relative w-full h-[166px] bg-white overflow-hidden">
-                  <Image src={step.image} alt={`${step.label} step`} fill className="object-cover" sizes="(max-width: 768px) 100vw, 348px" />
+                <div className="relative w-full h-[220px] md:h-[260px] lg:h-[300px] 2xl:h-[520px] bg-white overflow-hidden rounded-md">
+                  <Image
+                    src={step.image}
+                    alt={`${step.label} step`}
+                    fill
+                    className="object-cover"
+                    // On 2xl we expect the left column width is (100vw - aside), so request 1/3 of that for each column
+                    sizes="(min-width:1536px) calc((100vw - 356px) / 3), (max-width: 768px) 100vw, 348px"
+                  />
                 </div>
               </div>
             ))}

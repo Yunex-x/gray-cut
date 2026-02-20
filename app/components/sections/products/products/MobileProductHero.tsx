@@ -25,9 +25,9 @@ export default function MobileProductHero({
   return (
     <div className="w-full flex flex-col bg-[#F6F4F1] relative">
       {/* Hero Image with Gradient Overlay */}
-      {/* Negative margins cancel the page container padding so the hero becomes full-bleed on small screens.
-          Matches page container px: px-[18px] sm:px-[24px] md:px-[30px] (lg resets to normal flow). */}
-      <div className="-mx-[18px] sm:-mx-[24px] md:-mx-[30px] lg:mx-0">
+      {/* Make this element full viewport width on small screens so the background covers the full right edge.
+          Use w-screen centered inside the parent; revert to normal flow on lg+. */}
+      <div className="relative left-1/2 -translate-x-1/2 w-screen lg:mx-0 lg:left-0 lg:-translate-x-0 lg:w-full">
         <div className="relative w-full aspect-[375/646] md:aspect-[768/900]">
           {/* Background Image positioned as per design */}
           <div 

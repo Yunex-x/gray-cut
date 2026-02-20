@@ -24,7 +24,7 @@ export default function ProductShowcase({ images, className = '' }: ProductShowc
 
   return (
     <>
-      {/* Mobile Version - Only visible on mobile/tablet (below lg) */}
+      {/* Mobile Version */}
       <div className="lg:hidden w-full">
         <MobileProductHero 
           heroImage={images?.image146 || '/products/1.webp'}
@@ -37,15 +37,15 @@ export default function ProductShowcase({ images, className = '' }: ProductShowc
         />
       </div>
 
-      {/* Desktop Version - Only visible on desktop (lg and above) */}
+      {/* Desktop / wide */}
       <section className={`hidden lg:block w-full bg-[#F6F4F1] ${className}`}>
-        {/* vertical spacing preserved; content block is right-aligned with a 40px gap from viewport right */}
         <div className="w-full py-[118px]">
           <div className="w-full flex justify-end">
-            {/* max-w keeps content width consistent; pr-[40px] ensures the 40px gap from the right edge */}
-            <div className="w-full max-w-[1440px] pr-[40px]">
+            {/* Keep a centered max width normally, but allow expansion on 2xl (2xl:max-w-none).
+                We remove the extra right padding at 2xl so the left column's calc width is honored. */}
+            <div className="w-full max-w-[1440px] 2xl:max-w-none pr-[40px] 2xl:pr-0">
               <div className="flex flex-col lg:flex-row gap-[20px] items-start">
-                {/* Gallery Grid - Main Content */}
+                {/* Gallery Grid - this will expand to fill the left column (which is calc(100vw-356px) on 2xl) */}
                 <div className="w-full">
                   <GridGallery images={images} className="p-0 max-w-none" />
                 </div>
