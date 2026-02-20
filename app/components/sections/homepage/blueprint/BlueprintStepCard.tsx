@@ -1,10 +1,4 @@
-type Props = {
-  step: string;
-  title: string;
-  description: string;
-  image: string;
-  faded?: boolean;
-};
+import { BlueprintStepCardProps } from "@/app/types/blueprint";
 
 export default function BlueprintStepCard({
   step,
@@ -12,7 +6,7 @@ export default function BlueprintStepCard({
   description,
   image,
   faded = false,
-}: Props) {
+}: BlueprintStepCardProps) {
   return (
     <div
       className="

@@ -1,31 +1,23 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-
-interface ProcessToggleButtonsProps {
-  /**
-   * Initial active button. Defaults to 'express'.
-   */
-  initial?: 'express' | 'standard';
-  /**
-   * Called when user toggles. Receives the new value.
-   */
-  onChange?: (value: 'express' | 'standard') => void;
-  className?: string;
-}
+import { useState, useEffect } from "react";
+import {
+  ProcessToggleButtonsProps,
+  ProcessTrack,
+} from "@/app/types/processButtons";
 
 export default function ProcessToggleButtons({
-  initial = 'express',
+  initial = "express",
   onChange,
-  className = ''
+  className = "",
 }: ProcessToggleButtonsProps) {
-  const [active, setActive] = useState<'express' | 'standard'>(initial);
+  const [active, setActive] = useState<ProcessTrack>(initial);
 
   useEffect(() => {
     setActive(initial);
   }, [initial]);
 
-  function handleClick(value: 'express' | 'standard') {
+  function handleClick(value: ProcessTrack) {
     if (value === active) return;
     setActive(value);
     onChange?.(value);
@@ -33,25 +25,27 @@ export default function ProcessToggleButtons({
 
   return (
     <div
-      className={`md:hidden whitespace-nowrap flex items-center justify-center gap-3  ${className}`}
+      className={`md:hidden whitespace-nowrap flex items-center justify-center gap-3 ${className}`}
       role="tablist"
       aria-label="Process track toggle"
     >
       <button
         type="button"
         role="tab"
-        aria-selected={active === 'express'}
-        onClick={() => handleClick('express')}
+        aria-selected={active === "express"}
+        onClick={() => handleClick("express")}
         className={`
           w-[147px] h-9 flex items-center justify-center
           px-[18px] py-2
           transition-colors duration-150
-          ${active === 'express'
-            ? 'bg-[#8AAE9B] text-[#F6F4F1] border-none'
-            : 'bg-[#F6F4F1] text-[#8AAE9B] border border-[#8AAE9B]'}
+          ${
+            active === "express"
+              ? "bg-[#8AAE9B] text-[#F6F4F1]"
+              : "bg-[#F6F4F1] text-[#8AAE9B] border border-[#8AAE9B]"
+          }
         `}
       >
-        <span className="font-neue-montreal font-medium text-sm leading-[17px] uppercase">
+        <span className="font-neue-montreal font-medium text-sm uppercase">
           EXPRESS TRACK
         </span>
       </button>
@@ -59,18 +53,20 @@ export default function ProcessToggleButtons({
       <button
         type="button"
         role="tab"
-        aria-selected={active === 'standard'}
-        onClick={() => handleClick('standard')}
+        aria-selected={active === "standard"}
+        onClick={() => handleClick("standard")}
         className={`
           w-[147px] h-9 flex items-center justify-center
           px-[18px] py-2
           transition-colors duration-150
-          ${active === 'standard'
-            ? 'bg-[#8AAE9B] text-[#F6F4F1] border-none'
-            : 'bg-[#F6F4F1] text-[#8AAE9B] border border-[#8AAE9B]'}
+          ${
+            active === "standard"
+              ? "bg-[#8AAE9B] text-[#F6F4F1]"
+              : "bg-[#F6F4F1] text-[#8AAE9B] border border-[#8AAE9B]"
+          }
         `}
       >
-        <span className="font-neue-montreal font-medium text-sm leading-[17px] uppercase">
+        <span className="font-neue-montreal font-medium text-sm uppercase">
           STANDARD TRACK
         </span>
       </button>

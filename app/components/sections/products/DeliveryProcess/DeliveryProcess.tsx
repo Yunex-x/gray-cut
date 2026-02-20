@@ -1,78 +1,24 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useRef, useState } from 'react';
-import ProcessToggleButtons from './ProcessToggleButtons';
-
-interface ProcessStep {
-  number: string;
-  label: string;
-  description: string;
-  image: string;
-}
-
-interface DeliveryProcessProps {
-  title?: string;
-  subtitle?: string;
-  steps?: ProcessStep[];
-  className?: string;
-}
+import Image from "next/image";
+import ProcessToggleButtons from "./ProcessToggleButtons";
+import { useHorizontalDrag } from "@/app/hooks/useHorizontalDrag";
+import { DELIVERY_STEPS } from "@/app/constants/deliverySteps";
+import { DeliveryProcessProps } from "@/app/types/process";
 
 export default function DeliveryProcess({
-  title = 'delivery process',
-  subtitle = 'From order to wear, every step is carefully planned.',
-  steps = [
-    {
-      number: '01',
-      label: 'Order',
-      description: 'Pick your shade. Packed instantly',
-      image: '/products/delivery1.png'
-    },
-    {
-      number: '02',
-      label: 'Ship',
-      description: 'Dispatched from Europe in 24h.',
-      image: '/products/delivery2.png'
-    },
-    {
-      number: '03',
-      label: 'Wear',
-      description: 'Receive in 3 days. Ready to install',
-      image: '/products/delivery3.png'
-    }
-  ],
-  className = ''
+  title = "delivery process",
+  subtitle = "From order to wear, every step is carefully planned.",
+  steps = DELIVERY_STEPS,
+  className = "",
 }: DeliveryProcessProps) {
-  // mobile carousel drag state (used only by the mobile carousel)
-  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  const handlePointerStart = (pageX: number) => {
-    if (!scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeft(scrollContainerRef.current.scrollLeft);
-  };
-
-  const handlePointerMove = (pageX: number) => {
-    if (!isDragging || !scrollContainerRef.current) return;
-    const x = pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleMouseDown = (e: React.MouseEvent) => handlePointerStart(e.pageX);
-  const handleMouseMove = (e: React.MouseEvent) => {
-    e.preventDefault();
-    handlePointerMove(e.pageX);
-  };
-  const handleTouchStart = (e: React.TouchEvent) =>
-    handlePointerStart(e.touches[0].pageX);
-  const handleTouchMove = (e: React.TouchEvent) =>
-    handlePointerMove(e.touches[0].pageX);
-  const handleDragEnd = () => setIsDragging(false);
+  const {
+    scrollContainerRef,
+    isDragging,
+    handlePointerStart,
+    handlePointerMove,
+    handleDragEnd,
+  } = useHorizontalDrag();
 
   return (
     <section className={`w-full bg-[#F6F4F1] ${className}`}>
@@ -107,12 +53,12 @@ export default function DeliveryProcess({
               scrollbar-hide
               ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}
             `}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
+            onMouseDown={(e) => handlePointerStart(e.pageX)}
+            onMouseMove={(e) => handlePointerMove(e.pageX)}
             onMouseUp={handleDragEnd}
             onMouseLeave={handleDragEnd}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
+            onTouchStart={(e) => handlePointerStart(e.touches[0].pageX)}
+            onTouchMove={(e) => handlePointerMove(e.touches[0].pageX)}
             onTouchEnd={handleDragEnd}
             style={{ WebkitOverflowScrolling: 'touch' }}
           >

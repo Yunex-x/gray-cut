@@ -18,7 +18,7 @@ interface ProductOption {
 export default function ProductConfigurator() {
   const [selectedColor, setSelectedColor] = useState<string>('jet-black');
   const [selectedSize, setSelectedSize] = useState<string>('7 × 7');
-  const [selectedLocation] = useState<string>('');
+  const [selectedLocation, setSelectedLocation] = useState<string>('');
   const [selectedVariant, setSelectedVariant] = useState<string>('standard');
 
   const productOptions: ProductOption[] = [
@@ -61,19 +61,17 @@ export default function ProductConfigurator() {
   }
 
   return (
-    // Keep compact width, but DO NOT set maxHeight/overflow here to avoid inner scroll.
     <div className="w-full max-w-[300px] flex flex-col">
-      {/* Content flows naturally; page will scroll instead of inner area */}
+
       <div className="bg-[#F6F4F1] p-3">
-        {/* Card */}
         <div className="flex flex-col gap-3">
+
           {/* Header */}
           <div className="flex flex-col gap-1">
             <h1 className="font-playfair whitespace-nowrap font-semibold text-[20px] leading-[26px] tracking-[-0.02em] uppercase text-[#2C2D30]">
               The Standard <br /> System
             </h1>
 
-            {/* Rating */}
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-1">
                 <Star className="w-3 h-3 fill-[#2C2D30] text-[#2C2D30]" />
@@ -117,7 +115,7 @@ export default function ProductConfigurator() {
             />
           </div>
 
-          {/* Location */}
+          {/* ✅ RESTORED — Where is your part */}
           <div className="flex flex-col gap-1 mt-1">
             <h3 className="font-playfair font-semibold text-[12px] uppercase text-[#2C2D30]">
               Where is your part?
@@ -128,7 +126,7 @@ export default function ProductConfigurator() {
                 Select your part line
               </span>
 
-              <svg width="14" height="14" viewBox="0 0 18 18" fill="none" className="ml-2">
+              <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
                 <path
                   d="M3 6.75L9 12.75L15 6.75"
                   stroke="rgba(44, 45, 48, 0.7)"
@@ -140,16 +138,14 @@ export default function ProductConfigurator() {
             </div>
           </div>
 
-          {/* small spacer so content doesn't sit under sticky button */}
+          {/* Spacer so sticky CTA doesn’t overlap */}
           <div className="h-3" />
         </div>
       </div>
 
-      {/* Keep the CTA visible by making it sticky to the viewport bottom. No inner scroll. */}
+      {/* Sticky CTA */}
       <div className="sticky bottom-0 bg-[#F6F4F1] p-3 border-t border-[#E6E2D9] z-10">
-        <div className="w-full">
-          <AddToCart onAddToCart={handleAddToCart} compact />
-        </div>
+        <AddToCart onAddToCart={handleAddToCart} compact />
       </div>
     </div>
   );

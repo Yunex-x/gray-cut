@@ -1,10 +1,4 @@
-type ProtocolCardProps = {
-  title: string;
-  price: string;
-  features: string[];
-  cta: string;
-  image: string;
-};
+import { ProtocolCardProps } from "@/app/types/protocol";
 
 export default function ProtocolCard({
   title,
