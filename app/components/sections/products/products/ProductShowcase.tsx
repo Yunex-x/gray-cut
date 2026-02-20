@@ -22,17 +22,25 @@ export default function ProductShowcase({ images, className = '' }: ProductShowc
     setIsModalOpen(true);
   };
 
+  // Map images to GalleryImageSet shape
+  const galleryImages = {
+    top: images?.image146 || '/products/1.webp',
+    left: images?.image147 || '/products/2.webp',
+    right: images?.image148 || '/products/3.webp',
+    bottom: images?.image141 || undefined,
+  };
+
   return (
     <>
       {/* Mobile Version */}
       <div className="lg:hidden w-full">
-        <MobileProductHero 
-          heroImage={images?.image146 || '/products/1.webp'}
+        <MobileProductHero
+          heroImage={galleryImages.top}
           title="The Standard System"
           onConfigureClick={handleConfigureClick}
           additionalImages={{
-            image1: images?.image147 || '/products/2.webp',
-            image2: images?.image148 || '/products/3.webp'
+            image1: galleryImages.left,
+            image2: galleryImages.right
           }}
         />
       </div>
@@ -47,7 +55,7 @@ export default function ProductShowcase({ images, className = '' }: ProductShowc
               <div className="flex flex-col lg:flex-row gap-[20px] items-start">
                 {/* Gallery Grid - this will expand to fill the left column (which is calc(100vw-356px) on 2xl) */}
                 <div className="w-full">
-                  <GridGallery images={images} className="p-0 max-w-none" />
+                  <GridGallery images={galleryImages} className="p-0 max-w-none" />
                 </div>
               </div>
             </div>
@@ -56,7 +64,7 @@ export default function ProductShowcase({ images, className = '' }: ProductShowc
       </section>
 
       {/* Mobile Modal */}
-      <MobileProductModal 
+      <MobileProductModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
