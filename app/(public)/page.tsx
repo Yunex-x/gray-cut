@@ -10,7 +10,7 @@ import DiagnosisSection from "../components/sections/homepage/Diagnosis/Diagnosi
 
 export default function HomePage() {
   return (
-    <main className="w-full flex flex-col  bg-[#F6F4F1] items-center">
+    <main className="w-full flex flex-col bg-[#F6F4F1] items-center">
       <HeroSection />
       <ProtocolsSections />
       <DiagnosisSection />
