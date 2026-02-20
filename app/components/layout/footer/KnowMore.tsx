@@ -16,7 +16,7 @@ export default function KnowMore() {
         font-poppins
           lg:text-[26px]
           xl:text-[32px]
-          2xl:text-[60px]
+          2xl:text-[42px]
           font-semibold
           uppercase
           text-[#F6F4F1]

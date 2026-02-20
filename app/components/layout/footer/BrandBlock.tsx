@@ -21,7 +21,7 @@ export default function BrandBlock() {
           font-semibold
           lg:text-[48px]
           xl:text-[64px]
-          2xl:text-[80px]
+          2xl:text-[65px]
           lg:leading-[64px]
           xl:leading-[85px]
           uppercase

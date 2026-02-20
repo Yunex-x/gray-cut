@@ -16,7 +16,7 @@ export default function ExploreNow() {
         font-poppins
           lg:text-[26px]
           xl:text-[32px]
-          2xl:text-[60px]
+          2xl:text-[48px]
           font-semibold
           uppercase
           text-[#F6F4F1]
@@ -38,7 +38,7 @@ export default function ExploreNow() {
                 2xl:text-[30px]
               lg:leading-[24px]
               xl:leading-[27px]
-              2xl:leading-[45px]
+              2xl:leading-[42px]
               
               text-[#F6F4F1]
               hover:opacity-70
