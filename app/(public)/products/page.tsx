@@ -7,6 +7,8 @@ import SystemEngulfs from "../../components/sections/products/SystemEngulfs/Syst
 import WearingProcess from "../../components/sections/products/WearingProcess/WearingProcess";
 import AfterProtocol from "../../components/sections/products/AfterProtocol/AfterProtocol";
 import DeliveryProcess from "../../components/sections/products/DeliveryProcess/DeliveryProcess";
+import MobileFooter from "@/app/components/layout/footer/MobileFooter";
+import FooterSection from "@/app/components/layout/footer/FooterSection";
 
 export default function Page() {
   return (
@@ -25,6 +27,8 @@ export default function Page() {
             <WearingProcess />
             <AfterProtocol />
             <DeliveryProcess />
+             <FooterSection />
+                  <MobileFooter />
           </div>
 
           {/* RIGHT: ProductConfigurator aside (hidden on small screens, fixed 356px on lg+) */}
