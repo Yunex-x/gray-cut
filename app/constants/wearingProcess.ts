@@ -16,7 +16,7 @@ export const WEARING_PROCESS_STEPS: ProcessStep[] = [
   {
     number: '03',
     label: 'Secure',
-    description: 'Press down, style, and go.',
+    description: 'Press down, style, and go about your day.',
     image: '/products/delivery3.png'
   }
 ];

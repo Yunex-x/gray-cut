@@ -52,9 +52,9 @@ export default function CurrencySelector({
           </span>
         </span>
 
-        {/* Arrow */}
+        {/* Arrow 
         <span
-          className={`relative w-[18px] h-[18px] transition-transform duration-300 ${
+          className={`relative w-[18px] h-[18px]  transition-transform duration-300 ${
             isOpen ? 'rotate-180' : ''
           }`}
         >
@@ -65,7 +65,7 @@ export default function CurrencySelector({
               strokeWidth="1.5"
             />
           </svg>
-        </span>
+        </span>*/}
       </button>
 
       {/* Dropdown */}
