@@ -4,18 +4,35 @@ import { WEARING_PROCESS_STEPS } from '@/app/constants/wearingProcess';
 import { useHorizontalDrag } from '@/app/hooks/useHorizontalDrag';
 import { ProcessProps } from '@/app/types/process';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function WearingProcess({
   steps = WEARING_PROCESS_STEPS,
 }: ProcessProps) {
-
   const {
     scrollContainerRef,
     isDragging,
     handlePointerStart,
     handlePointerMove,
-    handleDragEnd
+    handleDragEnd,
   } = useHorizontalDrag();
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const slideWidth =
+        container.firstElementChild?.clientWidth || 1;
+      const index = Math.round(container.scrollLeft / slideWidth);
+      setActiveIndex(index);
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, [scrollContainerRef]);
 
   return (
     <section className="w-full bg-[#F6F4F1]">
@@ -73,18 +90,45 @@ export default function WearingProcess({
                 </p>
               </div>
 
-<div className="relative w-full h-[166px] bg-[#F9F9F9] overflow-hidden rounded-md">
-  {step.image ? (
-    <Image
-      src={step.image}
-      alt={`${step.label} step`}
-      fill
-      className="object-cover pointer-events-none"
-      sizes="100vw"
-      draggable={false}
-    />
-  ) : null}
-</div>            </div>
+              <div className="relative w-full h-[166px] bg-[#F9F9F9] overflow-hidden rounded-md">
+                {step.image ? (
+                  <Image
+                    src={step.image}
+                    alt={`${step.label} step`}
+                    fill
+                    className="object-cover pointer-events-none"
+                    sizes="100vw"
+                    draggable={false}
+                  />
+                ) : null}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* MOBILE DOTS */}
+        <div className="md:hidden flex justify-center gap-2 mt-6">
+          {steps.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                const container = scrollContainerRef.current;
+                if (!container) return;
+
+                const slideWidth =
+                  container.firstElementChild?.clientWidth || 0;
+
+                container.scrollTo({
+                  left: slideWidth * index,
+                  behavior: 'smooth',
+                });
+              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeIndex === index
+                  ? 'w-6 bg-[#15b020]'
+                  : 'w-2 bg-[#D2D2D2]'
+              }`}
+            />
           ))}
         </div>
 
@@ -93,7 +137,9 @@ export default function WearingProcess({
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className={`flex flex-col flex-1 p-6 gap-6 ${index === 1 ? '' : 'border-x border-[#E4DACC]'}`}
+              className={`flex flex-col flex-1 p-6 gap-6 ${
+                index === 1 ? '' : 'border-x border-[#E4DACC]'
+              }`}
             >
               <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-3">

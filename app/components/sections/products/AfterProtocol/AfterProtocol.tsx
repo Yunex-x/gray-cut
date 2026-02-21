@@ -56,14 +56,14 @@ export default function AfterProtocol() {
 
               <div className="flex items-end gap-[12px]">
                 <div className="flex flex-col gap-[8px]">
-                  <p className="font-poppins font-medium text-[14px] leading-[61px] text-white">
+                  <p className="font-poppins font-medium text-[14px] -mb-6 leading-[61px] text-white">
                     {AFTER_PROTOCOL_TESTIMONIALS[index].name}
                   </p>
-                  <p className="font-poppins font-normal text-[12px] leading-[120%] text-white/60">
+                  <p className="font-poppins font-normal text-[12px]  leading-[120%] text-white/60">
                     {AFTER_PROTOCOL_TESTIMONIALS[index].role}
                   </p>
                 </div>
-                <div className="flex-1 h-[1px] bg-white/29" />
+                <div className="flex-1  h-[1px] bg-white/29" />
               </div>
             </motion.div>
           </AnimatePresence>
@@ -141,7 +141,7 @@ export default function AfterProtocol() {
                   <p className="font-poppins text-white text-[16px] xl:text-[16px] font-medium leading-[61px] 2xl:text-[20px]">
                     {AFTER_PROTOCOL_TESTIMONIALS[index].name}
                   </p>
-                  <p className="font-poppins text-white/60 text-[14px] xl:text-[14px] leading-[120%] 2xl:text-[16px]">
+                  <p className="font-poppins text-white/60 -mt-2.5  text-[14px] xl:text-[14px] leading-[120%] 2xl:text-[16px]">
                     {AFTER_PROTOCOL_TESTIMONIALS[index].role}
                   </p>
                 </div>

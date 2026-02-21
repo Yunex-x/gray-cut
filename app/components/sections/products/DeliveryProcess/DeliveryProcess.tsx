@@ -4,7 +4,8 @@ import Image from "next/image";
 import ProcessToggleButtons from "./ProcessToggleButtons";
 import { useHorizontalDrag } from "@/app/hooks/useHorizontalDrag";
 import { DELIVERY_STEPS } from "@/app/constants/deliverySteps";
-import {  ProcessProps } from "@/app/types/process";
+import { ProcessProps } from "@/app/types/process";
+import { useEffect, useState } from "react";
 
 export default function DeliveryProcess({
   steps = DELIVERY_STEPS,
@@ -17,12 +18,28 @@ export default function DeliveryProcess({
     handleDragEnd,
   } = useHorizontalDrag();
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const slideWidth =
+        container.firstElementChild?.clientWidth || 1;
+      const index = Math.round(container.scrollLeft / slideWidth);
+      setActiveIndex(index);
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [scrollContainerRef]);
+
   return (
     <section className="w-full bg-[#F6F4F1]">
-      {/* Container: allow expansion at 2xl so this section fills the left column */}
-      <div className="max-w-[1124px] 2xl:max-w-none 2xl:mx-0 mx-auto px-4 md:px-8 lg:px-10 py-12 md:py-16 lg:py-12">
-        {/* Removed inner max-width on 2xl so the content can use the left-column width */}
+      <div className="max-w-[1124px] 2xl:max-w-none 2xl:mx-0 mx-auto px-4 md:px-8 lg:px-10 py-12 -mb-30 md:py-16 lg:py-12">
         <div className="w-full 2xl:max-w-none 2xl:mx-0 flex flex-col justify-center items-start gap-8 md:gap-12 lg:gap-14 2xl:gap-20">
+
           <div className="w-full flex flex-col justify-center items-center gap-4 md:gap-6">
             <h2 className="w-full font-playfair font-normal text-[32px] md:text-[48px] lg:text-[64px] leading-[42px] md:leading-[64px] lg:leading-[85px] text-center tracking-[-0.02em] uppercase text-[#2C2D30] 2xl:text-[72px]">
               delivery process
@@ -37,7 +54,7 @@ export default function DeliveryProcess({
             <ProcessToggleButtons />
           </div>
 
-          {/* MOBILE carousel (md:hidden) */}
+          {/* MOBILE carousel */}
           <div
             ref={scrollContainerRef}
             className={`
@@ -48,7 +65,7 @@ export default function DeliveryProcess({
               snap-x snap-mandatory
               gap-4
               scrollbar-hide
-              ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}
+              ${isDragging ? "cursor-grabbing" : "cursor-grab"}
             `}
             onMouseDown={(e) => handlePointerStart(e.pageX)}
             onMouseMove={(e) => handlePointerMove(e.pageX)}
@@ -57,10 +74,13 @@ export default function DeliveryProcess({
             onTouchStart={(e) => handlePointerStart(e.touches[0].pageX)}
             onTouchMove={(e) => handlePointerMove(e.touches[0].pageX)}
             onTouchEnd={handleDragEnd}
-            style={{ WebkitOverflowScrolling: 'touch' }}
+            style={{ WebkitOverflowScrolling: "touch" }}
           >
             {steps.map((step) => (
-              <div key={step.number} className="flex-shrink-0 w-[85vw] snap-center border-l border-r border-[#E4DACC] pl-4 pr-4">
+              <div
+                key={step.number}
+                className="flex-shrink-0 w-[85vw] snap-center border-l border-r border-[#E4DACC] pl-4 pr-4"
+              >
                 <div className="flex flex-col items-start gap-6 p-4">
                   <div className="w-full flex flex-row items-center gap-3">
                     <span className="font-neue-montreal font-medium text-base leading-[19px] uppercase text-[rgba(42,42,42,0.5)]">
@@ -91,13 +111,41 @@ export default function DeliveryProcess({
             ))}
           </div>
 
-          {/* DESKTOP / MD+: 3-column layout */}
+          {/* MOBILE DOTS */}
+          <div className="md:hidden flex justify-center mx-auto gap-2 ">
+            {steps.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  const container = scrollContainerRef.current;
+                  if (!container) return;
+
+                  const slideWidth =
+                    container.firstElementChild?.clientWidth || 0;
+
+                  container.scrollTo({
+                    left: slideWidth * index,
+                    behavior: "smooth",
+                  });
+                }}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeIndex === index
+                    ? "w-6 bg-[#15b020]"
+                    : "w-2 bg-[#D2D2D2]"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* DESKTOP */}
           <div className="hidden md:flex w-full flex-row items-stretch gap-0 2xl:gap-8">
             {steps.map((step, index) => (
               <div
                 key={step.number}
-                className={`flex flex-col items-start p-6 gap-6 2xl:basis-1/3 ${index === 1 ? '' : 'border-r border-l border-[#E4DACC]'}`}
-                style={{ boxSizing: 'border-box' }}
+                className={`flex flex-col items-start p-6 gap-6 2xl:basis-1/3 ${
+                  index === 1 ? "" : "border-r border-l border-[#E4DACC]"
+                }`}
+                style={{ boxSizing: "border-box" }}
               >
                 <div className="w-full flex flex-col items-start gap-6">
                   <div className="w-full flex flex-row items-center gap-3">
@@ -121,13 +169,13 @@ export default function DeliveryProcess({
                     alt={`${step.label} step`}
                     fill
                     className="object-cover"
-                    // On 2xl we expect the left column width is (100vw - aside), so request 1/3 of that for each column
                     sizes="(min-width:1536px) calc((100vw - 356px) / 3), (max-width: 768px) 100vw, 348px"
                   />
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
 
