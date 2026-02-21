@@ -25,7 +25,7 @@ export default function Page() {
         <div className="max-w-[1440px] 2xl:max-w-none w-full mx-auto flex flex-col lg:flex-row pb-40 lg:pb-40">
           
           {/* LEFT */}
-          <div className="w-full lg:w-[1084px] 2xl:w-[calc(100vw-356px)] pt-8 lg:pt-12">
+          <div className="w-full lg:w-[1084px] 2xl:w-[calc(100vw-356px)]  ">
             <ProductShowcase onAddToCart={handleAddToCart} />
             <SystemEngulfs />
             <WearingProcess />

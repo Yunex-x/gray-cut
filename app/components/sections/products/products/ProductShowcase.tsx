@@ -51,11 +51,11 @@ export default function ProductShowcase({
       </div>
 
       {/* Desktop / wide */}
-      <section className={`hidden lg:block w-full bg-[#F6F4F1] ${className}`}>
+      <section className={`hidden lg:block w-full bg-[#F6F4F1] `}>
         <div className="w-full py-[118px]">
           <div className="w-full flex justify-end">
-            <div className="w-full max-w-[1440px] 2xl:max-w-none pr-[40px] 2xl:pr-0">
-              <div className="flex flex-col lg:flex-row gap-[20px] items-start">
+            <div className="w-full max-w-[1440px] 2xl:max-w-none  2xl:pr-0">
+              <div className="flex flex-col lg:flex-row gap-[12px] items-start">
                 <div className="w-full">
                   <GridGallery images={galleryImages} className="p-0 max-w-none" />
                 </div>

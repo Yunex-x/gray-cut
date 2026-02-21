@@ -7,9 +7,9 @@ export default function GridGallery({
   return (
     <div
       className={`
-        grid grid-cols-1 md:grid-cols-2 gap-5
+        grid grid-cols-1 md:grid-cols-2 gap-5 -mt-5
         max-w-[1124px] mx-auto
-        p-6 md:p-10 sm:p-5
+         pl-[40px]
         2xl:mx-0 2xl:max-w-none 2xl:w-full 2xl:pl-6 2xl:gap-8
       `}
     >
