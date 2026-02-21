@@ -13,9 +13,14 @@ interface ProductShowcaseProps {
     image141?: string;
   };
   className?: string;
+  onAddToCart: (payload: any) => void; // ✅ receive from parent
 }
 
-export default function ProductShowcase({ images, className = '' }: ProductShowcaseProps) {
+export default function ProductShowcase({
+  images,
+  className = '',
+  onAddToCart,
+}: ProductShowcaseProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleConfigureClick = () => {
@@ -40,7 +45,7 @@ export default function ProductShowcase({ images, className = '' }: ProductShowc
           onConfigureClick={handleConfigureClick}
           additionalImages={{
             image1: galleryImages.left,
-            image2: galleryImages.right
+            image2: galleryImages.right,
           }}
         />
       </div>
@@ -49,11 +54,8 @@ export default function ProductShowcase({ images, className = '' }: ProductShowc
       <section className={`hidden lg:block w-full bg-[#F6F4F1] ${className}`}>
         <div className="w-full py-[118px]">
           <div className="w-full flex justify-end">
-            {/* Keep a centered max width normally, but allow expansion on 2xl (2xl:max-w-none).
-                We remove the extra right padding at 2xl so the left column's calc width is honored. */}
             <div className="w-full max-w-[1440px] 2xl:max-w-none pr-[40px] 2xl:pr-0">
               <div className="flex flex-col lg:flex-row gap-[20px] items-start">
-                {/* Gallery Grid - this will expand to fill the left column (which is calc(100vw-356px) on 2xl) */}
                 <div className="w-full">
                   <GridGallery images={galleryImages} className="p-0 max-w-none" />
                 </div>
@@ -67,6 +69,7 @@ export default function ProductShowcase({ images, className = '' }: ProductShowc
       <MobileProductModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        onAddToCart={onAddToCart}  // ✅ forward shared handler
       />
     </>
   );
