@@ -1,6 +1,6 @@
-import { Testimonialp } from "../types/testimonialp";
+import { Testimonial } from "../types/testimonial";
 
-export const AFTER_PROTOCOL_TESTIMONIALS: Testimonialp[] = [
+export const AFTER_PROTOCOL_TESTIMONIALS: Testimonial[] = [
   {
     quote:
       "stopped wondering how long it would last. That was the first real change.",

@@ -4,14 +4,11 @@ import Image from "next/image";
 import ProcessToggleButtons from "./ProcessToggleButtons";
 import { useHorizontalDrag } from "@/app/hooks/useHorizontalDrag";
 import { DELIVERY_STEPS } from "@/app/constants/deliverySteps";
-import { DeliveryProcessProps } from "@/app/types/process";
+import {  ProcessProps } from "@/app/types/process";
 
 export default function DeliveryProcess({
-  title = "delivery process",
-  subtitle = "From order to wear, every step is carefully planned.",
   steps = DELIVERY_STEPS,
-  className = "",
-}: DeliveryProcessProps) {
+}: ProcessProps) {
   const {
     scrollContainerRef,
     isDragging,
@@ -21,18 +18,18 @@ export default function DeliveryProcess({
   } = useHorizontalDrag();
 
   return (
-    <section className={`w-full bg-[#F6F4F1] ${className}`}>
+    <section className="w-full bg-[#F6F4F1]">
       {/* Container: allow expansion at 2xl so this section fills the left column */}
       <div className="max-w-[1124px] 2xl:max-w-none 2xl:mx-0 mx-auto px-4 md:px-8 lg:px-10 py-12 md:py-16 lg:py-20">
         {/* Removed inner max-width on 2xl so the content can use the left-column width */}
         <div className="w-full 2xl:max-w-none 2xl:mx-0 flex flex-col justify-center items-start gap-8 md:gap-12 lg:gap-14 2xl:gap-20">
           <div className="w-full flex flex-col justify-center items-center gap-4 md:gap-6">
             <h2 className="w-full font-playfair font-normal text-[32px] md:text-[48px] lg:text-[64px] leading-[42px] md:leading-[64px] lg:leading-[85px] text-center tracking-[-0.02em] uppercase text-[#2C2D30] 2xl:text-[72px]">
-              {title}
+              delivery process
             </h2>
 
             <p className="w-full font-poppins font-normal text-sm md:text-base leading-5 md:leading-6 text-center uppercase text-[rgba(44,45,48,0.7)] 2xl:text-[18px]">
-              {subtitle}
+              from order to wear, every step is carefully planned.
             </p>
           </div>
 

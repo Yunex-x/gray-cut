@@ -5,7 +5,7 @@ export interface ProcessStep {
   image: string;
 }
 
-export interface DeliveryProcessProps {
+export interface ProcessProps {
   title?: string;
   subtitle?: string;
   steps?: ProcessStep[];

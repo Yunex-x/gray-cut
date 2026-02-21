@@ -14,13 +14,7 @@ interface MobileProductHeroProps {
 }
 
 export default function MobileProductHero({
-  heroImage = '/products/heromobile.png',
-  title = 'The Standard System',
   onConfigureClick,
-  additionalImages = {
-    image1: '/products/2.webp',
-    image2: '/products/3.webp'
-  }
 }: MobileProductHeroProps) {
   return (
     <div className="w-full flex flex-col bg-[#F6F4F1] relative">
@@ -33,7 +27,7 @@ export default function MobileProductHero({
           <div 
             className="absolute inset-0 w-full h-full"
             style={{
-              background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 55.99%, rgba(0, 0, 0, 0.38) 96.42%), url(${heroImage})`,
+              backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 55.99%, rgba(0, 0, 0, 0.38) 96.42%), url('/products/1.webp')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
@@ -46,7 +40,7 @@ export default function MobileProductHero({
               <h1 
                 className="w-full font-playfair font-normal text-[40px] md:text-[56px] leading-[52px] md:leading-[72px] uppercase text-[#F6F4F1]"
               >
-                {title}
+                The Standard System
               </h1>
 
               {/* Frame 468 - Rating and CTA Container */}
@@ -88,7 +82,7 @@ export default function MobileProductHero({
           {/* Frame 495 - First Image */}
           <div className="relative w-full h-[210px] md:h-[350px] bg-white overflow-hidden flex-1">
             <Image
-              src={additionalImages.image1 || '/products/2.webp'}
+              src='/products/2.webp'
               alt="Product view 1"
               fill
               className="object-cover"
@@ -99,7 +93,7 @@ export default function MobileProductHero({
           {/* Frame 672 - Second Image */}
           <div className="relative w-full h-[210px] md:h-[350px] bg-white overflow-hidden flex-1">
             <Image
-              src={additionalImages.image2 || '/products/3.webp'}
+              src='/products/3.webp'
               alt="Product view 2"
               fill
               className="object-cover"

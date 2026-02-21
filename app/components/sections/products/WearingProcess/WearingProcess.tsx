@@ -1,16 +1,13 @@
 'use client';
 
 import { WEARING_PROCESS_STEPS } from '@/app/constants/wearingProcess';
-import { useHorizontalDrag } from '@/app/hooks/useHorizontalDragp';
-import { WearingProcessProps } from '@/app/types/wearing-process';
+import { useHorizontalDrag } from '@/app/hooks/useHorizontalDrag';
+import { ProcessProps } from '@/app/types/process';
 import Image from 'next/image';
 
 export default function WearingProcess({
-  title = 'wearing process',
-  subtitle = 'Wear it perfectly in under five minutes.',
   steps = WEARING_PROCESS_STEPS,
-  className = ''
-}: WearingProcessProps) {
+}: ProcessProps) {
 
   const {
     scrollContainerRef,
@@ -21,17 +18,17 @@ export default function WearingProcess({
   } = useHorizontalDrag();
 
   return (
-    <section className={`w-full bg-[#F6F4F1] ${className}`}>
+    <section className="w-full bg-[#F6F4F1]">
       <div className="max-w-[1124px] 2xl:max-w-none 2xl:mx-0 mx-auto px-4 md:px-8 lg:px-10 py-12 md:py-16 lg:py-20">
 
         {/* Header */}
         <div className="w-full flex flex-col gap-1 md:gap-2 mb-8 md:mb-12 lg:mb-14 2xl:mb-20">
           <h2 className="w-full font-playfair font-semibold text-[32px] md:text-[48px] lg:text-[64px] leading-[42px] md:leading-[64px] lg:leading-[85px] text-center uppercase text-[#2C2D30] 2xl:text-[72px] 2xl:leading-[92px]">
-            {title}
+            wearing process
           </h2>
 
           <p className="w-full font-poppins text-sm md:text-base leading-5 md:leading-6 text-center uppercase text-[rgba(44,45,48,0.7)] px-4 2xl:text-[18px] 2xl:leading-7">
-            {subtitle}
+            wear it perfectly in under five minutes.
           </p>
         </div>
 
@@ -76,17 +73,18 @@ export default function WearingProcess({
                 </p>
               </div>
 
-              <div className="relative w-full h-[166px] bg-[#F9F9F9] overflow-hidden rounded-md">
-                <Image
-                  src={step.image}
-                  alt={`${step.label} step`}
-                  fill
-                  className="object-cover pointer-events-none"
-                  sizes="100vw"
-                  draggable={false}
-                />
-              </div>
-            </div>
+<div className="relative w-full h-[166px] bg-[#F9F9F9] overflow-hidden rounded-md">
+  {step.image ? (
+    <Image
+      src={step.image}
+      alt={`${step.label} step`}
+      fill
+      className="object-cover pointer-events-none"
+      sizes="100vw"
+      draggable={false}
+    />
+  ) : null}
+</div>            </div>
           ))}
         </div>
 
