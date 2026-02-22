@@ -1,5 +1,10 @@
 import { BlueprintStepCardProps } from "@/app/types/blueprint";
 
+/* BlueprintStepCard
+   - Simple step card used in the Blueprint section.
+   - Edit copy, sizes, or colors directly below where noted.
+*/
+
 export default function BlueprintStepCard({
   step,
   title,
@@ -12,11 +17,11 @@ export default function BlueprintStepCard({
       className="
         bg-[#F6F4F1]
         w-full
-        
+
         border-x
         border-[#E4DACC]
         md:border-x-0
-        
+
         group
         cursor-pointer
         items-center
@@ -24,7 +29,7 @@ export default function BlueprintStepCard({
         flex-col
       "
     >
-      {/* Content - Always on top for mobile, bottom for desktop */}
+      {/* Content - text block (mobile on top, desktop below image) */}
       <div className="
         px-[19px] 
         pt-[19px] 
@@ -35,20 +40,20 @@ export default function BlueprintStepCard({
         xl:px-[40px]
         xl:pt-[24px]
         xl:pb-[32px]
-        
+
         flex flex-col 
         gap-[19px]
         md:gap-[16px]
         xl:gap-[24px]
-        
+
         order-1
         md:order-2
-        
+
         transition-all 
         duration-300 
         group-hover:translate-y-[-5px]
       ">
-        {/* Header */}
+        {/* Header: step number and title */}
         <div className="flex items-center gap-[9px] md:gap-[12px] xl:gap-[16px]">
           <span
             className={`
@@ -73,6 +78,7 @@ export default function BlueprintStepCard({
             {step}
           </span>
 
+          {/* vertical divider between step and title */}
           <span className="w-[1px] h-[17px] md:h-[21px] xl:h-[28px] bg-[#D2D2D2] transition-all duration-300 group-hover:bg-[#8AAE9B] group-hover:w-[2px]" />
 
           <span
@@ -96,7 +102,7 @@ export default function BlueprintStepCard({
           </span>
         </div>
 
-        {/* Description */}
+        {/* Description: edit copy or text sizing here */}
         <p
           className="
             font-poppins
@@ -120,7 +126,7 @@ export default function BlueprintStepCard({
         </p>
       </div>
 
-      {/* Image */}
+      {/* Image container — responsive sizes below, background uses `image` prop */}
       <div
         className="
           w-[321px]
@@ -133,7 +139,7 @@ export default function BlueprintStepCard({
           xl:h-[330px]
           2xl:w-[600px]
           2xl:h-[500px]
-       
+
           overflow-hidden
           relative
           mx-auto
