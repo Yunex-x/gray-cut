@@ -8,17 +8,20 @@ export default function TestimonialCarousel() {
   const { index, direction, paginate } =
     useCarousel(TESTIMONIALS.length);
 
+  // current testimonial image with fallback
+  const currentImage = TESTIMONIALS[index]?.image ?? "/home/verdict.webp";
+
   return (
     <section className="w-full bg-[#F6F4F1]">
       {/* ================= MOBILE LAYOUT ================= */}
       <div className="lg:hidden w-full max-w-[393px] mx-auto flex flex-col">
-        {/* Image */}
+        {/* Image (uses current testimonial image) */}
         <div className="relative bg-[#EEECE9] w-full h-[426px] overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage:
-                "linear-gradient(181.2deg, rgba(0,0,0,0) 27.49%, rgba(0,0,0,0.54) 91.81%), url('/home/verdict.webp')",
+                `linear-gradient(181.2deg, rgba(0,0,0,0) 27.49%, rgba(0,0,0,0.54) 91.81%), url('${currentImage}')`,
             }}
           />
         </div>
@@ -85,10 +88,15 @@ export default function TestimonialCarousel() {
 
       {/* ================= DESKTOP LAYOUT ================= */}
       <div className="hidden lg:grid grid-cols-2 min-h-[870px]">
-        {/* IMAGE */}
+        {/* IMAGE (uses current testimonial image) */}
         <div className="relative bg-[#EEECE9] overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(181.2deg,rgba(0,0,0,0)_27%,rgba(0,0,0,0.54)_92%)] z-10" />
-          <div className="absolute inset-0 bg-[url('/home/verdict.webp')] bg-cover bg-center xl:bg-top" />
+          <div
+            className="absolute inset-0 bg-cover bg-center xl:bg-top"
+            style={{
+              backgroundImage: `url('${currentImage}')`,
+            }}
+          />
         </div>
 
         {/* CONTENT */}

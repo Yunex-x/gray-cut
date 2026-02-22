@@ -16,6 +16,10 @@ export default function AfterProtocol() {
     ]);
   };
 
+  // use current testimonial image if present, otherwise fallback to existing image
+  const currentImage =
+    AFTER_PROTOCOL_TESTIMONIALS[index]?.image ?? "/products/after-protocol.png";
+
   return (
     <section className="w-full bg-[#F6F4F1]">
       {/* MOBILE LAYOUT */}
@@ -25,7 +29,7 @@ export default function AfterProtocol() {
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage:
-                "linear-gradient(181.2deg, rgba(0,0,0,0) 27.49%, rgba(0,0,0,0.54) 91.81%), url('/products/after-protocol.png')",
+                `linear-gradient(181.2deg, rgba(0,0,0,0) 27.49%, rgba(0,0,0,0.54) 91.81%), url('${currentImage}')`,
             }}
           />
         </div>
@@ -96,14 +100,20 @@ export default function AfterProtocol() {
       {/* DESKTOP / WIDE LAYOUT */}
       <div className="hidden lg:grid w-full grid-cols-1 lg:grid-cols-2 min-h-[870px] pl-0 lg:pl-[40px]">
         {/* LEFT: image */}
-        <div className="relative bg-[#EEECE9] overflow-hidden 2xl:h-[900px]">
+        <div className="relative bg-[#EEECE9] overflow-hidden 2xl:h-[1200px]">
           <div className="absolute inset-0 bg-[linear-gradient(181.2deg,rgba(0,0,0,0)_27%,rgba(0,0,0,0.54)_92%)] z-10" />
-          <div className="absolute inset-0 bg-[url('/products/after-protocol.png')] bg-cover bg-center xl:bg-top xl:bg-cover" />
+          <div
+            className="absolute inset-0 bg-cover bg-center xl:bg-top xl:bg-cover"
+            style={{
+              backgroundImage: `url('${currentImage}')`,
+            }}
+          />
         </div>
 
         {/* RIGHT: content */}
-        <div className="flex flex-col bg-[#F6F4F1]">
-          <div className="px-[24px] lg:px-[40px] xl:px-[80px] pt-[64px] text-right 2xl:pt-[100px] 2xl:px-[120px]">
+        {/* keep header pinned to the top via mb-auto so nav can stay at bottom */}
+        <div className="flex flex-col bg-[#F6F4F1] justify-center">
+          <div className="px-[24px] lg:px-[40px] xl:px-[80px] pt-[64px] text-right mb-auto 2xl:pt-[100px] 2xl:px-[120px]">
             <h2 className="font-playfair uppercase font-semibold tracking-[-0.02em] text-[#2C2D30] text-[36px] lg:text-[44px] xl:text-[64px] leading-tight 2xl:text-[72px]">
               After the Protocol
             </h2>
@@ -112,7 +122,8 @@ export default function AfterProtocol() {
             </p>
           </div>
 
-          <div className="mt-[48px] bg-[#8AAE9B] border-y border-black/30 w-full h-[280px] lg:h-[346px] xl:h-[400px] 2xl:h-[560px] px-[24px] lg:px-[40px] xl:px-[60px] py-[24px] xl:py-[40px] overflow-hidden">
+          {/* UPDATED: make the card fill the right column width on large screens */}
+          <div className="mt-[48px] lg:mt-0 bg-[#8AAE9B] border-y border-black/30 w-full h-[280px] lg:h-[346px] xl:h-[400px] 2xl:h-[560px] px-[24px] lg:px-[40px] xl:px-[60px] py-[24px] xl:py-[40px] overflow-hidden">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={index}
