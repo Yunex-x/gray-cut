@@ -13,7 +13,7 @@ interface ProductShowcaseProps {
     image141?: string;
   };
   className?: string;
-  onAddToCart: (payload: any) => void; // ✅ receive from parent
+  onAddToCart: (payload: any) => void; // 
 }
 
 export default function ProductShowcase({
@@ -27,7 +27,6 @@ export default function ProductShowcase({
     setIsModalOpen(true);
   };
 
-  // Map images to GalleryImageSet shape
   const galleryImages = {
     top: images?.image146 || '/products/1.webp',
     left: images?.image147 || '/products/2.webp',
@@ -37,7 +36,6 @@ export default function ProductShowcase({
 
   return (
     <>
-      {/* Mobile Version */}
       <div className="lg:hidden w-full">
         <MobileProductHero
           heroImage={galleryImages.top}
@@ -50,7 +48,6 @@ export default function ProductShowcase({
         />
       </div>
 
-      {/* Desktop / wide */}
       <section className={`hidden lg:block w-full bg-[#F6F4F1] `}>
         <div className="w-full py-[118px]">
           <div className="w-full flex justify-end">
@@ -65,11 +62,10 @@ export default function ProductShowcase({
         </div>
       </section>
 
-      {/* Mobile Modal */}
       <MobileProductModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        onAddToCart={onAddToCart}  // ✅ forward shared handler
+        onAddToCart={onAddToCart}  
       />
     </>
   );

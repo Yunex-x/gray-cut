@@ -12,7 +12,7 @@ import FooterSection from "@/app/components/layout/footer/FooterSection";
 
 export default function Page() {
 
-  // ✅ Shared Add To Cart Logic (Desktop + Mobile)
+  // Cart Logic 
   function handleAddToCart(payload: any) {
     console.log("Shared Add To Cart:", payload);
   }

@@ -2,7 +2,6 @@ import { GridGalleryProps } from "@/app/types/gallery";
 import Image from "next/image";
 
 export default function GridGallery({
-  className = "",
 }: GridGalleryProps) {
   return (
     <div

@@ -18,12 +18,8 @@ export default function MobileProductHero({
 }: MobileProductHeroProps) {
   return (
     <div className="w-full flex flex-col bg-[#F6F4F1] relative">
-      {/* Hero Image with Gradient Overlay */}
-      {/* Make this element full viewport width on small screens so the background covers the full right edge.
-          Use w-screen centered inside the parent; revert to normal flow on lg+. */}
       <div className="relative left-1/2 -translate-x-1/2 w-screen lg:mx-0 lg:left-0 lg:-translate-x-0 lg:w-full">
         <div className="relative w-full aspect-[375/646] md:aspect-[768/900]">
-          {/* Background Image positioned as per design */}
           <div 
             className="absolute inset-0 w-full h-full"
             style={{
@@ -32,7 +28,6 @@ export default function MobileProductHero({
               backgroundPosition: 'center'
             }}
           >
-            {/* Title and CTA Container - Frame 603 */}
             <div 
               className="absolute bottom-8 md:bottom-16 left-1/2 md:left-[80px] -translate-x-1/2 w-[345px] md:w-[500px] max-w-[90%] flex flex-col items-start gap-[20px] md:gap-[24px]"
             >
@@ -43,9 +38,9 @@ export default function MobileProductHero({
                 The Standard System
               </h1>
 
-              {/* Frame 468 - Rating and CTA Container */}
+              {/*Rating and CTA Container */}
               <div className="flex flex-row items-center gap-[8px]">
-                {/* Frame 467 - Rating Container */}
+                {/* Rating Container */}
                 <div className="flex flex-row items-center gap-[4px]">
                   {/* Star Icon */}
                   <Star className="w-[14px] h-[14px] md:w-4 md:h-4 fill-[#FFFFFF] text-[#FFFFFF]" />
@@ -62,7 +57,7 @@ export default function MobileProductHero({
                 </span>
               </div>
 
-              {/* Frame 370 - Add to Cart Button */}
+              {/* Add to Cart Button */}
               <button
                 onClick={onConfigureClick}
                 className="px-[18px] md:px-6 py-2 md:py-3 bg-[#8AAE9B] hover:bg-[#7A9E8B] transition-colors"
@@ -76,10 +71,8 @@ export default function MobileProductHero({
         </div>
       </div>
 
-      {/* Frame 677 - Additional Images Section (keeps normal container alignment) */}
       <div className="w-full px-4 md:px-8 py-6 md:py-12">
         <div className="w-full max-w-[357px] md:max-w-[600px] mx-auto flex flex-row items-center gap-[18px] md:gap-[24px]">
-          {/* Frame 495 - First Image */}
           <div className="relative w-full h-[210px] md:h-[350px] bg-white overflow-hidden flex-1">
             <Image
               src='/products/2.webp'
@@ -90,7 +83,6 @@ export default function MobileProductHero({
             />
           </div>
 
-          {/* Frame 672 - Second Image */}
           <div className="relative w-full h-[210px] md:h-[350px] bg-white overflow-hidden flex-1">
             <Image
               src='/products/3.webp'

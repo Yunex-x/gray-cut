@@ -12,7 +12,6 @@ interface NavbarProps {
 export default function Navbar({ variant = 'light' }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Disable body scroll when menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -21,7 +20,6 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
     }
   }, [menuOpen]);
 
-  // Color configurations based on variant
   const isDark = variant === 'dark';
   const textColor = isDark ? 'text-[#2C2D30]' : 'text-[rgba(246,244,241,0.7)]';
   const textHoverColor = isDark ? 'hover:text-[#2C2D30]/80' : 'hover:text-[#F6F4F1]';
@@ -29,14 +27,12 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
   const logoSrc = isDark ? '/home/logo-dark.svg' : '/home/logo.svg';
   const hamburgerColor = isDark ? 'bg-[#2C2D30]' : 'bg-white';
 
-  // Explicit menu items with their respective hrefs.
-  // Update any hrefs below if you want different target routes.
   const menuItems = [
     { label: "Home", href: "/" },
     { label: "PrecisionFit System", href: "/precisionfit-system" },
     { label: "Shop", href: "/products" },
     { label: "Why Us?", href: "/why-us" },
-    { label: "A Question?", href: "/faq" }, // or "/contact" if preferred
+    { label: "A Question?", href: "/faq" },
     { label: "Blog", href: "/blog" },
     { label: "Our Location", href: "/location" },
   ];
@@ -103,7 +99,7 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
           <CurrencySelector variant={variant} />
         </div>
 
-        {/* Logo - Centered Absolutely */}
+        {/* Logo  */}
         <Link
           href="/"
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[69px] h-[30px]"

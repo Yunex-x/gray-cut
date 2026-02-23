@@ -39,7 +39,6 @@ export default function ProtocolCard({
       >
         <div className="flex flex-col gap-[12px] md:gap-[20px] max-w-full md:max-w-[590px] transform transition-transform duration-500 group-hover:translate-y-[-10px]">
           
-          {/* Title - Mobile Only */}
           <h3
             className="
               md:hidden
@@ -60,7 +59,6 @@ export default function ProtocolCard({
             {title}
           </h3>
 
-          {/* Title + Price Row - Desktop Only */}
           <div className="hidden md:flex items-center whitespace-nowrap justify-between gap-[16px] lg:gap-[42px] xl:gap-[80px] ">
             <h3
               className="
@@ -105,7 +103,6 @@ export default function ProtocolCard({
             </span>
           </div>
 
-          {/* Features / Protocols */}
           <ul className="flex flex-col gap-[8px] md:gap-[10px]">
             {features.map((item, index) => (
               <li
@@ -136,7 +133,6 @@ export default function ProtocolCard({
             ))}
           </ul>
 
-          {/* CTA + Price Row - Mobile Only / CTA Button - Desktop */}
           <div className="flex items-center justify-between pt-[8px] md:pt-[16px] gap-[12px]">
             <button
               className="
@@ -175,7 +171,6 @@ export default function ProtocolCard({
               {cta}
             </button>
 
-            {/* Price - Mobile Only */}
             <span
               className="
                 md:hidden

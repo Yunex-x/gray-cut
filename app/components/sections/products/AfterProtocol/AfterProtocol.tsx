@@ -16,7 +16,6 @@ export default function AfterProtocol() {
     ]);
   };
 
-  // use current testimonial image if present, otherwise fallback to existing image
   const currentImage =
     AFTER_PROTOCOL_TESTIMONIALS[index]?.image ?? "/products/after-protocol.png";
 
